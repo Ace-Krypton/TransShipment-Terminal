@@ -19,7 +19,7 @@ public class Main {
         //String strInput;  //For String input
         boolean loopStop = true;  //Boolean for while loop
 
-        MAINLOOP:
+        MAINLOOP:   //Label
         while (loopStop) {
             menu(); //Calling static method menu for displaying the screen to the user
             try {
@@ -46,13 +46,13 @@ public class Main {
 
                         switch (intInput) {
                             case 1 -> //Create Ships
-                                    seaport.createShips(new Ships());
+                                    seaport.createShips(new Ships());  //Everytime creating new object
 
                             case 2 -> //Ships Info
-                                    seaport.listInfo();
+                                    seaport.listInfo(); //Printing the elements of "ships" ArrayList
 
                             case 3 -> { //Back
-                                continue MAINLOOP;
+                                continue MAINLOOP;  //goto label
                             }
 
                             case default ->
