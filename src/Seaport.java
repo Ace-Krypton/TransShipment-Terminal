@@ -7,5 +7,6 @@ public class Seaport {
         System.out.println("[1] Create Ships");
         System.out.println("[2] Ships Info");
         System.out.println("[3] Back");
+        System.out.println("+-----------------------------------------+");
     }
 }
