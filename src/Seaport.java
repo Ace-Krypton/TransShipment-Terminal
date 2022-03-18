@@ -31,8 +31,13 @@ public class Seaport {
     //Ship Info
     public void listInfo() {
         System.out.println("+-----------------------------------------+");
-        for (Ships shipList : ships) {
-            System.out.println(shipList);
+        //Checks if List is empty or not
+        boolean isEmpty = ships.isEmpty();
+        if (isEmpty) System.out.println("You don't have any ships right now");
+        else{
+            for (Ships shipList : ships) {
+                System.out.println(shipList);
+            }
         }
     }
 
@@ -41,7 +46,7 @@ public class Seaport {
         System.out.println("\n+-----------------------------------------+");
         System.out.println("Name Of The Seaport: " + name);
         System.out.println("[1] Create Ships");
-        System.out.println("[2] Ships Info");
+        System.out.println("[2] Warehouse");
         System.out.println("[3] Back");
         System.out.println("+-----------------------------------------+");
     }

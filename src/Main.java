@@ -1,4 +1,5 @@
 import java.util.InputMismatchException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);  //For user input
         int intInput;  //For Integer input
-        //String strInput;  //For String input
+        String strInput;  //For String input
         boolean loopStop = true;  //Boolean for while loop
 
         MAINLOOP:   //Label
@@ -18,16 +19,16 @@ public class Main {
             menu(); //Calling static method menu for displaying the screen to the user
             try {
                 System.out.print("> ");
-                intInput = scan.nextInt(); //Getting the input from user
+                strInput = scan.next(); //Getting the input from user
             } catch (InputMismatchException i) {
                 System.out.println("Only Numbers From 1-3 Are Allowed");
                 scan.nextLine();
                 System.out.print("> ");
-                intInput = scan.nextInt(); //Getting the input from user
+                strInput = scan.next(); //Getting the input from user
             }
 
-            switch (intInput) {
-                case 1 -> {
+            switch (strInput.toUpperCase(Locale.ROOT)) {
+                case "1" -> {
                     //Create A Seaport
                     Seaport seaport = new Seaport();  //Creating new object of Seaport class
                     System.out.println("+-----------------------------------------+");
@@ -54,11 +55,8 @@ public class Main {
                         }
                     }
                 }
-                case 2 -> {
-                    //Warehouse
-                }
 
-                case 3 -> {
+                case "X" -> {
                     //Exit
                     System.out.println("Exiting....");
                     loopStop = false;
@@ -74,8 +72,7 @@ public class Main {
     public static void menu() {
         System.out.println("+-----------------------------------------+");
         System.out.println("[1] Create A Seaport");
-        System.out.println("[2] Warehouse");
-        System.out.println("[3] Exit");
+        System.out.println("[X] Exit");
         System.out.println("+-----------------------------------------+");
     }
 }

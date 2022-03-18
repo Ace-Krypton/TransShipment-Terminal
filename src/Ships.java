@@ -31,7 +31,7 @@ public class Ships {
     }
 
     //Overriding toString() method
-    //@Returns unique ID and Name, Transport Origin, Home Port and Destination of the ship
+    //@returns unique ID and Name, Transport Origin, Home Port and Destination of the ship
     @Override
     public String toString() {
         return ID + ". " + "Name: " + name + "\nTransport Origin: " + transportOrigin
