@@ -5,7 +5,6 @@ public class Seaport {
     Scanner scan = new Scanner(System.in);  //Scanner for User input
     public ArrayList<Ships> ships = new ArrayList<>();  //ArrayList for ships
     public String name;   //Name of the seaport
-    Ships ship = new Ships();  //Creating object of Ships class
     String userInput;   //For user input
 
     //Creating Ships
@@ -27,15 +26,14 @@ public class Seaport {
         shipObjects.setDestination(userInput); //Setting the destination of the ship
 
         ships.add(shipObjects);
-        for (Ships shipList : ships) {
-            System.out.println(shipList);
-        }
     }
 
     //Ship Info
-    public String shipInfo() {
+    public void listInfo() {
         System.out.println("+-----------------------------------------+");
-        return ship.toString();
+        for (Ships shipList : ships) {
+            System.out.println(shipList);
+        }
     }
 
     //Menu For Seaport
