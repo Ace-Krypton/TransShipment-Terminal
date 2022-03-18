@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class Seaport {
     Scanner scan = new Scanner(System.in);  //Scanner for User input
-    public ArrayList<String> ships = new ArrayList<>();  //ArrayList for ships
+    public ArrayList<Ships> ships = new ArrayList<>();  //ArrayList for ships
     public String name;   //Name of the seaport
-    Ships ship = new Ships();
-    String userInput;
+    Ships ship = new Ships();  //Creating object of Ships class
+    String userInput;   //For user input
 
     //Creating Ships
     public void createShips() {
@@ -25,11 +25,22 @@ public class Seaport {
         System.out.print("Destination: ");
         userInput = scan.next();
         ship.setDestination(userInput); //Setting the destination of the ship
+
+        ships.add(ship);
+        for (Ships shipList : ships) {
+            System.out.println(shipList);
+        }
+    }
+
+    //Ship Info
+    public String shipInfo() {
+        System.out.println("+-----------------------------------------+");
+        return ship.toString();
     }
 
     //Menu For Seaport
     public void menuForSeaport() {
-        System.out.println("+-----------------------------------------+");
+        System.out.println("\n+-----------------------------------------+");
         System.out.println("Name Of The Seaport: " + name);
         System.out.println("[1] Create Ships");
         System.out.println("[2] Ships Info");

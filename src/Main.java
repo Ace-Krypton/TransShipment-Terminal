@@ -45,14 +45,11 @@ public class Main {
                         intInput = scan.nextInt(); //Getting the input from user
 
                         switch (intInput) {
-                            case 1 -> {
-                                //Create Ships
-                                seaport.createShips();
-                            }
+                            case 1 -> //Create Ships
+                                    seaport.createShips();
 
-                            case 2 -> {
-                                //Ships Info
-                            }
+                            case 2 -> //Ships Info
+                                    System.out.println(seaport.shipInfo());
 
                             case 3 -> { //Back
                                 continue MAINLOOP;

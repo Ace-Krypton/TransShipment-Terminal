@@ -5,7 +5,7 @@ public class Ships {
     private String homePort;  //For home port
     private String transportOrigin; //For transport origin
     private String destination; //For destination of the ship
-    public double capacity;  //Ship's capacity
+    //public double capacity;  //Ship's capacity
 
     //Constructor
     public Ships() {
@@ -13,11 +13,7 @@ public class Ships {
         ID = _id;
     }
 
-    //Setters and Getters
-    public String getName() {
-        return name;
-    }
-
+    //Setters
     public void setName(String name) {
         this.name = name;
     }
