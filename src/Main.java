@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
@@ -9,6 +10,12 @@ public class Main {
       **/
 
     public static void main(String[] args) {
+        /*
+         * This ArrayList takes the ships from seaport list
+         * I created this because, when I went back to main menu, created ships were lost
+         * That is the way I found to store them.
+         **/
+        ArrayList<Ships> ships = new ArrayList<>();
         Scanner scan = new Scanner(System.in);  //For user input
         int intInput;  //For Integer input
         String strInput;  //For String input
@@ -43,8 +50,10 @@ public class Main {
                             case 1 -> //Create Ships
                                     seaport.createShips(new Ships());  //Everytime creating new object
 
-                            case 2 -> //Warehouse
+                            case 2 -> { //Warehouse
                                     seaport.listInfo(); //Printing the elements of "ships" ArrayList
+                                    ships.addAll(seaport.ships);
+                            }
 
                             case 3 -> { //Back
                                 continue MAINLOOP;  //goto label
