@@ -1,4 +1,4 @@
-![Ship-Management-Software](            https://user-images.githubusercontent.com/75210504/159066915-8b2cb737-6555-48a3-82e2-b2e9ce9dfe3b.jpg)
+![Ship-Management-Software](https://user-images.githubusercontent.com/75210504/159066915-8b2cb737-6555-48a3-82e2-b2e9ce9dfe3b.jpg)
 
 <h1 align="center">Welcome to TransShipment-Terminal System 👋</h1>
 <p>
@@ -17,7 +17,7 @@
 
 ## Prerequisites
 
-- RAM : At least 128 MB. Disk Space : 124 MB for JRE, 2 MB for Java Update. Processor : Minimum Pentium 2 266 MHz processor 
+- RAM : At least 128 MB. Disk Space : 124 MB for JRE. Processor : Minimum Pentium 2 266 MHz processor 
 
 ## Authors
 
