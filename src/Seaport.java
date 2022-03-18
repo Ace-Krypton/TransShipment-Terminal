@@ -4,8 +4,17 @@ import java.util.Scanner;
 public class Seaport implements ISeaport {
     Scanner scan = new Scanner(System.in);  //Scanner for User input
     public ArrayList<Ships> ships = new ArrayList<>();  //ArrayList for ships
-    public String name;   //Name of the seaport
+    private String name;   //Name of the seaport
     String userInput;   //For user input
+
+    //Getters and Setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     //Creating Ships
     public void createShips(Ships shipObjects) {
@@ -59,6 +68,6 @@ public class Seaport implements ISeaport {
      **/
     @Override
     public String toString() {
-        return "Name: " + name + "\nShips: " + ships;
+        return " Name: " + name + "\n\tShips: " + ships;
     }
 }

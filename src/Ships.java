@@ -38,7 +38,7 @@ public class Ships implements IShips{
      **/
     @Override
     public String toString() {
-        return ID + ". " + "Name: " + name + "\nTransport Origin: " + transportOrigin
-              + "\nHome Port: " + homePort + "\nDestination: " + destination;
+        return ID + ". " + " Name: " + name + "\n\tTransport Origin: " + transportOrigin
+              + "\n\tHome Port: " + homePort + "\n\tDestination: " + destination;
     }
 }

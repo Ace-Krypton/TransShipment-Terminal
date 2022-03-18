@@ -41,7 +41,7 @@ public class Main {
                     Seaport seaport = new Seaport(); //Creating new object of Seaport class
                     seaports.add(seaport);
                     System.out.print("Name of the seaport: ");
-                    seaport.name = scan.next();  //Setting the name of the seaport
+                    seaport.setName(scan.next());  //Setting the name of the seaport
                     while (true) {
                         seaport.menuForSeaport();  //Displaying the menu for seaport
                         System.out.print("> ");
@@ -74,9 +74,19 @@ public class Main {
                 }
 
                 case "3" -> {  //Go To The Existing Seaport
-                    for (Seaport seaportAsList : seaports) {
-                        System.out.println(seaportAsList);
-                    }
+                    //User Input
+                    System.out.print("Enter the name of the seaport: ");
+                    strInput = scan.next();
+                        //Iterating through our ArrayList
+                        for (Seaport seaport : seaports) {
+                            //If seaport name is not null and seaport name contains given string then do something
+                            if (seaport.getName() != null && seaport.getName().contains(strInput))
+                                System.out.println(seaport);
+                            else {
+                                System.out.println("+-----------------------------------------+");
+                                System.out.println("There are not any seaports named " + strInput);
+                            }
+                        }
                 }
 
                 case "X" -> {  //Exit
