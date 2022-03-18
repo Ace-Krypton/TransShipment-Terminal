@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -9,12 +10,20 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);  //For user input
         int intInput;  //For Integer input
-        String strInput;  //For String input
+        //String strInput;  //For String input
+        boolean loopStop = true;  //Boolean for while loop
 
-        while (true) {
+        while (loopStop) {
             menu(); //Calling static method menu for displaying the screen to the user
-            System.out.print("> ");
-            intInput = scan.nextInt(); //Getting the input from user
+            try {
+                System.out.print("> ");
+                intInput = scan.nextInt(); //Getting the input from user
+            } catch (InputMismatchException i) {
+                System.out.println("Only Numbers From 1-3 Are Allowed");
+                scan.nextLine();
+                System.out.print("> ");
+                intInput = scan.nextInt(); //Getting the input from user
+            }
 
             switch (intInput) {
                 case 1 -> {
@@ -23,8 +32,18 @@ public class Main {
                     System.out.print("Name of the seaport: ");
                     seaport.name = scan.next();  //Setting the name of the seaport
                     System.out.println("+-----------------------------------------+");
-                    System.out.println("Seaport Created");
+
                 }
+                case 2 -> {
+                    //Warehouse
+                }
+
+                case 3 -> {
+                    System.out.println("Exiting....");
+                    loopStop = false;
+                }
+
+                case default -> System.out.println("Invalid Command, Please Try Again");
             }
         }
 //        Ships ship = new Ships("The Diamond Ark");
