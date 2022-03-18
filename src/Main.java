@@ -5,7 +5,8 @@ public class Main {
     /**
       * TODO In the main method, create a seaport with at least five different types of container ships loaded with different containers.
       *  Additionally, several containers of different types should be placed in the warehouse
-     * //        Ships ship = new Ships("The Diamond Ark");
+     * //        Ships ship = new Ships();
+     * //        ship.setName("The Diamond Ark");
      * //        ship.setTransportOrigin("USA");
      * //        ship.setHomePort("Port of Virginia");
      * //        ship.setDestination("Port of Hong Kong");
@@ -46,6 +47,7 @@ public class Main {
                         switch (intInput) {
                             case 1 -> {
                                 //Create Ships
+                                seaport.createShips();
                             }
 
                             case 2 -> {

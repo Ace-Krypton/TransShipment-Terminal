@@ -1,20 +1,27 @@
 public class Ships {
     private static int _id; //No one could change unique ID from outside
     public int ID;  //For unique ID
-    private final String name;  //Indicates the name of the ship
+    private String name;  //Indicates the name of the ship
     private String homePort;  //For home port
     private String transportOrigin; //For transport origin
     private String destination; //For destination of the ship
     public double capacity;  //Ship's capacity
 
     //Constructor
-    public Ships(String name) {
-        this.name = name;
+    public Ships() {
         ++_id;
         ID = _id;
     }
 
-    //Setters
+    //Setters and Getters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setHomePort(String homePort) {
         this.homePort = homePort;
     }
