@@ -9,24 +9,24 @@ public class Seaport {
     String userInput;   //For user input
 
     //Creating Ships
-    public void createShips() {
+    public void createShips(Ships shipObjects) {
         System.out.print("Name Of The Ship: ");
         userInput = scan.next();
-        ship.setName(userInput); //Setting the name of the ship
+        shipObjects.setName(userInput); //Setting the name of the ship
 
         System.out.print("Transport Origin: ");
         userInput = scan.next();
-        ship.setTransportOrigin(userInput); //Setting the transport origin of the ship
+        shipObjects.setTransportOrigin(userInput); //Setting the transport origin of the ship
 
         System.out.print("Home Port: ");
         userInput = scan.next();
-        ship.setHomePort(userInput);  //Setting the home port of the ship
+        shipObjects.setHomePort(userInput);  //Setting the home port of the ship
 
         System.out.print("Destination: ");
         userInput = scan.next();
-        ship.setDestination(userInput); //Setting the destination of the ship
+        shipObjects.setDestination(userInput); //Setting the destination of the ship
 
-        ships.add(ship);
+        ships.add(shipObjects);
         for (Ships shipList : ships) {
             System.out.println(shipList);
         }
