@@ -50,4 +50,15 @@ public class Seaport implements ISeaport {
         System.out.println("[3] Back");
         System.out.println("+-----------------------------------------+");
     }
+
+    //Overriding toString() method
+    /** @returns unique ID and Name
+     * Transport Origin
+     * Home Port
+     * Destination of the ship
+     **/
+    @Override
+    public String toString() {
+        return "Name: " + name + "\nShips: " + ships;
+    }
 }

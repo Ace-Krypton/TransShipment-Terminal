@@ -16,13 +16,14 @@ public class Main {
          * That is the way I found to store them.
          **/
         ArrayList<Ships> ships = new ArrayList<>();
+        ArrayList<Seaport> seaports = new ArrayList<>();
         Scanner scan = new Scanner(System.in);  //For user input
         int intInput;  //For Integer input
         String strInput;  //For String input
         boolean loopStop = true;  //Boolean for while loop
 
         MAINLOOP:   //Label
-        while (loopStop) {
+        while (loopStop) {  //Main loop
             menu(); //Calling static method menu for displaying the screen to the user
             try {
                 System.out.print("> ");
@@ -35,10 +36,10 @@ public class Main {
             }
 
             switch (strInput.toUpperCase(Locale.ROOT)) {
-                case "1" -> {
-                    //Create A Seaport
-                    Seaport seaport = new Seaport();  //Creating new object of Seaport class
+                case "1" -> { //Create A Seaport
                     System.out.println("+-----------------------------------------+");
+                    Seaport seaport = new Seaport(); //Creating new object of Seaport class
+                    seaports.add(seaport);
                     System.out.print("Name of the seaport: ");
                     seaport.name = scan.next();  //Setting the name of the seaport
                     while (true) {
@@ -47,12 +48,13 @@ public class Main {
                         intInput = scan.nextInt(); //Getting the input from user
 
                         switch (intInput) {
-                            case 1 -> //Create Ships
+                            case 1 ->  //Create Ships
                                     seaport.createShips(new Ships());  //Everytime creating new object
 
+
                             case 2 -> { //Warehouse
-                                    seaport.listInfo(); //Printing the elements of "ships" ArrayList
-                                    ships.addAll(seaport.ships);
+                                 seaport.listInfo(); //Printing the elements of "ships" ArrayList
+                                 ships.addAll(seaport.ships); //Appends all the elements to the specified collection
                             }
 
                             case 3 -> { //Back
@@ -65,8 +67,19 @@ public class Main {
                     }
                 }
 
-                case "X" -> {
-                    //Exit
+                case "2" -> {  //Warehouse
+                    for (Ships ship : ships) {  //Enhanced for loop for printing the elements of list
+                        System.out.println(ship);
+                    }
+                }
+
+                case "3" -> {  //Go To The Existing Seaport
+                    for (Seaport seaportAsList : seaports) {
+                        System.out.println(seaportAsList);
+                    }
+                }
+
+                case "X" -> {  //Exit
                     System.out.println("Exiting....");
                     loopStop = false;
                 }
@@ -81,6 +94,8 @@ public class Main {
     public static void menu() {
         System.out.println("+-----------------------------------------+");
         System.out.println("[1] Create A Seaport");
+        System.out.println("[2] Warehouse");
+        System.out.println("[3] Go To The Existing Seaport");
         System.out.println("[X] Exit");
         System.out.println("+-----------------------------------------+");
     }
