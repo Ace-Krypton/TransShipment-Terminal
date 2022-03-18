@@ -1,4 +1,4 @@
-![Ship-Management-Software](https://user-images.githubusercontent.com/75210504/159066915-8b2cb737-6555-48a3-82e2-b2e9ce9dfe3b.jpg)
+![Ship-Management-Software](            https://user-images.githubusercontent.com/75210504/159066915-8b2cb737-6555-48a3-82e2-b2e9ce9dfe3b.jpg)
 
 <h1 align="center">Welcome to TransShipment-Terminal System 👋</h1>
 <p>
@@ -33,5 +33,5 @@ Give a ⭐️ if this project helped you !
 
 ## 📝 License
 
-Copyright © 2019 [Ramiz Abbasov](https://github.com/Ace-Krypton).<br />
+Copyright © 2022 [Ramiz Abbasov](https://github.com/Ace-Krypton).<br />
 This project is [MIT](https://github.com/Ace-Krypton/TransShipment-Terminal/blob/master/LICENSE) licensed.
