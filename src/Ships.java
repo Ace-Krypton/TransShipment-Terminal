@@ -1,10 +1,11 @@
 public class Ships {
     private static int _id; //No one could change unique ID from outside
     public int ID;  //For unique ID
-    String name;  //Indicates the name of the ship
+    private final String name;  //Indicates the name of the ship
     private String homePort;  //For home port
     private String transportOrigin; //For transport origin
     private String destination; //For destination of the ship
+    public double capacity;  //Ship's capacity
 
     //Constructor
     public Ships(String name) {
@@ -13,25 +14,13 @@ public class Ships {
         ID = _id;
     }
 
-    //Getters and setters
-    public String getHomePort() {
-        return homePort;
-    }
-
+    //Setters
     public void setHomePort(String homePort) {
         this.homePort = homePort;
     }
 
-    public String getTransportOrigin() {
-        return transportOrigin;
-    }
-
     public void setTransportOrigin(String transportOrigin) {
         this.transportOrigin = transportOrigin;
-    }
-
-    public String getDestination() {
-        return destination;
     }
 
     public void setDestination(String destination) {
@@ -39,8 +28,10 @@ public class Ships {
     }
 
     //Overriding toString() method
+    //Returns unique ID and Name, Transport Origin, Home Port and Destination of the ship
     @Override
     public String toString() {
-        return "(" + ID + ") " + name;  //returns unique ID and Name of the ship
+        return ID + ". " + "Name: " + name + "\nTransport Origin: " + transportOrigin
+              + "\nHome Port: " + homePort + "\nDestination: " + destination;
     }
 }
