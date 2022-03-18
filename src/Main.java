@@ -43,7 +43,7 @@ public class Main {
                             case 1 -> //Create Ships
                                     seaport.createShips(new Ships());  //Everytime creating new object
 
-                            case 2 -> //Ships Info
+                            case 2 -> //Warehouse
                                     seaport.listInfo(); //Printing the elements of "ships" ArrayList
 
                             case 3 -> { //Back

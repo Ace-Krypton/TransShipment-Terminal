@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Seaport {
+public class Seaport implements ISeaport {
     Scanner scan = new Scanner(System.in);  //Scanner for User input
     public ArrayList<Ships> ships = new ArrayList<>();  //ArrayList for ships
     public String name;   //Name of the seaport

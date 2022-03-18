@@ -1,4 +1,4 @@
-public class Ships {
+public class Ships implements IShips{
     private static int _id; //No one could change unique ID from outside
     public int ID;  //For unique ID
     private String name;  //Indicates the name of the ship
@@ -31,7 +31,11 @@ public class Ships {
     }
 
     //Overriding toString() method
-    //@returns unique ID and Name, Transport Origin, Home Port and Destination of the ship
+    /** @returns unique ID and Name
+     * Transport Origin
+     * Home Port
+     * Destination of the ship
+     **/
     @Override
     public String toString() {
         return ID + ". " + "Name: " + name + "\nTransport Origin: " + transportOrigin

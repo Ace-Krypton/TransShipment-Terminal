@@ -7,4 +7,6 @@ public class Cargo {
      *      • Toxic Powdery Cargo
      *      • Toxic Liquid Cargo
      */
+
+
 }
