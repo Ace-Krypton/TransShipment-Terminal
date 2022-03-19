@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -28,6 +29,8 @@ public class Main {
          * That is the way I found to store them.
          **/
         ArrayList<Seaport> seaports = new ArrayList<>();
+        Seaport seaport = new Seaport(); //Creating new object of Seaport class
+        Hashtable<String, String> userPass = new Hashtable<>();
         Scanner scan = new Scanner(System.in);  //For user input
         String strInput;  //For String input
         boolean loopStop = true;  //Boolean for while loop
@@ -39,13 +42,21 @@ public class Main {
             strInput = scan.next(); //Getting the input from user
 
             switch (strInput.toUpperCase(Locale.ROOT)) {
-                case "1" -> { //Create A Seaport
+                case "1" -> { //Login Into Seaport Account
                     System.out.println("+-----------------------------------------+");
-                    Seaport seaport = new Seaport(); //Creating new object of Seaport class
-                    seaports.add(seaport);  //Adding seaport object to the list
+                    System.out.print("Please enter the password for seaport: ");
+                    strInput = scan.next();
+
+                    if (!userPass.containsKey(strInput)) {
+                        System.out.println("Authentication Revoked!");
+                        break;
+                    }
+
                     System.out.print("Name of the seaport: ");
-                    strInput = scan.next(); //For user input
+                    strInput = scan.next(); //For name of the seaport
                     seaport.setName(strInput);  //Setting the name of the seaport
+
+                    seaports.add(seaport);  //Adding seaport object to the list
 
                     SEAPORTLOOP: //Label
                     while (true) {  //Seaport Loop
@@ -131,15 +142,25 @@ public class Main {
                     System.out.print("Enter the name of the seaport: ");
                     strInput = scan.next();
                         //Iterating through our ArrayList
-                        for (Seaport seaport : seaports) {
+                        for (Seaport seaportAsList : seaports) {
                             //If seaport name is not null and seaport name contains given string then do something
-                            if (seaport.getName().contains(strInput))
-                                System.out.println(seaport);
+                            if (seaportAsList.getName().contains(strInput))
+                                System.out.println(seaportAsList);
                             else {
                                 System.out.println("+-----------------------------------------+");
                                 System.out.println("There are not any seaports named " + strInput);
                             }
                         }
+                }
+
+                case "3" -> {  //Creating A Seaport Account
+
+                    System.out.print("Username: ");   //For Username
+                    String username = scan.next();
+                    System.out.print("Password: ");
+                    String password = scan.next(); //For password
+                    userPass.put(password, username); //Putting the key and value
+                    System.out.println("Account Created Successfully!" + userPass);
                 }
 
                 case "X" -> {  //Exit
@@ -156,8 +177,9 @@ public class Main {
     //Menu for console
     public static void menu() {
         System.out.println("+-----------------------------------------+");
-        System.out.println("[1] Create A Seaport");
-        System.out.println("[2] Info About Existing Seaport");
+        System.out.println("[1] Login Into Seaport Account");
+        System.out.println("[2] Info About Existing Seaport Account");
+        System.out.println("[3] Create A Seaport Account");
         System.out.println("[X] Exit");
         System.out.println("+-----------------------------------------+");
     }
