@@ -56,6 +56,7 @@ public class Seaport implements ISeaport {
         System.out.println("Name Of The Seaport: " + name);
         System.out.println("[1] Create Ships");
         System.out.println("[2] Warehouse");
+        System.out.println("[3] Create Cargo");
         System.out.println("[A] Back");
         System.out.println("+-----------------------------------------+");
     }

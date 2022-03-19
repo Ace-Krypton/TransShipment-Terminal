@@ -6,7 +6,19 @@ public class Main {
     /**
       * TODO In the main method, create a seaport with at least five different types of container ships loaded with different containers.
       *  Additionally, several containers of different types should be placed in the warehouse
-      *  1 -> Try Catch On intInput places
+     *       Demo for existing user entry
+      *      for (Seaport seaPort : seaports) {  //Iterating through seaports list
+      *                          while (true) {  //Always true
+      *                              //If name is not null and name contained in ArrayList already it gives you message and input again
+      *                              if (seaPort.getName() != null && seaPort.getName().contains(strInput)) {
+      *                                  System.out.println("You already have \"" + seaPort.getName()
+      *                                          + "\" account in system, Please try again");
+      *                                  System.out.print("Name1 of the seaport: ");
+      *                                  strInput = scan.next();
+      *                              }
+      *                              else break;
+      *                          }
+      *                      }
       **/
 
     public static void main(String[] args) {
@@ -31,10 +43,13 @@ public class Main {
                 case "1" -> { //Create A Seaport
                     System.out.println("+-----------------------------------------+");
                     Seaport seaport = new Seaport(); //Creating new object of Seaport class
-                    seaports.add(seaport);
+                    seaports.add(seaport);  //Adding seaport object to the list
                     System.out.print("Name of the seaport: ");
-                    seaport.setName(scan.next());  //Setting the name of the seaport
-                    while (true) {
+                    strInput = scan.next(); //For user input
+                    seaport.setName(strInput);  //Setting the name of the seaport
+
+                    SEAPORTLOOP:
+                    while (true) {  //Seaport Loop
                         seaport.menuForSeaport();  //Displaying the menu for seaport
                         System.out.print("> ");
                         strInput = scan.next(); //Getting the input from user
@@ -47,6 +62,57 @@ public class Main {
                             case "2" -> { //Warehouse
                                  seaport.listInfo(); //Printing the elements of "ships" ArrayList
                                  ships.addAll(seaport.ships); //Appends all the elements to the specified collection
+                            }
+
+                            case "3" -> {  //Create Cargos
+                                Cargo cargo = new Cargo();
+                                CARGOLOOP:
+                                while (true) {  //For Cargos
+                                    cargo.cargoMenu();  //For Cargo Menu
+                                    System.out.print("> ");
+                                    strInput = scan.next(); //Getting the input from user
+
+                                    switch (strInput.toUpperCase(Locale.ROOT)) {
+                                        case "1" -> {  // Create Explosive Cargo
+                                            
+                                        }
+
+                                        case "2" -> {  //Create Toxic Cargo
+                                            //I am doing that
+                                            while (true) {
+                                                cargo.cargoToxicMenu();
+                                                System.out.print("> ");
+                                                strInput = scan.next(); //Getting the input from user
+
+                                                switch (strInput.toUpperCase(Locale.ROOT)) {
+                                                    case "1" -> //Toxic Liquid
+                                                            System.out.println("Toxic liquid created!");
+
+                                                    case "2" -> //Toxic Powdery
+                                                            System.out.println("Toxic powdery created!");
+
+                                                    case "A" -> {   //Back
+                                                        continue CARGOLOOP;
+                                                    }
+
+                                                    case default ->
+                                                            System.out.println("Invalid Command, Please Try Again");
+                                                }
+                                            }
+                                        }
+
+                                        case "3" -> {  //Create Liquid Cargo
+
+                                        }
+
+                                        case "A" -> { //Back
+                                            continue SEAPORTLOOP;
+                                        }
+
+                                        case default ->
+                                                System.out.println("Invalid Command, Please Try Again");
+                                    }
+                                }
                             }
 
                             case "A" -> { //Back
