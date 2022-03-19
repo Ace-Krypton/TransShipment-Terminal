@@ -27,7 +27,6 @@ public class Main {
          * I created this because, when I went back to main menu, created ships were lost
          * That is the way I found to store them.
          **/
-        ArrayList<Ships> ships = new ArrayList<>();
         ArrayList<Seaport> seaports = new ArrayList<>();
         Scanner scan = new Scanner(System.in);  //For user input
         String strInput;  //For String input
@@ -48,7 +47,7 @@ public class Main {
                     strInput = scan.next(); //For user input
                     seaport.setName(strInput);  //Setting the name of the seaport
 
-                    SEAPORTLOOP:
+                    SEAPORTLOOP: //Label
                     while (true) {  //Seaport Loop
                         seaport.menuForSeaport();  //Displaying the menu for seaport
                         System.out.print("> ");
@@ -59,10 +58,9 @@ public class Main {
                                     seaport.createShips(new Ships());  //Everytime creating new object
 
 
-                            case "2" -> { //Warehouse
-                                 seaport.listInfo(); //Printing the elements of "ships" ArrayList
-                                 ships.addAll(seaport.ships); //Appends all the elements to the specified collection
-                            }
+                            case "2" -> //Warehouse
+                                    seaport.listInfo(); //Printing the elements of "ships" ArrayList
+
 
                             case "3" -> {  //Create Cargos
                                 Cargo cargo = new Cargo();
@@ -74,7 +72,7 @@ public class Main {
 
                                     switch (strInput.toUpperCase(Locale.ROOT)) {
                                         case "1" -> {  // Create Explosive Cargo
-                                            
+
                                         }
 
                                         case "2" -> {  //Create Toxic Cargo
@@ -85,8 +83,11 @@ public class Main {
                                                 strInput = scan.next(); //Getting the input from user
 
                                                 switch (strInput.toUpperCase(Locale.ROOT)) {
-                                                    case "1" -> //Toxic Liquid
-                                                            System.out.println("Toxic liquid created!");
+                                                    case "1" -> { //Toxic Liquid
+                                                        System.out.println("Toxic Liquid Cargo Created!");
+                                                        Containers containers = new Containers();
+                                                        containers.toxicLiquidContainer.add(cargo);
+                                                    }
 
                                                     case "2" -> //Toxic Powdery
                                                             System.out.println("Toxic powdery created!");
@@ -125,20 +126,14 @@ public class Main {
                     }
                 }
 
-                case "2" -> {  //Warehouse
-                    for (Ships ship : ships) {  //Enhanced for loop for printing the elements of list
-                        System.out.println(ship);
-                    }
-                }
-
-                case "3" -> {  //Info About Existing Seaport
+                case "2" -> {  //Info About Existing Seaport
                     //User Input
                     System.out.print("Enter the name of the seaport: ");
                     strInput = scan.next();
                         //Iterating through our ArrayList
                         for (Seaport seaport : seaports) {
                             //If seaport name is not null and seaport name contains given string then do something
-                            if (seaport.getName() != null && seaport.getName().contains(strInput))
+                            if (seaport.getName().contains(strInput))
                                 System.out.println(seaport);
                             else {
                                 System.out.println("+-----------------------------------------+");
@@ -162,8 +157,7 @@ public class Main {
     public static void menu() {
         System.out.println("+-----------------------------------------+");
         System.out.println("[1] Create A Seaport");
-        System.out.println("[2] Warehouse");
-        System.out.println("[3] Info About Existing Seaport");
+        System.out.println("[2] Info About Existing Seaport");
         System.out.println("[X] Exit");
         System.out.println("+-----------------------------------------+");
     }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Cargo {
     /*
@@ -10,13 +11,25 @@ public class Cargo {
      *      • Toxic Liquid Cargo
      */
 
+    Scanner scan = new Scanner(System.in);
+    String strInput;
+
+    //Cargo Lists
     ArrayList<Cargo> cargos = new ArrayList<>();
     ArrayList<String> explosiveCargos = new ArrayList<>();
-    ArrayList<String> toxicCargos = new ArrayList<>();
+    ArrayList<String> toxicPowderyCargos = new ArrayList<>();
+    ArrayList<String> toxicLiquidCargos = new ArrayList<>();
     ArrayList<String> liquidCargos = new ArrayList<>();
+
+    //Cargo Capacities
+    final double cargoCapacityForToxic = 25;
+    final double cargoCapacityForExplosive = 25;
+    final double cargoCapacityForLiquid = 15;
 
     //Create different types of cargos
     public void createCargo() {
+        System.out.println("");
+        strInput = scan.next(); //User input
 
     }
 

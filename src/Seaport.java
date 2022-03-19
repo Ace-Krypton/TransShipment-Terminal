@@ -42,7 +42,8 @@ public class Seaport implements ISeaport {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
         boolean isEmpty = ships.isEmpty();
-        if (isEmpty) System.out.println("You don't have any ships right now");
+        if (isEmpty)
+            System.out.println("You don't have any ships right now");
         else{
             for (Ships shipList : ships) {
                 System.out.println(shipList);
