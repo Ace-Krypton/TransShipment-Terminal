@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Cargo {
@@ -76,8 +77,38 @@ public class Cargo {
         System.out.println("\n+-----------------------------------------+");
     }
 
+    //Display Cargos
+    public void displayCargos() {
+        System.out.print("> ");
+        strInput = scan.next(); //User Input
+
+        switch (strInput.toUpperCase(Locale.ROOT)) {
+            case "1" -> {   //Toxic Liquid
+                for (String toxicLiquid : toxicLiquidCargos) System.out.println(toxicLiquid);
+            }
+
+            case "2" -> {  //Toxic Powdery
+                for (String toxicPowdery : toxicPowderyCargos) System.out.println(toxicPowdery);
+            }
+
+            case "3" -> {  //Liquid
+                for (String liquid : liquidCargos) System.out.println(liquid);
+            }
+
+            case "4" -> {  //Explosive
+                for (String explosive : explosiveCargos) System.out.println(explosive);
+            }
+        }
+    }
+
     //Menu for displaying cargos
     public void displayCargosMenu() {
-        
+        System.out.println("\n+-----------------------------------------+");
+        System.out.println("[1] Display Toxic Liquid Cargos");
+        System.out.println("[2] Display Toxic Powdery Cargos");
+        System.out.println("[3] Display Liquid Cargos");
+        System.out.println("[4] Display Explosive Cargos");
+        System.out.println("[A] Back");
+        System.out.println("\n+-----------------------------------------+");
     }
 }
