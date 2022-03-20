@@ -44,18 +44,20 @@ public class Main {
             switch (strInput.toUpperCase(Locale.ROOT)) {
                 case "1" -> { //Login Into Seaport Account
                     System.out.println("+-----------------------------------------+");
+                    System.out.print("Please enter the username for seaport: ");
+                    String username = scan.next();  //For username
                     System.out.print("Please enter the password for seaport: ");
-                    strInput = scan.next();
+                    String password = scan.next();  //For password
 
-                    if (!userPass.containsKey(strInput)) {
+                    //If HashTable is not contains entered Key and Value it will give us "Authentication Revoked" and breaks
+                    if (!userPass.containsKey(password) || !userPass.containsValue(username)) {
                         System.out.println("Authentication Revoked!");
-                        break;
+                        break;  //Breaks from loop
                     }
 
                     System.out.print("Name of the seaport: ");
                     strInput = scan.next(); //For name of the seaport
                     seaport.setName(strInput);  //Setting the name of the seaport
-
                     seaports.add(seaport);  //Adding seaport object to the list
 
                     SEAPORTLOOP: //Label
@@ -154,7 +156,6 @@ public class Main {
                 }
 
                 case "3" -> {  //Creating A Seaport Account
-
                     System.out.print("Username: ");   //For Username
                     String username = scan.next();
                     System.out.print("Password: ");
