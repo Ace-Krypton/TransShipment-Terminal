@@ -82,11 +82,12 @@ public class Main {
                                     cargo.cargoMenu();  //For Cargo Menu
                                     System.out.print("> ");
                                     strInput = scan.next(); //Getting the input from user
-                                    Cargo cargos = new Cargo();
 
                                     switch (strInput.toUpperCase(Locale.ROOT)) {
                                         case "1" -> {  // Create Explosive Cargo
-                                            cargos.createCargoForExplosive();
+                                            System.out.print("Enter the name of the cargo (Explosive): ");
+                                            strInput = scan.next(); //User Input
+                                            cargo.explosiveCargos.add(strInput);
                                             System.out.println("Explosive Cargo Created!");
                                         }
 
@@ -98,12 +99,16 @@ public class Main {
 
                                                 switch (strInput.toUpperCase(Locale.ROOT)) {
                                                     case "1" -> { //Toxic Liquid
-                                                        cargos.createCargoForToxicLiquid();
+                                                        System.out.print("Enter the name of the cargo (Toxic Liquid): ");
+                                                        strInput = scan.next(); //User input
+                                                        cargo.toxicLiquidCargos.add(strInput);
                                                         System.out.println("Toxic Liquid Cargo Created!");
                                                     }
 
                                                     case "2" -> {  //Toxic Powdery
-                                                        cargos.createCargoForToxicPowdery();
+                                                        System.out.print("Enter the name of the cargo (Toxic Powdery): ");
+                                                        strInput = scan.next(); //User Input
+                                                        cargo.toxicPowderyCargos.add(strInput);
                                                         System.out.println("Toxic powdery created!");
                                                     }
 
@@ -118,12 +123,52 @@ public class Main {
                                         }
 
                                         case "3" -> {  //Create Liquid Cargo
-                                            cargos.createCargoForLiquid();
+                                            System.out.print("Enter the name of the cargo (Liquid): ");
+                                            strInput = scan.next();
+                                            cargo.liquidCargos.add(strInput);
                                             System.out.println("Liquid Cargo Created!");
                                         }
 
                                         case "4" -> {  //Display Cargos
+                                            cargo.displayCargosMenu();  //Menu for display cargos
+                                            System.out.print("> ");
+                                            strInput = scan.next(); //User Input
+                                            boolean back = true;  //For stopping the loop
 
+                                            while (back) {
+                                                switch (strInput.toUpperCase(Locale.ROOT)) {
+                                                    case "1" -> {   //Toxic Liquid
+                                                        for (String toxicLiquid : cargo.toxicLiquidCargos)
+                                                            System.out.println(toxicLiquid);
+                                                        back = false;
+                                                    }
+
+                                                    case "2" -> {  //Toxic Powdery
+                                                        for (String toxicPowdery : cargo.toxicPowderyCargos)
+                                                            System.out.println(toxicPowdery);
+                                                        back = false;
+                                                    }
+
+                                                    case "3" -> {  //Liquid
+                                                        for (String liquid : cargo.liquidCargos)
+                                                            System.out.println(liquid);
+                                                        back = false;
+                                                    }
+
+                                                    case "4" -> {  //Explosive
+                                                        for (String explosive : cargo.explosiveCargos)
+                                                            System.out.println(explosive);
+                                                        back = false;
+                                                    }
+
+                                                    case "A" -> {  //Back
+                                                        continue CARGOLOOP;
+                                                    }
+
+                                                    case default ->
+                                                            System.out.println("Invalid Command, Please Try Again");
+                                                }
+                                            }
                                         }
 
                                         case "A" -> { //Back
