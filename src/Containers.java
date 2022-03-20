@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Containers {
     /*
     * TODO
@@ -15,12 +13,5 @@ public class Containers {
     *      cargo.
     */
 
-    //ArrayLists for containers
-    ArrayList<String> standardContainer = new ArrayList<>();
-    ArrayList<String> heavyContainer = new ArrayList<>();
-    ArrayList<String> refrigeratedContainer = new ArrayList<>();
-    ArrayList<String> liquidContainer = new ArrayList<>();
-    ArrayList<String> explosiveContainer = new ArrayList<>();
-    ArrayList<String> toxicPowderyContainer = new ArrayList<>();
-    ArrayList<Cargo> toxicLiquidContainer = new ArrayList<>();
+
 }

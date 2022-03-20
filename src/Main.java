@@ -82,14 +82,15 @@ public class Main {
                                     cargo.cargoMenu();  //For Cargo Menu
                                     System.out.print("> ");
                                     strInput = scan.next(); //Getting the input from user
+                                    Cargo cargos = new Cargo();
 
                                     switch (strInput.toUpperCase(Locale.ROOT)) {
                                         case "1" -> {  // Create Explosive Cargo
-
+                                            cargos.createCargoForExplosive();
+                                            System.out.println("Explosive Cargo Created!");
                                         }
 
                                         case "2" -> {  //Create Toxic Cargo
-                                            //I am doing that
                                             while (true) {
                                                 cargo.cargoToxicMenu();
                                                 System.out.print("> ");
@@ -97,13 +98,14 @@ public class Main {
 
                                                 switch (strInput.toUpperCase(Locale.ROOT)) {
                                                     case "1" -> { //Toxic Liquid
+                                                        cargos.createCargoForToxicLiquid();
                                                         System.out.println("Toxic Liquid Cargo Created!");
-                                                        Containers containers = new Containers();
-                                                        containers.toxicLiquidContainer.add(cargo);
                                                     }
 
-                                                    case "2" -> //Toxic Powdery
-                                                            System.out.println("Toxic powdery created!");
+                                                    case "2" -> {  //Toxic Powdery
+                                                        cargos.createCargoForToxicPowdery();
+                                                        System.out.println("Toxic powdery created!");
+                                                    }
 
                                                     case "A" -> {   //Back
                                                         continue CARGOLOOP;
@@ -116,6 +118,11 @@ public class Main {
                                         }
 
                                         case "3" -> {  //Create Liquid Cargo
+                                            cargos.createCargoForLiquid();
+                                            System.out.println("Liquid Cargo Created!");
+                                        }
+
+                                        case "4" -> {  //Display Cargos
 
                                         }
 
@@ -161,7 +168,7 @@ public class Main {
                     System.out.print("Password: ");
                     String password = scan.next(); //For password
                     userPass.put(password, username); //Putting the key and value
-                    System.out.println("Account Created Successfully!" + userPass);
+                    System.out.println("Account Created Successfully!");
                 }
 
                 case "X" -> {  //Exit
