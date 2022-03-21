@@ -64,6 +64,7 @@ public class Main {
 
                             case "3" -> {  //Create Cargos
                                 Cargo cargo = new Cargo();
+                                ExplosiveContainer explosive = new ExplosiveContainer();
                                 CARGOLOOP:
                                 while (true) {  //For Cargos
                                     cargo.cargoMenu();  //For Cargo Menu
@@ -147,8 +148,8 @@ public class Main {
                                                     }
 
                                                     case "4" -> {  //Explosive
-                                                        for (String explosive : cargo.explosiveCargos)
-                                                            System.out.println(explosive);
+                                                        for (String explosiveAsList : cargo.explosiveCargos)
+                                                            System.out.println(explosiveAsList);
                                                         back = false;
                                                     }
 
@@ -163,8 +164,15 @@ public class Main {
                                         }
 
                                         case "5" -> {
-                                            ExplosiveContainer explosive = new ExplosiveContainer();
                                             explosive.loadContainer(cargo);
+                                            System.out.println("If you wanna see your explosive container press Y");
+                                            System.out.print("> ");
+                                            strInput = scan.next();
+                                            if (strInput.equalsIgnoreCase("Y")) {
+                                                for (String str : explosive.explosiveContainer) {
+                                                    System.out.println(str);
+                                                }
+                                            }
                                         }
 
                                         case "A" -> { //Back

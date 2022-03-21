@@ -14,9 +14,15 @@ public class ExplosiveContainer extends StandardContainer {
         System.out.print("Your cargos: ");
         int counter = 1;  //This is just for numbering
 
-        for (String cargosAsList : cargo.cargos) {
-            System.out.println(counter + ". "+ cargosAsList);
-            counter++;
+        //Checks if List is empty or not
+        boolean isEmptyCargo = cargo.cargos.isEmpty();
+        if (isEmptyCargo)
+            System.out.println("You don't have any cargos right now");
+        else {
+            for (String cargosAsList : cargo.cargos) {
+                System.out.println(counter + ". " + cargosAsList);
+                counter++;
+            }
         }
 
         System.out.println("\n+-----------------------------------------+");
@@ -30,8 +36,13 @@ public class ExplosiveContainer extends StandardContainer {
             }
         }
 
-        for (String explosive : explosiveContainer) {
-            System.out.println(explosive);
+        boolean isEmptyExplosive = explosiveContainer.isEmpty();
+        if (isEmptyExplosive)
+            System.out.println("You don't have any explosive containers right now");
+        else {
+            for (String explosive : explosiveContainer) {
+                System.out.println(explosive);
+            }
         }
     }
 }
