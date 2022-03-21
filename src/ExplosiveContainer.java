@@ -10,7 +10,7 @@ public class ExplosiveContainer extends StandardContainer {
     //This method is for loading container
     public void loadContainer(Cargo cargo) {
         System.out.println("\n+-----------------------------------------+");
-        System.out.println("Welcome to the loading screen, You can only load explosive cargo to the explosive container");
+        System.out.println("!Warning! You can only load explosive cargo to the explosive container");
         System.out.print("Your cargos: ");
         int counter = 1;  //This is just for numbering
 
@@ -19,7 +19,7 @@ public class ExplosiveContainer extends StandardContainer {
         if (isEmptyCargo)
             System.out.println("You don't have any cargos right now");
         else {
-            for (String cargosAsList : cargo.cargos) {
+            for (String cargosAsList : cargo.cargos) {  //Iterating through cargos (All of them)
                 System.out.println(counter + ". " + cargosAsList);
                 counter++;
             }
@@ -30,18 +30,15 @@ public class ExplosiveContainer extends StandardContainer {
         System.out.print("> ");
         String userInput = scan.next();
 
-        for (String cargoAsList : cargo.cargos) {
-            if (userInput.equalsIgnoreCase(cargoAsList)) {
+        for (String cargoAsList : cargo.cargos) {   //Iterating through all cargos
+            //If user input equals cargo in the list (NO CASE SENSITIVE), and explosive cargos contains user input
+            if (userInput.equalsIgnoreCase(cargoAsList) && cargo.explosiveCargos.contains(userInput)) {
+                //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                 explosiveContainer.add(cargoAsList);
             }
-        }
-
-        boolean isEmptyExplosive = explosiveContainer.isEmpty();
-        if (isEmptyExplosive)
-            System.out.println("You don't have any explosive containers right now");
-        else {
-            for (String explosive : explosiveContainer) {
-                System.out.println(explosive);
+            else {
+                System.out.println("You dumb ass look above");
+                break;
             }
         }
     }

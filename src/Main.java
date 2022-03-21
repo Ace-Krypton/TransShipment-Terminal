@@ -175,14 +175,19 @@ public class Main {
                                             }
                                         }
 
-                                        case "5" -> {
+                                        case "5" -> {   //Loading Cargo (Test)
                                             explosive.loadContainer(cargo);
                                             System.out.println("If you wanna see your explosive container press Y");
                                             System.out.print("> ");
                                             strInput = scan.next();
                                             if (strInput.equalsIgnoreCase("Y")) {
-                                                for (String str : explosive.explosiveContainer) {
-                                                    System.out.println(str);
+                                                boolean isEmptyExplosive = explosive.explosiveContainer.isEmpty();
+                                                if (isEmptyExplosive)
+                                                    System.out.println("You don't have any explosive containers right now");
+                                                else {
+                                                    for (String explosiveAsList : explosive.explosiveContainer) {
+                                                        System.out.println(explosiveAsList);
+                                                    }
                                                 }
                                             }
                                         }
