@@ -130,24 +130,36 @@ public class Main {
                                             while (back) {
                                                 switch (strInput.toUpperCase(Locale.ROOT)) {
                                                     case "1" -> {   //Toxic Liquid
+                                                        boolean isToxicLiquidEmpty = cargo.toxicLiquidCargos.isEmpty();
+                                                        if (isToxicLiquidEmpty)
+                                                            System.out.println("You don't have any toxic liquid cargo");
                                                         for (String toxicLiquid : cargo.toxicLiquidCargos)
                                                             System.out.println(toxicLiquid);
                                                         back = false;
                                                     }
 
                                                     case "2" -> {  //Toxic Powdery
+                                                        boolean isToxicPowderyEmpty = cargo.toxicPowderyCargos.isEmpty();
+                                                        if (isToxicPowderyEmpty)
+                                                            System.out.println("You don't have any toxic powdery cargo");
                                                         for (String toxicPowdery : cargo.toxicPowderyCargos)
                                                             System.out.println(toxicPowdery);
                                                         back = false;
                                                     }
 
                                                     case "3" -> {  //Liquid
+                                                        boolean isLiquidEmpty = cargo.liquidCargos.isEmpty();
+                                                        if (isLiquidEmpty)
+                                                            System.out.println("You don't have any liquid cargo");
                                                         for (String liquid : cargo.liquidCargos)
                                                             System.out.println(liquid);
                                                         back = false;
                                                     }
 
                                                     case "4" -> {  //Explosive
+                                                        boolean isExplosiveEmpty = cargo.explosiveCargos.isEmpty();
+                                                        if (isExplosiveEmpty)
+                                                            System.out.println("You don't have any explosive cargo");
                                                         for (String explosiveAsList : cargo.explosiveCargos)
                                                             System.out.println(explosiveAsList);
                                                         back = false;
