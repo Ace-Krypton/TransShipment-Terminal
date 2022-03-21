@@ -65,6 +65,7 @@ public class Main {
                             case "3" -> {  //Create Cargos
                                 Cargo cargo = new Cargo();
                                 ExplosiveContainer explosive = new ExplosiveContainer();
+                                Containers container = new Containers();
                                 CARGOLOOP:
                                 while (true) {  //For Cargos
                                     cargo.cargoMenu();  //For Cargo Menu
@@ -176,18 +177,56 @@ public class Main {
                                         }
 
                                         case "5" -> {   //Loading Cargo (Test)
-                                            explosive.loadContainer(cargo);
-                                            System.out.println("If you wanna see your explosive container press Y");
-                                            System.out.print("> ");
-                                            strInput = scan.next();
-                                            if (strInput.equalsIgnoreCase("Y")) {
-                                                boolean isEmptyExplosive = explosive.explosiveContainer.isEmpty();
-                                                if (isEmptyExplosive)
-                                                    System.out.println("You don't have any explosive containers right now");
-                                                else {
-                                                    for (String explosiveAsList : explosive.explosiveContainer) {
-                                                        System.out.println(explosiveAsList);
+                                            /*
+                                             * System.out.println("If you want to see your explosive container press Y");
+                                             *                                             System.out.print("> ");
+                                             *                                             strInput = scan.next();
+                                             *                                             if (strInput.equalsIgnoreCase("Y")) {
+                                             *                                                 boolean isEmptyExplosive = explosive.explosiveContainer.isEmpty();
+                                             *                                                 if (isEmptyExplosive)
+                                             *                                                     System.out.println("You don't have any explosive containers right now");
+                                             *                                                 else {
+                                             *                                                     for (String explosiveAsList : explosive.explosiveContainer) {
+                                             *                                                         System.out.println(explosiveAsList);
+                                             *                                                     }
+                                             *                                                 }
+                                             *                                             }
+                                             */
+                                            container.containerMenu();
+                                            while (true) {
+                                                System.out.print("> ");
+                                                strInput = scan.next(); //User input
+
+                                                switch (strInput.toUpperCase(Locale.ROOT)) {
+                                                    case "1" -> {  //Standard Container
+
                                                     }
+
+                                                    case "2" -> {  //Heavy Container
+
+                                                    }
+
+                                                    case "3" -> { //Liquid Container
+
+                                                    }
+
+                                                    case "4" -> {  //Refrigerated Container
+
+                                                    }
+
+                                                    case "5" -> //Explosive Container
+                                                            explosive.loadContainer(cargo);
+
+                                                    case "6" -> {  //Toxic Container
+
+                                                    }
+
+                                                    case "A" -> {  //Back
+                                                        continue CARGOLOOP;
+                                                    }
+
+                                                    case default ->
+                                                            System.out.println("Invalid Command, Please Try Again");
                                                 }
                                             }
                                         }

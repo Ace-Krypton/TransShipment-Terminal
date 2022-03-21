@@ -13,5 +13,15 @@ public class Containers {
     *      cargo.
     */
 
-
+    public void containerMenu() {
+        System.out.println("\n+-----------------------------------------+");
+        System.out.println("[1] Load Cargo To Standard Container");
+        System.out.println("[2] Load Cargo To Heavy Container");
+        System.out.println("[3] Load Cargo To Liquid Container");
+        System.out.println("[4] Load Cargo To Refrigerated Container");
+        System.out.println("[5] Load Cargo To Explosive Container (This is the one working right now)");
+        System.out.println("[6] Load Cargo To Toxic Container");
+        System.out.println("[A] Back");
+        System.out.println("\n+-----------------------------------------+");
+    }
 }

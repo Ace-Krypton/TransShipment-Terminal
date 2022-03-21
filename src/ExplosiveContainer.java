@@ -36,10 +36,6 @@ public class ExplosiveContainer extends StandardContainer {
                 //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                 explosiveContainer.add(cargoAsList);
             }
-            else {
-                System.out.println("You dumb ass look above");
-                break;
-            }
         }
     }
 }
