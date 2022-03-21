@@ -7,19 +7,6 @@ public class Main {
     /**
       * TODO In the main method, create a seaport with at least five different types of container ships loaded with different containers.
       *  Additionally, several containers of different types should be placed in the warehouse
-     *       Demo for existing user entry
-      *      for (Seaport seaPort : seaports) {  //Iterating through seaports list
-      *                          while (true) {  //Always true
-      *                              //If name is not null and name contained in ArrayList already it gives you message and input again
-      *                              if (seaPort.getName() != null && seaPort.getName().contains(strInput)) {
-      *                                  System.out.println("You already have \"" + seaPort.getName()
-      *                                          + "\" account in system, Please try again");
-      *                                  System.out.print("Name1 of the seaport: ");
-      *                                  strInput = scan.next();
-      *                              }
-      *                              else break;
-      *                          }
-      *                      }
       **/
 
     public static void main(String[] args) {
@@ -89,6 +76,7 @@ public class Main {
                                             strInput = scan.next(); //User Input
                                             cargo.explosiveCargos.add(strInput);
                                             System.out.println("Explosive Cargo Created!");
+                                            cargo.cargos.addAll(cargo.explosiveCargos);
                                         }
 
                                         case "2" -> {  //Create Toxic Cargo
@@ -103,6 +91,7 @@ public class Main {
                                                         strInput = scan.next(); //User input
                                                         cargo.toxicLiquidCargos.add(strInput);
                                                         System.out.println("Toxic Liquid Cargo Created!");
+                                                        cargo.cargos.addAll(cargo.toxicLiquidCargos);
                                                     }
 
                                                     case "2" -> {  //Toxic Powdery
@@ -110,6 +99,7 @@ public class Main {
                                                         strInput = scan.next(); //User Input
                                                         cargo.toxicPowderyCargos.add(strInput);
                                                         System.out.println("Toxic powdery created!");
+                                                        cargo.cargos.addAll(cargo.toxicPowderyCargos);
                                                     }
 
                                                     case "A" -> {   //Back
@@ -127,6 +117,7 @@ public class Main {
                                             strInput = scan.next();
                                             cargo.liquidCargos.add(strInput);
                                             System.out.println("Liquid Cargo Created!");
+                                            cargo.cargos.addAll(cargo.liquidCargos);
                                         }
 
                                         case "4" -> {  //Display Cargos
@@ -169,6 +160,11 @@ public class Main {
                                                             System.out.println("Invalid Command, Please Try Again");
                                                 }
                                             }
+                                        }
+
+                                        case "5" -> {
+                                            ExplosiveContainer explosive = new ExplosiveContainer();
+                                            explosive.loadContainer(cargo);
                                         }
 
                                         case "A" -> { //Back

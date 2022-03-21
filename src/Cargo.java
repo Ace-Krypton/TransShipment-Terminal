@@ -11,7 +11,7 @@ public class Cargo {
      */
 
     //Cargo Lists
-    //ArrayList<ArrayList<String>> cargos = new ArrayList<>();
+    ArrayList<String> cargos = new ArrayList<>();
     ArrayList<String> explosiveCargos = new ArrayList<>();
     ArrayList<String> toxicPowderyCargos = new ArrayList<>();
     ArrayList<String> toxicLiquidCargos = new ArrayList<>();
@@ -31,6 +31,7 @@ public class Cargo {
         System.out.println("[2] Create Toxic Cargo");
         System.out.println("[3] Create Liquid Cargo");
         System.out.println("[4] Display Cargos");
+        System.out.println("[5] Add Cargos To Containers");
         System.out.println("[A] Back");
         System.out.println("\n+-----------------------------------------+");
     }
