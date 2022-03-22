@@ -11,31 +11,30 @@ public class ExplosiveContainer extends StandardContainer {
     public void loadContainer(Cargo cargo) {
         System.out.println("\n+-----------------------------------------+");
         System.out.println("!Warning! You can only load explosive cargo to the explosive container");
-        System.out.print("Your cargos: ");
-        int counter = 1;  //This is just for numbering
-
-        //Checks if List is empty or not
-        boolean isEmptyCargo = cargo.cargos.isEmpty();
-        if (isEmptyCargo)
-            System.out.println("You don't have any cargos right now");
-        else {
-            for (String cargosAsList : cargo.cargos) {  //Iterating through cargos (All of them)
-                System.out.println(counter + ". " + cargosAsList);
-                counter++;
-            }
-        }
-
+        cargo.printCargos();
         System.out.println("\n+-----------------------------------------+");
-        System.out.println("Which cargo you wanna add?");
-        System.out.print("> ");
-        String userInput = scan.next();
+        while (true) {
+            System.out.println("Which cargo you wanna add?");
+            System.out.print("> ");
+            String userInput = scan.next();
 
-        for (String cargoAsList : cargo.cargos) {   //Iterating through all cargos
-            //If user input equals cargo in the list (NO CASE SENSITIVE), and explosive cargos contains user input
-            if (userInput.equalsIgnoreCase(cargoAsList) && cargo.explosiveCargos.contains(userInput)) {
-                //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
-                explosiveContainer.add(cargoAsList);
+            for (ArrayList<String> cargosOne : cargo.cargos) {  //Iterating through cargos (All of them)
+                for (String cargoAsList : cargosOne) {
+                    //If user input equals cargo in the list (NO CASE SENSITIVE), and explosive cargos contains user input
+                    if (userInput.equalsIgnoreCase(cargoAsList) && cargo.explosiveCargos.contains(userInput)) {
+                        //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
+                        explosiveContainer.add(userInput);
+                        //After adding it removes such cargo in specified cargo list
+                        cargo.explosiveCargos.remove(userInput);
+                    }
+                }
             }
+
+            System.out.println("You wanna add more?");
+            System.out.print("> ");
+            userInput = scan.next();
+
+            if (userInput.equalsIgnoreCase("N")) break;
         }
     }
 }

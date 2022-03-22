@@ -11,7 +11,7 @@ public class Cargo {
      */
 
     //Cargo Lists
-    ArrayList<String> cargos = new ArrayList<>();
+    ArrayList<ArrayList<String>> cargos = new ArrayList<>();
     ArrayList<String> explosiveCargos = new ArrayList<>();
     ArrayList<String> toxicPowderyCargos = new ArrayList<>();
     ArrayList<String> toxicLiquidCargos = new ArrayList<>();
@@ -23,6 +23,24 @@ public class Cargo {
      *     final double cargoCapacityForExplosive = 25;
      *     final double cargoCapacityForLiquid = 15;
      */
+
+    public void printCargos() {
+        System.out.print("Your cargos: ");
+        int counter = 1;
+
+        //Checks if List is empty or not
+        boolean isEmptyCargo = cargos.isEmpty();
+        if (isEmptyCargo)
+            System.out.println("You don't have any cargos right now");
+        else {
+            for (ArrayList<String> cargosAsList : cargos) {  //Iterating through cargos (All of them)
+                for (String cargosOne : cargosAsList) {
+                    System.out.println(counter + ". " + cargosOne);
+                    counter++;
+                }
+            }
+        }
+    }
 
     //Menu for cargo
     public void cargoMenu() {

@@ -78,7 +78,7 @@ public class Main {
                                             strInput = scan.next(); //User Input
                                             cargo.explosiveCargos.add(strInput);
                                             System.out.println("Explosive Cargo Created!");
-                                            cargo.cargos.addAll(cargo.explosiveCargos);
+                                            cargo.cargos.add(cargo.explosiveCargos);
                                         }
 
                                         case "2" -> {  //Create Toxic Cargo
@@ -93,7 +93,7 @@ public class Main {
                                                         strInput = scan.next(); //User input
                                                         cargo.toxicLiquidCargos.add(strInput);
                                                         System.out.println("Toxic Liquid Cargo Created!");
-                                                        cargo.cargos.addAll(cargo.toxicLiquidCargos);
+                                                        cargo.cargos.add(cargo.toxicLiquidCargos);
                                                     }
 
                                                     case "2" -> {  //Toxic Powdery
@@ -101,7 +101,7 @@ public class Main {
                                                         strInput = scan.next(); //User Input
                                                         cargo.toxicPowderyCargos.add(strInput);
                                                         System.out.println("Toxic powdery created!");
-                                                        cargo.cargos.addAll(cargo.toxicPowderyCargos);
+                                                        cargo.cargos.add(cargo.toxicPowderyCargos);
                                                     }
 
                                                     case "A" -> {   //Back
@@ -119,7 +119,7 @@ public class Main {
                                             strInput = scan.next();
                                             cargo.liquidCargos.add(strInput);
                                             System.out.println("Liquid Cargo Created!");
-                                            cargo.cargos.addAll(cargo.liquidCargos);
+                                            cargo.cargos.add(cargo.liquidCargos);
                                         }
 
                                         case "4" -> {  //Display Cargos
@@ -166,6 +166,17 @@ public class Main {
                                                         back = false;
                                                     }
 
+                                                    case "5" -> {  //All Cargos
+                                                        boolean isCargosEmpty = cargo.cargos.isEmpty();
+                                                        if (isCargosEmpty)
+                                                            System.out.println("You don't have any cargo");
+                                                        for (ArrayList<String> cargosAsList : cargo.cargos) {
+                                                            for (String cargosOne : cargosAsList)
+                                                                System.out.println(cargosOne);
+                                                        }
+                                                        back = false;
+                                                    }
+
                                                     case "A" -> {  //Back
                                                         continue CARGOLOOP;
                                                     }
@@ -177,21 +188,6 @@ public class Main {
                                         }
 
                                         case "5" -> {   //Loading Cargo (Test)
-                                            /*
-                                             * System.out.println("If you want to see your explosive container press Y");
-                                             *                                             System.out.print("> ");
-                                             *                                             strInput = scan.next();
-                                             *                                             if (strInput.equalsIgnoreCase("Y")) {
-                                             *                                                 boolean isEmptyExplosive = explosive.explosiveContainer.isEmpty();
-                                             *                                                 if (isEmptyExplosive)
-                                             *                                                     System.out.println("You don't have any explosive containers right now");
-                                             *                                                 else {
-                                             *                                                     for (String explosiveAsList : explosive.explosiveContainer) {
-                                             *                                                         System.out.println(explosiveAsList);
-                                             *                                                     }
-                                             *                                                 }
-                                             *                                             }
-                                             */
                                             container.containerMenu();
                                             while (true) {
                                                 System.out.print("> ");
