@@ -70,6 +70,7 @@ public class Cargo {
         System.out.println("[2] Display Toxic Powdery Cargos");
         System.out.println("[3] Display Liquid Cargos");
         System.out.println("[4] Display Explosive Cargos");
+        System.out.println("[5] Display All Cargos");
         System.out.println("[A] Back");
         System.out.println("\n+-----------------------------------------+");
     }

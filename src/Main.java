@@ -78,7 +78,6 @@ public class Main {
                                             strInput = scan.next(); //User Input
                                             cargo.explosiveCargos.add(strInput);
                                             System.out.println("Explosive Cargo Created!");
-                                            cargo.cargos.add(cargo.explosiveCargos);
                                         }
 
                                         case "2" -> {  //Create Toxic Cargo
@@ -93,7 +92,6 @@ public class Main {
                                                         strInput = scan.next(); //User input
                                                         cargo.toxicLiquidCargos.add(strInput);
                                                         System.out.println("Toxic Liquid Cargo Created!");
-                                                        cargo.cargos.add(cargo.toxicLiquidCargos);
                                                     }
 
                                                     case "2" -> {  //Toxic Powdery
@@ -101,7 +99,6 @@ public class Main {
                                                         strInput = scan.next(); //User Input
                                                         cargo.toxicPowderyCargos.add(strInput);
                                                         System.out.println("Toxic powdery created!");
-                                                        cargo.cargos.add(cargo.toxicPowderyCargos);
                                                     }
 
                                                     case "A" -> {   //Back
@@ -119,10 +116,15 @@ public class Main {
                                             strInput = scan.next();
                                             cargo.liquidCargos.add(strInput);
                                             System.out.println("Liquid Cargo Created!");
-                                            cargo.cargos.add(cargo.liquidCargos);
                                         }
 
                                         case "4" -> {  //Display Cargos
+                                            //Adding different cargos to the one cargo
+                                            cargo.cargos.add(cargo.explosiveCargos);
+                                            cargo.cargos.add(cargo.toxicPowderyCargos);
+                                            cargo.cargos.add(cargo.toxicLiquidCargos);
+                                            cargo.cargos.add(cargo.liquidCargos);
+
                                             cargo.displayCargosMenu();  //Menu for display cargos
                                             System.out.print("> ");
                                             strInput = scan.next(); //User Input
@@ -187,7 +189,7 @@ public class Main {
                                             }
                                         }
 
-                                        case "5" -> {   //Loading Cargo (Test)
+                                        case "5" -> {   //Loading Cargo
                                             container.containerMenu();
                                             while (true) {
                                                 System.out.print("> ");
