@@ -119,12 +119,6 @@ public class Main {
                                         }
 
                                         case "4" -> {  //Display Cargos
-                                            //Adding different cargos to the one cargo
-                                            cargo.cargos.add(cargo.explosiveCargos);
-                                            cargo.cargos.add(cargo.toxicPowderyCargos);
-                                            cargo.cargos.add(cargo.toxicLiquidCargos);
-                                            cargo.cargos.add(cargo.liquidCargos);
-
                                             cargo.displayCargosMenu();  //Menu for display cargos
                                             System.out.print("> ");
                                             strInput = scan.next(); //User Input
@@ -190,8 +184,8 @@ public class Main {
                                         }
 
                                         case "5" -> {   //Loading Cargo
-                                            container.containerMenu();
                                             while (true) {
+                                                container.containerMenu();
                                                 System.out.print("> ");
                                                 strInput = scan.next(); //User input
 
@@ -218,6 +212,9 @@ public class Main {
                                                     case "6" -> {  //Toxic Container
 
                                                     }
+
+                                                    case "7" -> //Adding Cargos
+                                                            cargo.addCargos();
 
                                                     case "A" -> {  //Back
                                                         continue CARGOLOOP;

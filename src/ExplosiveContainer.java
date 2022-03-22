@@ -30,7 +30,7 @@ public class ExplosiveContainer extends StandardContainer {
                 }
             }
 
-            System.out.println("You wanna add more?");
+            System.out.println("You wanna add more? Press \"Y\" For Yes, \"N\" For No");
             System.out.print("> ");
             userInput = scan.next();
 

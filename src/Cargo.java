@@ -24,6 +24,14 @@ public class Cargo {
      *     final double cargoCapacityForLiquid = 15;
      */
 
+    //Adding different cargos to the one cargo
+    public void addCargos() {
+        cargos.add(explosiveCargos);
+        cargos.add(toxicPowderyCargos);
+        cargos.add(toxicLiquidCargos);
+        cargos.add(liquidCargos);
+    }
+
     public void printCargos() {
         System.out.print("Your cargos: ");
         int counter = 1;

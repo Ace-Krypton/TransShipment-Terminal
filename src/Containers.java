@@ -21,6 +21,7 @@ public class Containers {
         System.out.println("[4] Load Cargo To Refrigerated Container");
         System.out.println("[5] Load Cargo To Explosive Container (This is the one working right now)");
         System.out.println("[6] Load Cargo To Toxic Container");
+        System.out.println("[7] Load All Types To The One Container");
         System.out.println("[A] Back");
         System.out.println("\n+-----------------------------------------+");
     }
