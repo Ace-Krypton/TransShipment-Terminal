@@ -166,7 +166,7 @@ public class Main {
                                                     case "5" -> {  //All Cargos
                                                         boolean isCargosEmpty = cargo.cargos.isEmpty();
                                                         if (isCargosEmpty)
-                                                            System.out.println("You don't have any cargo");
+                                                            System.out.println("You have not added cargos to the one yet");
                                                         for (ArrayList<String> cargosAsList : cargo.cargos) {
                                                             for (String cargosOne : cargosAsList)
                                                                 System.out.println(cargosOne);

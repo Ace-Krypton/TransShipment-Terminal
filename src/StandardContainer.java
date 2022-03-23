@@ -26,7 +26,7 @@ public class StandardContainer {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                         standardContainer.add(userInput);
                         //After adding it removes such cargo in specified cargo list
-                        cargosOne.remove(userInput);
+                        cargosOne.remove(cargoAsList);
                     }
                 }
             }

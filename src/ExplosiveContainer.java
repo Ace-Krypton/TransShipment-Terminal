@@ -26,7 +26,7 @@ public class ExplosiveContainer extends StandardContainer {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                         explosiveContainer.add(userInput);
                         //After adding it removes such cargo in specified cargo list
-                        cargo.explosiveCargos.remove(userInput);
+                        cargo.explosiveCargos.remove(cargoAsList);
                     }
                 }
             }
