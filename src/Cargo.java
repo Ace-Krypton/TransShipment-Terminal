@@ -26,21 +26,23 @@ public class Cargo {
 
     //Adding different cargos to the one cargo
     public void addCargos() {
-        //Iterating through arraylist
-        for (ArrayList<String> elements : cargos) {
-            /*
-             * https://www.geeksforgeeks.org/how-to-remove-duplicates-from-arraylist-in-java/
-             * If cargos arraylist contains its elements it is not going to add it
-             * Simply it does not add duplicate items
-             */
+        cargos.add(explosiveCargos);
+        cargos.add(toxicPowderyCargos);
+        cargos.add(toxicLiquidCargos);
+        cargos.add(liquidCargos);
 
-            if (!cargos.contains(elements)) {
-                cargos.add(explosiveCargos);
-                cargos.add(toxicPowderyCargos);
-                cargos.add(toxicLiquidCargos);
-                cargos.add(liquidCargos);
-            }
-        }
+//        Iterating through arraylist
+//        for (ArrayList<String> elements : cargos) {
+//            for (String element : elements) {
+//                /*
+//                 * https://www.geeksforgeeks.org/how-to-remove-duplicates-from-arraylist-in-java/
+//                 * If cargos arraylist contains its elements it is not going to add it
+//                 * Simply it does not add duplicate items
+//                 */
+//
+//                if (!cargos.contains(elements) || !elements.contains(element))
+//            }
+//        }
     }
 
     public void printCargos() {
