@@ -65,6 +65,7 @@ public class Main {
                             case "3" -> {  //Create Cargos
                                 Cargo cargo = new Cargo();
                                 ExplosiveContainer explosive = new ExplosiveContainer();
+                                StandardContainer standard = new StandardContainer();
                                 Containers container = new Containers();
                                 CARGOLOOP:
                                 while (true) {  //For Cargos
@@ -190,9 +191,8 @@ public class Main {
                                                 strInput = scan.next(); //User input
 
                                                 switch (strInput.toUpperCase(Locale.ROOT)) {
-                                                    case "1" -> {  //Standard Container
-
-                                                    }
+                                                    case "1" -> //Standard Container
+                                                            standard.loadContainer(cargo);
 
                                                     case "2" -> {  //Heavy Container
 
@@ -213,7 +213,7 @@ public class Main {
 
                                                     }
 
-                                                    case "7" -> //Adding Cargos
+                                                    case "7" -> //Adding Cargos (There is small bug with that, I will fix it)
                                                             cargo.addCargos();
 
                                                     case "A" -> {  //Back

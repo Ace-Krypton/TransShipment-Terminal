@@ -13,6 +13,7 @@ public class ExplosiveContainer extends StandardContainer {
         System.out.println("!Warning! You can only load explosive cargo to the explosive container");
         cargo.printCargos();
         System.out.println("\n+-----------------------------------------+");
+
         while (true) {
             System.out.println("Which cargo you wanna add?");
             System.out.print("> ");
@@ -34,6 +35,7 @@ public class ExplosiveContainer extends StandardContainer {
             System.out.print("> ");
             userInput = scan.next();
 
+            //If user enters "n" or "N" it will break from the look
             if (userInput.equalsIgnoreCase("N")) break;
         }
     }
