@@ -24,12 +24,15 @@ public class StandardContainer {
                     //If user input equals cargo in the list (NO CASE SENSITIVE), and cargos contains user input
                     if (userInput.equalsIgnoreCase(cargoAsList) && cargoAsList.contains(userInput)) {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
-                        standardContainer.add(userInput);
-                        //After adding it removes such cargo in specified cargo list
-                        cargosOne.remove(cargoAsList);
+                        standardContainer.add(cargoAsList);
                     }
                 }
             }
+
+            //After adding it removes such cargo in specified cargo list
+                for (String element : standardContainer) {
+                    System.out.println(element);
+                }
 
             System.out.println("You wanna add more? Press \"Y\" For Yes, \"N\" For No");
             System.out.print("> ");
