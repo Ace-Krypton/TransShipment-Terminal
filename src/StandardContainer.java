@@ -25,6 +25,7 @@ public class StandardContainer {
                     if (userInput.equalsIgnoreCase(cargoAsList) && cargoAsList.contains(userInput)) {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                         standardContainer.add(cargoAsList);
+                        cargosOne.remove(cargoAsList);  //MUST FIX! ~ Find a way to compare ArrayList<ArrayList<String>> with ArrayList<String>
                     }
                 }
             }

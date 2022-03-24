@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Containers {
     /*
     * TODO
@@ -12,6 +14,8 @@ public class Containers {
     *      is not only a kind of heavy container, but also has the features of a container for liquids
     *      cargo.
     */
+
+    ArrayList<ArrayList<String>> containers = new ArrayList<>();
 
     public void containerMenu() {
         System.out.println("\n+-----------------------------------------+");
