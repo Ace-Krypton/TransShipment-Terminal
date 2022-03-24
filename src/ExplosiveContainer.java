@@ -24,12 +24,14 @@ public class ExplosiveContainer extends StandardContainer {
                     //If user input equals cargo in the list (NO CASE SENSITIVE), and explosive cargos contains user input
                     if (userInput.equalsIgnoreCase(cargoAsList) && cargo.explosiveCargos.contains(userInput)) {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
-                        explosiveContainer.add(userInput);
-                        //After adding it removes such cargo in specified cargo list
-                        cargo.explosiveCargos.remove(cargoAsList);
+                        explosiveContainer.add(cargoAsList);
                     }
                 }
             }
+
+            //After adding it removes such cargo in specified cargo list
+            for (String elements : explosiveContainer)
+                cargo.explosiveCargos.remove(elements);
 
             System.out.println("You wanna add more? Press \"Y\" For Yes, \"N\" For No");
             System.out.print("> ");

@@ -38,7 +38,10 @@ public class Main {
 
                     //If HashTable is not contains entered Key and Value it will give us "Authentication Revoked" and breaks
                     if (!userPass.containsKey(password) || !userPass.containsValue(username)) {
-                        System.out.println("Authentication Revoked!");
+                        //https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println
+                        String ANSI_RED = "\u001B[31m";
+                        String ANSI_RESET = "\u001B[0m";
+                        System.out.println(ANSI_RED + "Authentication Revoked!" + ANSI_RESET);
                         break;  //Breaks from loop
                     }
 
