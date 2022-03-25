@@ -21,6 +21,10 @@ public class Main {
         Scanner scan = new Scanner(System.in);  //For user input
         String strInput;  //For String input
         boolean loopStop = true;  //Boolean for while loop
+        Cargo cargo = new Cargo();
+        ExplosiveContainer explosive = new ExplosiveContainer();
+        StandardContainer standard = new StandardContainer();
+        Containers container = new Containers();
 
         MAINLOOP:   //Label
         while (loopStop) {  //Main loop
@@ -66,10 +70,6 @@ public class Main {
 
 
                             case "3" -> {  //Create Cargos
-                                Cargo cargo = new Cargo();
-                                ExplosiveContainer explosive = new ExplosiveContainer();
-                                StandardContainer standard = new StandardContainer();
-                                Containers container = new Containers();
                                 CARGOLOOP:
                                 while (true) {  //For Cargos
                                     cargo.cargoMenu();  //For Cargo Menu
@@ -189,7 +189,7 @@ public class Main {
 
                                         case "5" -> {   //Loading Cargo
                                             while (true) {
-                                                container.containerMenu();
+                                                container.containerLoadMenu();
                                                 System.out.print("> ");
                                                 strInput = scan.next(); //User input
 
@@ -235,6 +235,49 @@ public class Main {
 
                                         case default ->
                                                 System.out.println("Invalid Command, Please Try Again");
+                                    }
+                                }
+                            }
+
+                            case "4" -> {  //Create Containers
+                                while (true) {
+                                    System.out.println("+-----------------------------------------+");
+                                    System.out.println("These are the available containers that you can create");
+                                    container.containerCreateMenu();  //Menu for container creating
+                                    System.out.print("> ");
+                                    strInput = scan.next(); //User input
+
+                                    switch (strInput.toUpperCase(Locale.ROOT)) {
+                                        case "1" -> {  //Standard Container
+                                            
+                                        }
+
+                                        case "2" -> {  //Heavy Container
+
+                                        }
+
+                                        case "3" -> {  //Refrigerated Container
+
+                                        }
+
+                                        case "4" -> {  //Liquid Container
+
+                                        }
+
+                                        case "5" -> {  //Explosive Container
+
+                                        }
+
+                                        case "6" -> {  //Toxic Container
+
+                                        }
+
+                                        case "A" -> {  //Back
+                                            continue SEAPORTLOOP;  //goto label
+                                        }
+
+                                        case "?" -> //Info About Containers
+                                                container.containerInfo();
                                     }
                                 }
                             }
