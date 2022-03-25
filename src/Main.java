@@ -248,23 +248,36 @@ public class Main {
                                     strInput = scan.next(); //User input
 
                                     switch (strInput.toUpperCase(Locale.ROOT)) {
-                                        case "1" -> //Standard Container
-                                                container.createStandardContainer(new StandardContainer());
+                                        case "1" -> {  //Standard Container
+                                            container.createStandardContainer(new StandardContainer());
+                                            System.out.println("Standard Container Created!");
+                                        }
 
-                                        case "2" -> //Heavy Container
-                                                container.createHeavyContainer(new HeavyContainer());
 
-                                        case "3" -> //Refrigerated Container
-                                                container.createRefrigeratedContainer(new RefrigeratedContainer());
+                                        case "2" -> {  //Heavy Container
+                                            container.createHeavyContainer(new HeavyContainer());
+                                            System.out.println("Heavy Container Created!");
+                                        }
 
-                                        case "4" -> //Liquid Container
-                                                container.createLiquidContainer(new LiquidContainer());
+                                        case "3" -> {  //Refrigerated Container
+                                            container.createRefrigeratedContainer(new RefrigeratedContainer());
+                                            System.out.println("Refrigerated Container Created!");
+                                        }
 
-                                        case "5" -> //Explosive Container
-                                                container.createExplosiveContainer(new ExplosiveContainer());
+                                        case "4" -> {  //Liquid Container
+                                            container.createLiquidContainer(new LiquidContainer());
+                                            System.out.println("Liquid Container Created!");
+                                        }
 
-                                        case "6" -> //Toxic Container
-                                                container.createToxicContainer(new ToxicContainer());
+                                        case "5" -> {  //Explosive Container
+                                            container.createExplosiveContainer(new ExplosiveContainer());
+                                            System.out.println("Explosive Container Created!");
+                                        }
+
+                                        case "6" -> {  //Toxic Container
+                                            container.createToxicContainer(new ToxicContainer());
+                                            System.out.println("Toxic Container Created");
+                                        }
 
                                         case "A" -> {  //Back
                                             continue SEAPORTLOOP;  //goto label
