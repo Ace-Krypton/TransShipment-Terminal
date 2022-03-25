@@ -248,13 +248,11 @@ public class Main {
                                     strInput = scan.next(); //User input
 
                                     switch (strInput.toUpperCase(Locale.ROOT)) {
-                                        case "1" -> {  //Standard Container
+                                        case "1" -> //Standard Container
+                                                container.createStandardContainer(new StandardContainer());
 
-                                        }
-
-                                        case "2" -> {  //Heavy Container
-
-                                        }
+                                        case "2" -> //Heavy Container
+                                                container.createHeavyContainer(new HeavyContainer());
 
                                         case "3" -> {  //Refrigerated Container
 
@@ -281,8 +279,40 @@ public class Main {
                                 }
                             }
 
-                            case "5" -> //Warehouse For Containers
-                                    container.explosiveInfo();
+                            case "5" -> {  //Warehouse For Containers
+                                while (true) {
+                                    container.warehouseMenu();  //Menu For WareHouse Of Containers
+                                    System.out.print("> ");
+                                    strInput = scan.next(); //User input
+
+                                    switch (strInput.toUpperCase(Locale.ROOT)) {
+                                        case "1" -> //Display Standard Containers
+                                                container.standardInfo();
+
+                                        case "2" -> //Display Heavy Containers
+                                                container.heavyInfo();
+
+                                        case "3" -> {  //Display Refrigerated Containers
+
+                                        }
+
+                                        case "4" -> {  //Display Liquid Containers
+
+                                        }
+
+                                        case "5" -> //Display Explosive Containers
+                                                container.explosiveInfo();
+
+                                        case "6" -> {  //Display Toxic Containers
+
+                                        }
+
+                                        case "A" -> {  //Back
+                                            continue SEAPORTLOOP;
+                                        }
+                                    }
+                                }
+                            }
 
                             case "A" -> { //Back
                                 continue MAINLOOP;  //goto label

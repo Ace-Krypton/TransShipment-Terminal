@@ -18,14 +18,15 @@ public class Containers {
 
     ArrayList<ExplosiveContainer> explosiveContainers = new ArrayList<>();
     ArrayList<StandardContainer> standardContainers = new ArrayList<>();
+    ArrayList<HeavyContainer> heavyContainers = new ArrayList<>();
 
     Scanner scan = new Scanner(System.in);
     String userInput;   //For user input
     double doubleInput; //For specific values
 
     //Method for creating new Standard Container
-    public void createExplosiveContainer(StandardContainer standardContainer) {
-        System.out.println("Name Of The Sender: ");
+    public void createStandardContainer(StandardContainer standardContainer) {
+        System.out.print("Name Of The Sender: ");
         userInput = scan.next();
         standardContainer.setSender(userInput);
 
@@ -50,6 +51,63 @@ public class Containers {
         standardContainer.setCertificateInfo(userInput);
 
         standardContainers.add(standardContainer);
+    }
+
+    //Explosive Container Info
+    public void standardInfo() {
+        System.out.println("+-----------------------------------------+");
+        //Checks if List is empty or not
+        boolean isEmpty = standardContainers.isEmpty();
+        if (isEmpty)
+            System.out.println("You don't have any standard containers right now");
+        else{
+            for (StandardContainer containers : standardContainers) {
+                System.out.println(containers);
+            }
+        }
+    }
+
+    //Method for creating new Standard Container
+    public void createHeavyContainer(HeavyContainer heavyContainer) {
+        System.out.print("Name Of The Sender: ");
+        userInput = scan.next();
+        heavyContainer.setSender(userInput);
+
+        System.out.print("Tare: ");
+        doubleInput = scan.nextDouble();
+        heavyContainer.setTare(doubleInput);
+
+        System.out.print("Information About Security: ");
+        userInput = scan.next();
+        heavyContainer.setInfoSecurity(userInput);
+
+        System.out.print("Net Weight: ");
+        doubleInput = scan.nextDouble();
+        heavyContainer.setNetWeight(doubleInput);
+
+        System.out.print("Gross Weight: ");
+        doubleInput = scan.nextDouble();
+        heavyContainer.setGrossWeight(doubleInput);
+
+        System.out.print("Certificate Information: ");
+        userInput = scan.next();
+        heavyContainer.setCertificateInfo(userInput);
+
+        heavyContainers.add(heavyContainer);
+    }
+
+    //Explosive Container Info
+    public void heavyInfo() {
+        System.out.println("+-----------------------------------------+");
+        //Checks if List is empty or not
+        boolean isEmpty = standardContainers.isEmpty();
+        if (isEmpty)
+            System.out.println("You don't have any heavy containers right now");
+        else{
+            for (HeavyContainer containers : heavyContainers) {
+                System.out.println(containers);
+            }
+        }
     }
 
     //Method for creating new Explosive Container
@@ -119,6 +177,7 @@ public class Containers {
         System.out.println("[6] Toxic Container");
         System.out.println("[A] Back");
         System.out.println("[?] Info About Containers");
+        System.out.println("+-----------------------------------------+");
     }
 
     public void containerLoadMenu() {
@@ -127,10 +186,22 @@ public class Containers {
         System.out.println("[2] Load Cargo To Heavy Container");
         System.out.println("[3] Load Cargo To Liquid Container");
         System.out.println("[4] Load Cargo To Refrigerated Container");
-        System.out.println("[5] Load Cargo To Explosive Container (This is the one working right now)");
+        System.out.println("[5] Load Cargo To Explosive Container");
         System.out.println("[6] Load Cargo To Toxic Container");
         System.out.println("[7] Load All Types To The One Container");
         System.out.println("[A] Back");
         System.out.println("\n+-----------------------------------------+");
+    }
+
+    public void warehouseMenu() {
+        System.out.println("+-----------------------------------------+");
+        System.out.println("[1] Display Standard Containers");
+        System.out.println("[2] Display Heavy Containers");
+        System.out.println("[3] Display Refrigerated Containers");
+        System.out.println("[4] Display Liquid Containers");
+        System.out.println("[5] Display Explosive Containers");
+        System.out.println("[6] Display Toxic Containers");
+        System.out.println("[A] Back");
+        System.out.println("+-----------------------------------------+");
     }
 }
