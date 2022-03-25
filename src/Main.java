@@ -263,9 +263,8 @@ public class Main {
                                         case "5" -> //Explosive Container
                                                 container.createExplosiveContainer(new ExplosiveContainer());
 
-                                        case "6" -> {  //Toxic Container
-
-                                        }
+                                        case "6" -> //Toxic Container
+                                                container.createToxicContainer(new ToxicContainer());
 
                                         case "A" -> {  //Back
                                             continue SEAPORTLOOP;  //goto label
@@ -299,9 +298,8 @@ public class Main {
                                         case "5" -> //Display Explosive Containers
                                                 container.explosiveInfo();
 
-                                        case "6" -> {  //Display Toxic Containers
-
-                                        }
+                                        case "6" -> //Display Toxic Containers
+                                                container.toxicInfo();
 
                                         case "A" -> {  //Back
                                             continue SEAPORTLOOP;

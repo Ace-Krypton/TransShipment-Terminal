@@ -21,6 +21,7 @@ public class Containers {
     ArrayList<HeavyContainer> heavyContainers = new ArrayList<>();
     ArrayList<RefrigeratedContainer> refrigeratedContainers = new ArrayList<>();
     ArrayList<LiquidContainer> liquidContainers = new ArrayList<>();
+    ArrayList<ToxicContainer> toxicContainers = new ArrayList<>();
 
     Scanner scan = new Scanner(System.in);
     String userInput;   //For user input
@@ -193,6 +194,49 @@ public class Containers {
             System.out.println("You don't have any liquid containers right now");
         else{
             for (LiquidContainer containers : liquidContainers) {
+                System.out.println(containers);
+            }
+        }
+    }
+
+    //Method for creating new Toxic Container
+    public void createToxicContainer(ToxicContainer toxicContainer) {
+        System.out.print("Name Of The Sender: ");
+        userInput = scan.next();
+        toxicContainer.setSender(userInput);
+
+        System.out.print("Tare: ");
+        doubleInput = scan.nextDouble();
+        toxicContainer.setTare(doubleInput);
+
+        System.out.print("Information About Security: ");
+        userInput = scan.next();
+        toxicContainer.setInfoSecurity(userInput);
+
+        System.out.print("Net Weight: ");
+        doubleInput = scan.nextDouble();
+        toxicContainer.setNetWeight(doubleInput);
+
+        System.out.print("Gross Weight: ");
+        doubleInput = scan.nextDouble();
+        toxicContainer.setGrossWeight(doubleInput);
+
+        System.out.print("Certificate Information: ");
+        userInput = scan.next();
+        toxicContainer.setCertificateInfo(userInput);
+
+        toxicContainers.add(toxicContainer);
+    }
+
+    //Toxic Container Info
+    public void toxicInfo() {
+        System.out.println("+-----------------------------------------+");
+        //Checks if List is empty or not
+        boolean isEmpty = toxicContainers.isEmpty();
+        if (isEmpty)
+            System.out.println("You don't have any toxic containers right now");
+        else{
+            for (ToxicContainer containers : toxicContainers) {
                 System.out.println(containers);
             }
         }
