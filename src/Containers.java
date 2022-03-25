@@ -20,6 +20,7 @@ public class Containers {
     ArrayList<StandardContainer> standardContainers = new ArrayList<>();
     ArrayList<HeavyContainer> heavyContainers = new ArrayList<>();
     ArrayList<RefrigeratedContainer> refrigeratedContainers = new ArrayList<>();
+    ArrayList<LiquidContainer> liquidContainers = new ArrayList<>();
 
     Scanner scan = new Scanner(System.in);
     String userInput;   //For user input
@@ -149,6 +150,49 @@ public class Containers {
             System.out.println("You don't have any refrigerated containers right now");
         else{
             for (RefrigeratedContainer containers : refrigeratedContainers) {
+                System.out.println(containers);
+            }
+        }
+    }
+
+    //Method for creating new Liquid Container
+    public void createLiquidContainer(LiquidContainer liquidContainer) {
+        System.out.print("Name Of The Sender: ");
+        userInput = scan.next();
+        liquidContainer.setSender(userInput);
+
+        System.out.print("Tare: ");
+        doubleInput = scan.nextDouble();
+        liquidContainer.setTare(doubleInput);
+
+        System.out.print("Information About Security: ");
+        userInput = scan.next();
+        liquidContainer.setInfoSecurity(userInput);
+
+        System.out.print("Net Weight: ");
+        doubleInput = scan.nextDouble();
+        liquidContainer.setNetWeight(doubleInput);
+
+        System.out.print("Gross Weight: ");
+        doubleInput = scan.nextDouble();
+        liquidContainer.setGrossWeight(doubleInput);
+
+        System.out.print("Certificate Information: ");
+        userInput = scan.next();
+        liquidContainer.setCertificateInfo(userInput);
+
+        liquidContainers.add(liquidContainer);
+    }
+
+    //Liquid Container Info
+    public void liquidInfo() {
+        System.out.println("+-----------------------------------------+");
+        //Checks if List is empty or not
+        boolean isEmpty = liquidContainers.isEmpty();
+        if (isEmpty)
+            System.out.println("You don't have any liquid containers right now");
+        else{
+            for (LiquidContainer containers : liquidContainers) {
                 System.out.println(containers);
             }
         }
