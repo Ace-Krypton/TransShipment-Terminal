@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Containers {
     /*
@@ -15,7 +16,53 @@ public class Containers {
     *      cargo.
     */
 
-    ArrayList<ArrayList<String>> containers = new ArrayList<>();
+    ArrayList<ExplosiveContainer> explosiveContainers = new ArrayList<>();
+    Scanner scan = new Scanner(System.in);
+    String userInput;   //For user input
+    double doubleInput; //For specific values
+
+    //Method for creating new Explosive Container
+    public void createExplosiveContainer(ExplosiveContainer explosiveContainer) {
+        System.out.print("Name Of The Sender: ");
+        userInput = scan.next();
+        explosiveContainer.setSender(userInput);
+
+        System.out.print("Tare: ");
+        doubleInput = scan.nextDouble();
+        explosiveContainer.setTare(doubleInput);
+
+        System.out.print("Information About Security: ");
+        userInput = scan.next();
+        explosiveContainer.setInfoSecurity(userInput);
+
+        System.out.print("Net Weight: ");
+        doubleInput = scan.nextDouble();
+        explosiveContainer.setNetWeight(doubleInput);
+
+        System.out.print("Gross Weight: ");
+        doubleInput = scan.nextDouble();
+        explosiveContainer.setGrossWeight(doubleInput);
+
+        System.out.print("Certificate Information: ");
+        userInput = scan.next();
+        explosiveContainer.setCertificateInfo(userInput);
+
+        explosiveContainers.add(explosiveContainer);
+    }
+
+    //Explosive Container Info
+    public void listInfo() {
+        System.out.println("+-----------------------------------------+");
+        //Checks if List is empty or not
+        boolean isEmpty = explosiveContainers.isEmpty();
+        if (isEmpty)
+            System.out.println("You don't have any explosive containers right now");
+        else{
+            for (ExplosiveContainer containers : explosiveContainers) {
+                System.out.println(containers);
+            }
+        }
+    }
 
     public void containerInfo() {
         System.out.println("""

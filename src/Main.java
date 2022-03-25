@@ -249,7 +249,7 @@ public class Main {
 
                                     switch (strInput.toUpperCase(Locale.ROOT)) {
                                         case "1" -> {  //Standard Container
-                                            
+
                                         }
 
                                         case "2" -> {  //Heavy Container
@@ -264,9 +264,8 @@ public class Main {
 
                                         }
 
-                                        case "5" -> {  //Explosive Container
-
-                                        }
+                                        case "5" -> //Explosive Container
+                                                container.createExplosiveContainer(new ExplosiveContainer());
 
                                         case "6" -> {  //Toxic Container
 

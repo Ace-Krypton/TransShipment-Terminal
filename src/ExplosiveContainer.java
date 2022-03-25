@@ -7,6 +7,48 @@ public class ExplosiveContainer extends StandardContainer {
     //ArrayList of explosive containers
     ArrayList<String> explosiveContainer = new ArrayList<>();
 
+    //For unique ID
+    private int _id;
+    int ID;
+
+    //Info about container
+    private String sender;
+    private double tare;
+    private String infoSecurity;
+    private double netWeight;
+    private double grossWeight;
+    private String certificateInfo;
+
+    public ExplosiveContainer() {
+        ++_id;
+        ID = _id;
+    }
+
+    //Getters and Setters
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public void setTare(double tare) {
+        this.tare = tare;
+    }
+
+    public void setInfoSecurity(String infoSecurity) {
+        this.infoSecurity = infoSecurity;
+    }
+
+    public void setNetWeight(double netWeight) {
+        this.netWeight = netWeight;
+    }
+
+    public void setGrossWeight(double grossWeight) {
+        this.grossWeight = grossWeight;
+    }
+
+    public void setCertificateInfo(String certificateInfo) {
+        this.certificateInfo = certificateInfo;
+    }
+
     //This method is for loading container
     public void loadContainer(Cargo cargo) {
         System.out.println("\n+-----------------------------------------+");
@@ -40,5 +82,14 @@ public class ExplosiveContainer extends StandardContainer {
             //If user enters "n" or "N" it will break from the look
             if (userInput.equalsIgnoreCase("N")) break;
         }
+    }
+
+    public String toString() {
+        return "Sender: " + sender
+                + "\nTare: " + tare
+                + "\nInformation About Security" + infoSecurity
+                + "\nNet Weight" + netWeight
+                + "\nGross Weight" + grossWeight
+                + "\nCertificate Information" + certificateInfo;
     }
 }
