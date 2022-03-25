@@ -254,9 +254,8 @@ public class Main {
                                         case "2" -> //Heavy Container
                                                 container.createHeavyContainer(new HeavyContainer());
 
-                                        case "3" -> {  //Refrigerated Container
-
-                                        }
+                                        case "3" -> //Refrigerated Container
+                                                container.createRefrigeratedContainer(new RefrigeratedContainer());
 
                                         case "4" -> {  //Liquid Container
 
@@ -292,9 +291,8 @@ public class Main {
                                         case "2" -> //Display Heavy Containers
                                                 container.heavyInfo();
 
-                                        case "3" -> {  //Display Refrigerated Containers
-
-                                        }
+                                        case "3" -> //Display Refrigerated Containers
+                                                container.refrigeratedInfo();
 
                                         case "4" -> {  //Display Liquid Containers
 

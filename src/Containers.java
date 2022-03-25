@@ -19,6 +19,7 @@ public class Containers {
     ArrayList<ExplosiveContainer> explosiveContainers = new ArrayList<>();
     ArrayList<StandardContainer> standardContainers = new ArrayList<>();
     ArrayList<HeavyContainer> heavyContainers = new ArrayList<>();
+    ArrayList<RefrigeratedContainer> refrigeratedContainers = new ArrayList<>();
 
     Scanner scan = new Scanner(System.in);
     String userInput;   //For user input
@@ -53,7 +54,7 @@ public class Containers {
         standardContainers.add(standardContainer);
     }
 
-    //Explosive Container Info
+    //Standard Container Info
     public void standardInfo() {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
@@ -67,7 +68,7 @@ public class Containers {
         }
     }
 
-    //Method for creating new Standard Container
+    //Method for creating new Heavy Container
     public void createHeavyContainer(HeavyContainer heavyContainer) {
         System.out.print("Name Of The Sender: ");
         userInput = scan.next();
@@ -96,15 +97,58 @@ public class Containers {
         heavyContainers.add(heavyContainer);
     }
 
-    //Explosive Container Info
+    //Heavy Container Info
     public void heavyInfo() {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
-        boolean isEmpty = standardContainers.isEmpty();
+        boolean isEmpty = heavyContainers.isEmpty();
         if (isEmpty)
             System.out.println("You don't have any heavy containers right now");
         else{
             for (HeavyContainer containers : heavyContainers) {
+                System.out.println(containers);
+            }
+        }
+    }
+
+    //Method for creating new Refrigerated Container
+    public void createRefrigeratedContainer(RefrigeratedContainer refrigeratedContainer) {
+        System.out.print("Name Of The Sender: ");
+        userInput = scan.next();
+        refrigeratedContainer.setSender(userInput);
+
+        System.out.print("Tare: ");
+        doubleInput = scan.nextDouble();
+        refrigeratedContainer.setTare(doubleInput);
+
+        System.out.print("Information About Security: ");
+        userInput = scan.next();
+        refrigeratedContainer.setInfoSecurity(userInput);
+
+        System.out.print("Net Weight: ");
+        doubleInput = scan.nextDouble();
+        refrigeratedContainer.setNetWeight(doubleInput);
+
+        System.out.print("Gross Weight: ");
+        doubleInput = scan.nextDouble();
+        refrigeratedContainer.setGrossWeight(doubleInput);
+
+        System.out.print("Certificate Information: ");
+        userInput = scan.next();
+        refrigeratedContainer.setCertificateInfo(userInput);
+
+        refrigeratedContainers.add(refrigeratedContainer);
+    }
+
+    //Refrigerated Container Info
+    public void refrigeratedInfo() {
+        System.out.println("+-----------------------------------------+");
+        //Checks if List is empty or not
+        boolean isEmpty = refrigeratedContainers.isEmpty();
+        if (isEmpty)
+            System.out.println("You don't have any refrigerated containers right now");
+        else{
+            for (RefrigeratedContainer containers : refrigeratedContainers) {
                 System.out.println(containers);
             }
         }
