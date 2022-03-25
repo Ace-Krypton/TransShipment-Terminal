@@ -8,7 +8,7 @@ public class StandardContainer {
     Scanner scan = new Scanner(System.in);
 
     //For unique ID
-    private int _id;
+    private static int _id;
     int ID;
 
     //Info about container
@@ -88,7 +88,8 @@ public class StandardContainer {
 
     @Override
     public String toString() {
-        return "Sender: " + sender
+        return ID + ". "
+                + "Sender: " + sender
                 + "\nTare: " + tare
                 + "\nInformation About Security: " + infoSecurity
                 + "\nNet Weight: " + netWeight

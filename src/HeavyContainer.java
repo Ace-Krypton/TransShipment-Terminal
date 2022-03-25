@@ -5,7 +5,7 @@ public class HeavyContainer extends StandardContainer {
     ArrayList<String> heavyContainer = new ArrayList<>();
 
     //For unique ID
-    private int _id;
+    private static int _id;
     int ID;
 
     //Info about container
@@ -48,7 +48,8 @@ public class HeavyContainer extends StandardContainer {
 
     @Override
     public String toString() {
-        return "Sender: " + sender
+        return ID + ". "
+                + "Sender: " + sender
                 + "\nTare: " + tare
                 + "\nInformation About Security: " + infoSecurity
                 + "\nNet Weight: " + netWeight

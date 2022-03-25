@@ -123,6 +123,7 @@ public class Main {
                                         }
 
                                         case "4" -> {  //Display Cargos
+                                            //(I know there are code duplication here, but there is no way of doing that in other classes)
                                             cargo.displayCargosMenu();  //Menu for display cargos
                                             System.out.print("> ");
                                             strInput = scan.next(); //User Input
