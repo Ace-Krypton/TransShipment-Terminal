@@ -281,6 +281,9 @@ public class Main {
                                 }
                             }
 
+                            case "5" -> //Warehouse For Containers
+                                    container.explosiveInfo();
+
                             case "A" -> { //Back
                                 continue MAINLOOP;  //goto label
                             }

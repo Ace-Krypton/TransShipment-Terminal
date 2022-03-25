@@ -84,12 +84,13 @@ public class ExplosiveContainer extends StandardContainer {
         }
     }
 
+    @Override
     public String toString() {
         return "Sender: " + sender
                 + "\nTare: " + tare
-                + "\nInformation About Security" + infoSecurity
-                + "\nNet Weight" + netWeight
-                + "\nGross Weight" + grossWeight
-                + "\nCertificate Information" + certificateInfo;
+                + "\nInformation About Security: " + infoSecurity
+                + "\nNet Weight: " + netWeight
+                + "\nGross Weight: " + grossWeight
+                + "\nCertificate Information: " + certificateInfo;
     }
 }

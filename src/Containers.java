@@ -17,9 +17,40 @@ public class Containers {
     */
 
     ArrayList<ExplosiveContainer> explosiveContainers = new ArrayList<>();
+    ArrayList<StandardContainer> standardContainers = new ArrayList<>();
+
     Scanner scan = new Scanner(System.in);
     String userInput;   //For user input
     double doubleInput; //For specific values
+
+    //Method for creating new Standard Container
+    public void createExplosiveContainer(StandardContainer standardContainer) {
+        System.out.println("Name Of The Sender: ");
+        userInput = scan.next();
+        standardContainer.setSender(userInput);
+
+        System.out.print("Tare: ");
+        doubleInput = scan.nextDouble();
+        standardContainer.setTare(doubleInput);
+
+        System.out.print("Information About Security: ");
+        userInput = scan.next();
+        standardContainer.setInfoSecurity(userInput);
+
+        System.out.print("Net Weight: ");
+        doubleInput = scan.nextDouble();
+        standardContainer.setNetWeight(doubleInput);
+
+        System.out.print("Gross Weight: ");
+        doubleInput = scan.nextDouble();
+        standardContainer.setGrossWeight(doubleInput);
+
+        System.out.print("Certificate Information: ");
+        userInput = scan.next();
+        standardContainer.setCertificateInfo(userInput);
+
+        standardContainers.add(standardContainer);
+    }
 
     //Method for creating new Explosive Container
     public void createExplosiveContainer(ExplosiveContainer explosiveContainer) {
@@ -51,7 +82,7 @@ public class Containers {
     }
 
     //Explosive Container Info
-    public void listInfo() {
+    public void explosiveInfo() {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
         boolean isEmpty = explosiveContainers.isEmpty();

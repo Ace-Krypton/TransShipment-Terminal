@@ -7,6 +7,48 @@ public class StandardContainer {
     //Scanner for user input
     Scanner scan = new Scanner(System.in);
 
+    //For unique ID
+    private int _id;
+    int ID;
+
+    //Info about container
+    private String sender;
+    private double tare;
+    private String infoSecurity;
+    private double netWeight;
+    private double grossWeight;
+    private String certificateInfo;
+
+    public StandardContainer() {
+        ++_id;
+        ID = _id;
+    }
+
+    //Getters and Setters
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public void setTare(double tare) {
+        this.tare = tare;
+    }
+
+    public void setInfoSecurity(String infoSecurity) {
+        this.infoSecurity = infoSecurity;
+    }
+
+    public void setNetWeight(double netWeight) {
+        this.netWeight = netWeight;
+    }
+
+    public void setGrossWeight(double grossWeight) {
+        this.grossWeight = grossWeight;
+    }
+
+    public void setCertificateInfo(String certificateInfo) {
+        this.certificateInfo = certificateInfo;
+    }
+
     //This method is for loading container
     public void loadContainer(Cargo cargo) {
         System.out.println("\n+-----------------------------------------+");
@@ -25,7 +67,7 @@ public class StandardContainer {
                     if (userInput.equalsIgnoreCase(cargoAsList) && cargoAsList.contains(userInput)) {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                         standardContainer.add(cargoAsList);
-                        cargosOne.remove(cargoAsList);  //MUST FIX! ~ Find a way to compare ArrayList<ArrayList<String>> with ArrayList<String>
+                        //cargosOne.remove(cargoAsList);  //MUST FIX! ~ Find a way to compare ArrayList<ArrayList<String>> with ArrayList<String>
                     }
                 }
             }
@@ -42,5 +84,15 @@ public class StandardContainer {
             //If user enters "n" or "N" it will break from the look
             if (userInput.equalsIgnoreCase("N")) break;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Sender: " + sender
+                + "\nTare: " + tare
+                + "\nInformation About Security: " + infoSecurity
+                + "\nNet Weight: " + netWeight
+                + "\nGross Weight: " + grossWeight
+                + "\nCertificate Information: " + certificateInfo;
     }
 }
