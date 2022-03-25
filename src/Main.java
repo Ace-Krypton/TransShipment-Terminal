@@ -10,11 +10,6 @@ public class Main {
       **/
 
     public static void main(String[] args) {
-        /*
-         * This ArrayList takes the ships from seaport list
-         * I created this because, when I went back to main menu, created ships were lost
-         * That is the way I found to store them.
-         **/
         ArrayList<Seaport> seaports = new ArrayList<>();
         Seaport seaport = new Seaport(); //Creating new object of Seaport class
         Hashtable<String, String> userPass = new Hashtable<>();
