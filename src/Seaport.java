@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Seaport implements ISeaport {
@@ -34,6 +35,54 @@ public class Seaport implements ISeaport {
         userInput = scan.next();
         shipObjects.setDestination(userInput); //Setting the destination of the ship
 
+        boolean loop = true;
+
+        while (loop) {
+            System.out.println("+-----------------------------------------+");
+            System.out.println("Which container you wanna add to this ship?");
+            System.out.println("Containers: ");
+            System.out.println("[1] Standard Container");
+            System.out.println("[2] Heavy Container");
+            System.out.println("[3] Refrigerated Container");
+            System.out.println("[4] Liquid Container");
+            System.out.println("[5] Explosive Container");
+            System.out.println("[6] Toxic Container");
+            System.out.println("[F] If you finished adding press \"F\"");
+
+            System.out.print("> ");
+            String userInput = scan.next();
+
+            switch (userInput.toUpperCase(Locale.ROOT)) {
+                case "1" -> {  //Standard Container
+
+                }
+
+                case "2" -> {  //Heavy Container
+
+                }
+
+                case "3" -> {  //Refrigerated Container
+
+                }
+
+                case "4" -> {  //Liquid Container
+
+                }
+
+                case "5" -> {  //Explosive Container
+
+                }
+
+                case "6" -> {  //Toxic Container
+
+                }
+
+                case "A" -> loop = false;
+
+                case default ->
+                        System.out.println("Invalid Command, Please Try Again");
+            }
+        }
         ships.add(shipObjects);
     }
 

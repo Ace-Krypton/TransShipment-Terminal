@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Ships implements IShips{
     private static int _id; //No one could change unique ID from outside
     public int ID;  //For unique ID
@@ -6,6 +8,7 @@ public class Ships implements IShips{
     private String transportOrigin; //For transport origin
     private String destination; //For destination of the ship
     //public double capacity;  //Ship's capacity
+    ArrayList<String> ship = new ArrayList<>();
 
     //Constructor
     public Ships() {

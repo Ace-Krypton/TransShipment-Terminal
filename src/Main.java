@@ -281,6 +281,9 @@ public class Main {
 
                                         case "?" -> //Info About Containers
                                                 container.containerInfo();
+
+                                        case default ->
+                                                System.out.println("Invalid Command, Please Try Again");
                                     }
                                 }
                             }
@@ -307,9 +310,15 @@ public class Main {
                                         case "5" -> //Display Explosive Containers
                                                 container.explosiveInfo();
 
+                                        case "6" -> //Display Toxic Containers
+                                                container.toxicInfo();
+
                                         case "A" -> {  //Back
                                             continue SEAPORTLOOP;
                                         }
+
+                                        case default ->
+                                                System.out.println("Invalid Command, Please Try Again");
                                     }
                                 }
                             }
