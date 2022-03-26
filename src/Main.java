@@ -19,6 +19,8 @@ public class Main {
         Cargo cargo = new Cargo();
         ExplosiveContainer explosive = new ExplosiveContainer();
         StandardContainer standard = new StandardContainer();
+        LiquidContainer liquid = new LiquidContainer();
+        HeavyContainer heavy = new HeavyContainer();
         ToxicContainer toxic = new ToxicContainer();
         RefrigeratedContainer refrigerated = new RefrigeratedContainer();
         Containers container = new Containers();
@@ -150,8 +152,8 @@ public class Main {
                                                         boolean isLiquidEmpty = cargo.liquidCargos.isEmpty();
                                                         if (isLiquidEmpty)
                                                             System.out.println("You don't have any liquid cargo");
-                                                        for (String liquid : cargo.liquidCargos)
-                                                            System.out.println(liquid);
+                                                        for (String liquids : cargo.liquidCargos)
+                                                            System.out.println(liquids);
                                                         back = false;
                                                     }
 
@@ -195,13 +197,11 @@ public class Main {
                                                     case "1" -> //Standard Container
                                                             standard.loadContainer(cargo);
 
-                                                    case "2" -> {  //Heavy Container
+                                                    case "2" -> //Heavy Container
+                                                            heavy.loadContainer(cargo);
 
-                                                    }
-
-                                                    case "3" -> { //Liquid Container
-
-                                                    }
+                                                    case "3" -> //Liquid Container
+                                                            liquid.loadContainer(cargo);
 
                                                     case "4" -> //Refrigerated Container
                                                             refrigerated.loadContainer(cargo);
