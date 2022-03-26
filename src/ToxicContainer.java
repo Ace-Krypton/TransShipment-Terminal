@@ -51,6 +51,12 @@ public class ToxicContainer extends HeavyContainer {
     //This method is for loading container
     public void loadContainer(Cargo cargo) {
         System.out.println("\n+-----------------------------------------+");
+        System.out.println("""
+                                                    !Warning!\040
+                           You can only load Toxic Powdery Cargo to the Toxic Powdery Container
+                           Toxic Liquid Cargo to the Toxic Liquid Container
+                           """);
+
         //For printing cargos
         cargo.printCargos();
         System.out.println("\n+-----------------------------------------+");

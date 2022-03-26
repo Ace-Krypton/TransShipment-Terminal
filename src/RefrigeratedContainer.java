@@ -46,6 +46,8 @@ public class RefrigeratedContainer extends HeavyContainer{
         this.certificateInfo = certificateInfo;
     }
 
+    
+
     @Override
     public String toString() {
         return ID + ". "

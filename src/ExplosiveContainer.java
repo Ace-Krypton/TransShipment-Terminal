@@ -52,7 +52,11 @@ public class ExplosiveContainer extends StandardContainer {
     //This method is for loading container
     public void loadContainer(Cargo cargo) {
         System.out.println("\n+-----------------------------------------+");
-        System.out.println("!Warning! You can only load explosive cargo to the explosive container");
+        System.out.println("""
+                                                 !Warning!\040
+                           You can only load Explosive Cargo to the Explosive Container
+                           """);
+
         cargo.printCargos();
         System.out.println("\n+-----------------------------------------+");
 

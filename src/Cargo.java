@@ -46,7 +46,7 @@ public class Cargo {
     }
 
     public void printCargos() {
-        System.out.print("Your cargos: ");
+        System.out.print("Your cargos: \n");
         int counter = 1;
 
         //Checks if List is empty or not

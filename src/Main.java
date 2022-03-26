@@ -19,6 +19,7 @@ public class Main {
         Cargo cargo = new Cargo();
         ExplosiveContainer explosive = new ExplosiveContainer();
         StandardContainer standard = new StandardContainer();
+        ToxicContainer toxic = new ToxicContainer();
         Containers container = new Containers();
 
         MAINLOOP:   //Label
@@ -208,9 +209,8 @@ public class Main {
                                                     case "5" -> //Explosive Container
                                                             explosive.loadContainer(cargo);
 
-                                                    case "6" -> {  //Toxic Container
-
-                                                    }
+                                                    case "6" -> //Toxic Container
+                                                            toxic.loadContainer(cargo);
 
                                                     case "7" -> //Adding Cargos (There is small bug with that, I will fix it)
                                                             cargo.addCargos();
