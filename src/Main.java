@@ -307,9 +307,6 @@ public class Main {
                                         case "5" -> //Display Explosive Containers
                                                 container.explosiveInfo();
 
-                                        case "6" -> //Display Toxic Containers
-                                                container.toxicInfo();
-
                                         case "A" -> {  //Back
                                             continue SEAPORTLOOP;
                                         }

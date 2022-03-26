@@ -72,11 +72,6 @@ public class StandardContainer {
                 }
             }
 
-            //After adding it removes such cargo in specified cargo list
-                for (String element : standardContainer) {
-                    System.out.println(element);
-                }
-
             System.out.println("You wanna add more? Press \"Y\" For Yes, \"N\" For No");
             System.out.print("> ");
             userInput = scan.next();
