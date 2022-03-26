@@ -20,6 +20,7 @@ public class Main {
         ExplosiveContainer explosive = new ExplosiveContainer();
         StandardContainer standard = new StandardContainer();
         ToxicContainer toxic = new ToxicContainer();
+        RefrigeratedContainer refrigerated = new RefrigeratedContainer();
         Containers container = new Containers();
 
         MAINLOOP:   //Label
@@ -202,9 +203,8 @@ public class Main {
 
                                                     }
 
-                                                    case "4" -> {  //Refrigerated Container
-
-                                                    }
+                                                    case "4" -> //Refrigerated Container
+                                                            refrigerated.loadContainer(cargo);
 
                                                     case "5" -> //Explosive Container
                                                             explosive.loadContainer(cargo);
