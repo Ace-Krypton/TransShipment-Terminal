@@ -9,21 +9,22 @@ public class Main {
       *  Additionally, several containers of different types should be placed in the warehouse
       **/
 
+    static StandardContainer standard = new StandardContainer();
+    static ExplosiveContainer explosive = new ExplosiveContainer();
+    static LiquidContainer liquid = new LiquidContainer();
+    static HeavyContainer heavy = new HeavyContainer();
+    static ToxicContainer toxic = new ToxicContainer();
+    static RefrigeratedContainer refrigerated = new RefrigeratedContainer();
+    static Cargo cargo = new Cargo();
+    static Containers container = new Containers();
+    static Seaport seaport = new Seaport(); //Creating new object of Seaport class
+
     public static void main(String[] args) {
         ArrayList<Seaport> seaports = new ArrayList<>();
-        Seaport seaport = new Seaport(); //Creating new object of Seaport class
         Hashtable<String, String> userPass = new Hashtable<>();
         Scanner scan = new Scanner(System.in);  //For user input
         String strInput;  //For String input
         boolean loopStop = true;  //Boolean for while loop
-        Cargo cargo = new Cargo();
-        ExplosiveContainer explosive = new ExplosiveContainer();
-        StandardContainer standard = new StandardContainer();
-        LiquidContainer liquid = new LiquidContainer();
-        HeavyContainer heavy = new HeavyContainer();
-        ToxicContainer toxic = new ToxicContainer();
-        RefrigeratedContainer refrigerated = new RefrigeratedContainer();
-        Containers container = new Containers();
 
         MAINLOOP:   //Label
         while (loopStop) {  //Main loop
@@ -64,7 +65,7 @@ public class Main {
                                     seaport.createShips(new Ships());  //Everytime creating new object
 
 
-                            case "2" -> //Warehouse
+                            case "2" -> //Warehouse for ships
                                     seaport.listInfo(); //Printing the elements of "ships" ArrayList
 
 

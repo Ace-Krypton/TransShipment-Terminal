@@ -54,11 +54,13 @@ public class Seaport implements ISeaport {
 
             switch (userInput.toUpperCase(Locale.ROOT)) {
                 case "1" -> {  //Standard Container
-
+                    Ships.standardContainer.add(Containers.standardContainers);
+                    Ships.printStandard("standardContainer");
                 }
 
                 case "2" -> {  //Heavy Container
-
+                    Ships.heavyContainer.add(Containers.heavyContainers);
+                    Ships.printStandard("standardContainer");
                 }
 
                 case "3" -> {  //Refrigerated Container
@@ -77,7 +79,7 @@ public class Seaport implements ISeaport {
 
                 }
 
-                case "A" -> loop = false;
+                case "F" -> loop = false;
 
                 case default ->
                         System.out.println("Invalid Command, Please Try Again");

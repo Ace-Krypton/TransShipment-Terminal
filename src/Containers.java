@@ -15,9 +15,10 @@ public class Containers {
     *      is not only a kind of heavy container, but also has the features of a container for liquids
     *      cargo.
     */
+
     ArrayList<ExplosiveContainer> explosiveContainers = new ArrayList<>();
-    ArrayList<StandardContainer> standardContainers = new ArrayList<>();
-    ArrayList<HeavyContainer> heavyContainers = new ArrayList<>();
+    static ArrayList<StandardContainer> standardContainers = new ArrayList<>();
+    static ArrayList<HeavyContainer> heavyContainers = new ArrayList<>();
     ArrayList<RefrigeratedContainer> refrigeratedContainers = new ArrayList<>();
     ArrayList<LiquidContainer> liquidContainers = new ArrayList<>();
     ArrayList<ToxicContainer> toxicContainers = new ArrayList<>();
