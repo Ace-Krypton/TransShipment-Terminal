@@ -59,6 +59,7 @@ public class Seaport implements ISeaport {
                     Containers.standardInfo();  //Printing standard containers
                     System.out.println("+-----------------------------------------+");
                     shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
+                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<StandardContainer> standards : shipObjects.standardContainer)
                         for (StandardContainer standard : standards) shipObjects.builder.append("\n\t").append(standard);
                     Containers.standardContainers.clear();  //Removes all the elements from collection
@@ -71,6 +72,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     shipObjects.heavyContainer.add(Containers.heavyContainers); //Adding heavy containers to the Ship
                     Containers.heavyContainers.clear(); //Removes all the elements from collection
+                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<HeavyContainer> heavies : shipObjects.heavyContainer)
                         for (HeavyContainer heavy : heavies) shipObjects.builder.append("\n\t").append(heavy);
                 }
@@ -82,6 +84,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     shipObjects.refrigeratedContainer.add(Containers.refrigeratedContainers); //Adding refrigerated containers to the Ship
                     Containers.refrigeratedContainers.clear(); //Removes all the elements from collection
+                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<RefrigeratedContainer> refrigerateds : shipObjects.refrigeratedContainer)
                         for (RefrigeratedContainer refrigerated : refrigerateds) shipObjects.builder.append("\n\t").append(refrigerated);
                 }
@@ -93,6 +96,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     shipObjects.liquidContainer.add(Containers.liquidContainers); //Adding liquid containers to the Ship
                     Containers.liquidContainers.clear(); //Removes all the elements from collection
+                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<LiquidContainer> liquids : shipObjects.liquidContainer)
                         for (LiquidContainer liquid : liquids) shipObjects.builder.append("\n\t").append(liquid);
                 }
@@ -104,6 +108,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     shipObjects.explosiveContainer.add(Containers.explosiveContainers); //Adding explosive containers to the Ship
                     Containers.explosiveContainers.clear(); //Removes all the elements from collection
+                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<ExplosiveContainer> explosives : shipObjects.explosiveContainer)
                         for (ExplosiveContainer explosive : explosives) shipObjects.builder.append("\n\t").append(explosive);
                 }
@@ -115,6 +120,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     shipObjects.toxicContainer.add(Containers.toxicContainers); //Adding toxic containers to the Ship
                     Containers.toxicContainers.clear(); //Removes all the elements from collection
+                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<ToxicContainer> toxics : shipObjects.toxicContainer)
                         for (ToxicContainer toxic : toxics) shipObjects.builder.append("\n\t").append(toxic);
                 }
