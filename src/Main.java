@@ -296,22 +296,22 @@ public class Main {
 
                                     switch (strInput.toUpperCase(Locale.ROOT)) {
                                         case "1" -> //Display Standard Containers
-                                                container.standardInfo();
+                                                Containers.standardInfo();
 
                                         case "2" -> //Display Heavy Containers
-                                                container.heavyInfo();
+                                                Containers.heavyInfo();
 
                                         case "3" -> //Display Refrigerated Containers
-                                                container.refrigeratedInfo();
+                                                Containers.refrigeratedInfo();
 
                                         case "4" -> //Display Liquid Containers
-                                                container.liquidInfo();
+                                                Containers.liquidInfo();
 
                                         case "5" -> //Display Explosive Containers
-                                                container.explosiveInfo();
+                                                Containers.explosiveInfo();
 
                                         case "6" -> //Display Toxic Containers
-                                                container.toxicInfo();
+                                                Containers.toxicInfo();
 
                                         case "A" -> {  //Back
                                             continue SEAPORTLOOP;
