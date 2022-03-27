@@ -95,6 +95,6 @@ public class Ships implements IShips{
                   + " Name: " + name
                   + "\n\tTransport Origin: " + transportOrigin
                   + "\n\tHome Port: " + homePort
-                  + "\n\tDestination: " + destination + builder;
+                  + "\n\tDestination: " + destination + "\n\t" + builder + "\n\t";
     }
 }
