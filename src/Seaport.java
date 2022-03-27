@@ -54,29 +54,51 @@ public class Seaport implements ISeaport {
 
             switch (userInput.toUpperCase(Locale.ROOT)) {
                 case "1" -> {  //Standard Container
-                    Ships.standardContainer.add(Containers.standardContainers);
-                    Ships.printStandard("standardContainer");
+                    System.out.println("+-----------------------------------------+");
+                    System.out.println("These are your standard containers");
+                    Containers.standardInfo();  //Printing standard containers
+                    System.out.println("+-----------------------------------------+");
+                    Ships.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
                 }
 
                 case "2" -> {  //Heavy Container
+                    System.out.println("+-----------------------------------------+");
+                    System.out.println("These are your heavy containers");
+                    Containers.heavyInfo();  //Printing heavy containers
+                    System.out.println("+-----------------------------------------+");
                     Ships.heavyContainer.add(Containers.heavyContainers);
-                    Ships.printStandard("standardContainer");
                 }
 
                 case "3" -> {  //Refrigerated Container
-
+                    System.out.println("+-----------------------------------------+");
+                    System.out.println("These are your refrigerated containers");
+                    Containers.refrigeratedInfo();  //Printing refrigerated containers
+                    System.out.println("+-----------------------------------------+");
+                    Ships.refrigeratedContainer.add(Containers.refrigeratedContainers);
                 }
 
                 case "4" -> {  //Liquid Container
-
+                    System.out.println("+-----------------------------------------+");
+                    System.out.println("These are your liquid containers");
+                    Containers.liquidInfo();  //Printing liquid containers
+                    System.out.println("+-----------------------------------------+");
+                    Ships.liquidContainer.add(Containers.liquidContainers);
                 }
 
                 case "5" -> {  //Explosive Container
-
+                    System.out.println("+-----------------------------------------+");
+                    System.out.println("These are your explosive containers");
+                    Containers.explosiveInfo();  //Printing explosive containers
+                    System.out.println("+-----------------------------------------+");
+                    Ships.explosiveContainer.add(Containers.explosiveContainers);
                 }
 
                 case "6" -> {  //Toxic Container
-
+                    System.out.println("+-----------------------------------------+");
+                    System.out.println("These are your toxic containers");
+                    Containers.toxicInfo();  //Printing toxic containers
+                    System.out.println("+-----------------------------------------+");
+                    Ships.toxicContainer.add(Containers.toxicContainers);
                 }
 
                 case "F" -> loop = false;

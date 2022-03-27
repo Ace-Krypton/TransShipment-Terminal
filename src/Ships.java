@@ -8,33 +8,20 @@ public class Ships implements IShips{
     private String transportOrigin; //For transport origin
     private String destination; //For destination of the ship
     //public double capacity;  //Ship's capacity
+
+    //Static ArrayLists
     static ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
     static ArrayList<ArrayList<HeavyContainer>> heavyContainer = new ArrayList<>();
-    static String container;
+    static ArrayList<ArrayList<ToxicContainer>> toxicContainer = new ArrayList<>();
+    static ArrayList<ArrayList<RefrigeratedContainer>> refrigeratedContainer = new ArrayList<>();
+    static ArrayList<ArrayList<LiquidContainer>> liquidContainer = new ArrayList<>();
+    static ArrayList<ArrayList<ExplosiveContainer>> explosiveContainer = new ArrayList<>();
+
 
     //Constructor
     public Ships() {
         ++_id;
         ID = _id;
-    }
-
-    /**
-     * So what I did here is hard to understand maybe and so stupid,
-     *    but that was the only way to make it, at least for me.
-     * I created static printStandard() abstract method that takes userInput as an argument,
-     *    then if userInput equals to standardContainer, it initializes standardContainer.toString() method,
-     *    which is converting arraylist to string. And uses that variable in @Overrided toString() method.
-     */
-    public static void printStandard(String userInput) {
-        if (userInput.equalsIgnoreCase("standardContainer")) {
-            container = standardContainer.toString();
-        }
-    }
-
-    public static void printHeavy(String userInput) {
-        if (userInput.equalsIgnoreCase("heavyContainer")) {
-            container = heavyContainer.toString();
-        }
     }
 
     //Setters
@@ -54,6 +41,16 @@ public class Ships implements IShips{
         this.destination = destination;
     }
 
+    //This method is printing containers inside of ship
+    public void printShipContainers() {
+        System.out.println("+-----------------------------------------+");
+        System.out.println("Standard Containers: \n");
+
+        for (ArrayList<StandardContainer> standard: standardContainer) {
+            System.out.println(standard);
+        }
+    }
+
     //Overriding toString() method
     /** @returns unique ID and Name
      * Transport Origin
@@ -66,7 +63,6 @@ public class Ships implements IShips{
                   + " Name: " + name
                   + "\n\tTransport Origin: " + transportOrigin
                   + "\n\tHome Port: " + homePort
-                  + "\n\tDestination: " + destination
-                  + "\n\tContainer's Info: " + container;
+                  + "\n\tDestination: " + destination;
     }
 }

@@ -16,12 +16,12 @@ public class Containers {
     *      cargo.
     */
 
-    ArrayList<ExplosiveContainer> explosiveContainers = new ArrayList<>();
+    static ArrayList<ExplosiveContainer> explosiveContainers = new ArrayList<>();
     static ArrayList<StandardContainer> standardContainers = new ArrayList<>();
     static ArrayList<HeavyContainer> heavyContainers = new ArrayList<>();
-    ArrayList<RefrigeratedContainer> refrigeratedContainers = new ArrayList<>();
-    ArrayList<LiquidContainer> liquidContainers = new ArrayList<>();
-    ArrayList<ToxicContainer> toxicContainers = new ArrayList<>();
+    static ArrayList<RefrigeratedContainer> refrigeratedContainers = new ArrayList<>();
+    static ArrayList<LiquidContainer> liquidContainers = new ArrayList<>();
+    static ArrayList<ToxicContainer> toxicContainers = new ArrayList<>();
 
     Scanner scan = new Scanner(System.in);
     String userInput;   //For user input
@@ -57,7 +57,7 @@ public class Containers {
     }
 
     //Standard Container Info
-    public void standardInfo() {
+    public static void standardInfo() {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
         boolean isEmpty = standardContainers.isEmpty();
@@ -100,7 +100,7 @@ public class Containers {
     }
 
     //Heavy Container Info
-    public void heavyInfo() {
+    public static void heavyInfo() {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
         boolean isEmpty = heavyContainers.isEmpty();
@@ -143,7 +143,7 @@ public class Containers {
     }
 
     //Refrigerated Container Info
-    public void refrigeratedInfo() {
+    public static void refrigeratedInfo() {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
         boolean isEmpty = refrigeratedContainers.isEmpty();
@@ -186,7 +186,7 @@ public class Containers {
     }
 
     //Liquid Container Info
-    public void liquidInfo() {
+    public static void liquidInfo() {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
         boolean isEmpty = liquidContainers.isEmpty();
@@ -229,7 +229,7 @@ public class Containers {
     }
 
     //Toxic Container Info
-    public void toxicInfo() {
+    public static void toxicInfo() {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
         boolean isEmpty = toxicContainers.isEmpty();
@@ -272,7 +272,7 @@ public class Containers {
     }
 
     //Explosive Container Info
-    public void explosiveInfo() {
+    public static void explosiveInfo() {
         System.out.println("+-----------------------------------------+");
         //Checks if List is empty or not
         boolean isEmpty = explosiveContainers.isEmpty();
