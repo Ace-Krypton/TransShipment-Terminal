@@ -10,14 +10,14 @@ public class Ships implements IShips{
     //public double capacity;  //Ship's capacity
 
     //Static ArrayLists
-    static ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
-    static ArrayList<ArrayList<HeavyContainer>> heavyContainer = new ArrayList<>();
-    static ArrayList<ArrayList<ToxicContainer>> toxicContainer = new ArrayList<>();
-    static ArrayList<ArrayList<RefrigeratedContainer>> refrigeratedContainer = new ArrayList<>();
-    static ArrayList<ArrayList<LiquidContainer>> liquidContainer = new ArrayList<>();
-    static ArrayList<ArrayList<ExplosiveContainer>> explosiveContainer = new ArrayList<>();
+    ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
+    ArrayList<ArrayList<HeavyContainer>> heavyContainer = new ArrayList<>();
+    ArrayList<ArrayList<ToxicContainer>> toxicContainer = new ArrayList<>();
+    ArrayList<ArrayList<RefrigeratedContainer>> refrigeratedContainer = new ArrayList<>();
+    ArrayList<ArrayList<LiquidContainer>> liquidContainer = new ArrayList<>();
+    ArrayList<ArrayList<ExplosiveContainer>> explosiveContainer = new ArrayList<>();
 
-    static StringBuilder builder = new StringBuilder();
+    StringBuilder builder = new StringBuilder();
 
 
     //Constructor
