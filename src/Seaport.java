@@ -59,6 +59,9 @@ public class Seaport implements ISeaport {
                     Containers.standardInfo();  //Printing standard containers
                     System.out.println("+-----------------------------------------+");
                     Ships.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
+                    for (ArrayList<StandardContainer> standards : Ships.standardContainer) {
+                        for (StandardContainer standard : standards) Ships.builder.append(standard);
+                    }
                     Containers.standardContainers.clear();  //Removes all the elements from collection
                 }
 
@@ -69,6 +72,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     Ships.heavyContainer.add(Containers.heavyContainers); //Adding heavy containers to the Ship
                     Containers.heavyContainers.clear(); //Removes all the elements from collection
+                    for (ArrayList<HeavyContainer> heavy : Ships.heavyContainer) Ships.builder.append(heavy);
                 }
 
                 case "3" -> {  //Refrigerated Container
@@ -78,6 +82,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     Ships.refrigeratedContainer.add(Containers.refrigeratedContainers); //Adding refrigerated containers to the Ship
                     Containers.refrigeratedContainers.clear(); //Removes all the elements from collection
+                    for (ArrayList<RefrigeratedContainer> refrigerated : Ships.refrigeratedContainer) Ships.builder.append(refrigerated);
                 }
 
                 case "4" -> {  //Liquid Container
@@ -87,6 +92,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     Ships.liquidContainer.add(Containers.liquidContainers); //Adding liquid containers to the Ship
                     Containers.liquidContainers.clear(); //Removes all the elements from collection
+                    for (ArrayList<LiquidContainer> liquid : Ships.liquidContainer) Ships.builder.append(liquid);
                 }
 
                 case "5" -> {  //Explosive Container
@@ -96,6 +102,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     Ships.explosiveContainer.add(Containers.explosiveContainers); //Adding explosive containers to the Ship
                     Containers.explosiveContainers.clear(); //Removes all the elements from collection
+                    for (ArrayList<ExplosiveContainer> explosive : Ships.explosiveContainer) Ships.builder.append(explosive);
                 }
 
                 case "6" -> {  //Toxic Container
@@ -105,6 +112,7 @@ public class Seaport implements ISeaport {
                     System.out.println("+-----------------------------------------+");
                     Ships.toxicContainer.add(Containers.toxicContainers); //Adding toxic containers to the Ship
                     Containers.toxicContainers.clear(); //Removes all the elements from collection
+                    for (ArrayList<ToxicContainer> toxic : Ships.toxicContainer) Ships.builder.append(toxic);
                 }
 
                 case "F" -> loop = false;
