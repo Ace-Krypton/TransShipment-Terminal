@@ -350,8 +350,12 @@ public class Main {
                 }
 
                 case "3" -> {  //Creating A Seaport Account
-                    System.out.print("Username: ");   //For Username
-                    String username = scan.next();
+                    String username;
+                    do {
+                        System.out.print("Username: ");   //For Username
+                        username = scan.next();
+                    }
+                    while (userPass.containsValue(username));  //While username already exist in hashtable get input again
                     System.out.print("Password: ");
                     String password = scan.next(); //For password
                     userPass.put(password, username); //Putting the key and value
