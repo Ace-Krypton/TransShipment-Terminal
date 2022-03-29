@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class StandardContainer {
     //ArrayList for standard containers
     ArrayList<String> standardContainer = new ArrayList<>();
+
     //Scanner for user input
     Scanner scan = new Scanner(System.in);
 
@@ -89,6 +90,7 @@ public class StandardContainer {
                 + "\nInformation About Security: " + infoSecurity
                 + "\nNet Weight: " + netWeight
                 + "\nGross Weight: " + grossWeight
-                + "\nCertificate Information: " + certificateInfo;
+                + "\nCertificate Information: " + certificateInfo
+                + "\nCargos: " + standardContainer;
     }
 }

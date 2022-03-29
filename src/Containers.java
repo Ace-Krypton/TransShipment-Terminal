@@ -53,6 +53,9 @@ public class Containers {
         userInput = scan.next();
         standardContainer.setCertificateInfo(userInput);
 
+        System.out.println("loading container");
+        standardContainer.loadContainer(Main.cargo);
+
         standardContainers.add(standardContainer);
     }
 
@@ -310,19 +313,6 @@ public class Containers {
         System.out.println("[A] Back");
         System.out.println("[?] Info About Containers");
         System.out.println("+-----------------------------------------+");
-    }
-
-    public void containerLoadMenu() {
-        System.out.println("\n+-----------------------------------------+");
-        System.out.println("[1] Load Cargo To Standard Container");
-        System.out.println("[2] Load Cargo To Heavy Container");
-        System.out.println("[3] Load Cargo To Liquid Container");
-        System.out.println("[4] Load Cargo To Refrigerated Container");
-        System.out.println("[5] Load Cargo To Explosive Container");
-        System.out.println("[6] Load Cargo To Toxic Container");
-        System.out.println("[7] Load All Types To The One Container");
-        System.out.println("[A] Back");
-        System.out.println("\n+-----------------------------------------+");
     }
 
     public void warehouseMenu() {

@@ -9,12 +9,6 @@ public class Main {
       *  Additionally, several containers of different types should be placed in the warehouse
       **/
 
-    static StandardContainer standard = new StandardContainer();
-    static ExplosiveContainer explosive = new ExplosiveContainer();
-    static LiquidContainer liquid = new LiquidContainer();
-    static HeavyContainer heavy = new HeavyContainer();
-    static ToxicContainer toxic = new ToxicContainer();
-    static RefrigeratedContainer refrigerated = new RefrigeratedContainer();
     static Cargo cargo = new Cargo();
     static Containers container = new Containers();
     static Seaport seaport = new Seaport(); //Creating new object of Seaport class
@@ -188,41 +182,12 @@ public class Main {
                                         }
 
                                         case "5" -> {   //Loading Cargo
-                                            while (true) {
-                                                container.containerLoadMenu();
-                                                System.out.print("> ");
-                                                strInput = scan.next(); //User input
-
-                                                switch (strInput.toUpperCase(Locale.ROOT)) {
-                                                    case "1" -> //Standard Container
-                                                            standard.loadContainer(cargo);
-
-                                                    case "2" -> //Heavy Container
-                                                            heavy.loadContainer(cargo);
-
-                                                    case "3" -> //Liquid Container
-                                                            liquid.loadContainer(cargo);
-
-                                                    case "4" -> //Refrigerated Container
-                                                            refrigerated.loadContainer(cargo);
-
-                                                    case "5" -> //Explosive Container
-                                                            explosive.loadContainer(cargo);
-
-                                                    case "6" -> //Toxic Container
-                                                            toxic.loadContainer(cargo);
-
-                                                    case "7" -> //Adding Cargos (There is small bug with that, I will fix it)
-                                                            cargo.addCargos();
-
-                                                    case "A" -> {  //Back
-                                                        continue CARGOLOOP;
-                                                    }
-
-                                                    case default ->
-                                                            System.out.println("Invalid Command, Please Try Again");
-                                                }
-                                            }
+                                            System.out.println("""
+                                                                Do you want to add all of your cargos to the container?
+                                                                              Type "Yes" to confirm""");
+                                            System.out.print("> ");
+                                            strInput = scan.next(); //User input
+                                            if (strInput.equalsIgnoreCase("Yes")) cargo.addCargos();
                                         }
 
                                         case "A" -> { //Back
@@ -350,7 +315,7 @@ public class Main {
                 }
 
                 case "3" -> {  //Creating A Seaport Account
-                    String username;
+                    String username;  //Initializing variable
                     do {
                         System.out.print("Username: ");   //For Username
                         username = scan.next();
