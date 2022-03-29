@@ -85,6 +85,8 @@ public class LiquidContainer extends StandardContainer {
                 + "\nInformation About Security: " + infoSecurity
                 + "\nNet Weight: " + netWeight
                 + "\nGross Weight: " + grossWeight
-                + "\nCertificate Information: " + certificateInfo;
+                + "\nCertificate Information: " + certificateInfo
+                + "\nCargos: " + liquidContainer;
+
     }
 }

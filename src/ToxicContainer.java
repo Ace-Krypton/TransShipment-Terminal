@@ -133,6 +133,8 @@ public class ToxicContainer extends HeavyContainer {
                 + "\nInformation About Security: " + infoSecurity
                 + "\nNet Weight: " + netWeight
                 + "\nGross Weight: " + grossWeight
-                + "\nCertificate Information: " + certificateInfo;
+                + "\nCertificate Information: " + certificateInfo
+                + "\nToxic Powdery Cargos: " + toxicPowderyContainer
+                + "\nToxic Liquid Cargos: " + toxicLiquidContainer;
     }
 }

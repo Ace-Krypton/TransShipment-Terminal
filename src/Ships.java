@@ -43,46 +43,6 @@ public class Ships implements IShips{
         this.destination = destination;
     }
 
-    //This method is printing containers inside of ship
-    public void printShipContainers() {
-        System.out.println("+-----------------------------------------+");
-        System.out.println("Standard Containers: \n");
-
-        for (ArrayList<StandardContainer> standard : standardContainer) {
-            System.out.println(standard);
-            builder.append(standard);
-        }
-        System.out.println("+-----------------------------------------+");
-        System.out.println("Heavy Containers: \n");
-        for (ArrayList<HeavyContainer> heavy : heavyContainer) {
-            System.out.println(heavy);
-            builder.append(heavy);
-        }
-        System.out.println("+-----------------------------------------+");
-        System.out.println("Toxic Containers: \n");
-        for (ArrayList<ToxicContainer> toxic : toxicContainer) {
-            System.out.println(toxic);
-            builder.append(toxic);
-        }
-        System.out.println("+-----------------------------------------+");
-        System.out.println("Refrigerated Containers: \n");
-        for (ArrayList<RefrigeratedContainer> refrigerated : refrigeratedContainer) {
-            System.out.println(refrigerated);
-            builder.append(refrigerated);
-        }
-        System.out.println("+-----------------------------------------+");
-        for (ArrayList<LiquidContainer> liquid : liquidContainer) {
-            System.out.println(liquid);
-            builder.append(liquid);
-        }
-        System.out.println("+-----------------------------------------+");
-        for (ArrayList<ExplosiveContainer> explosive : explosiveContainer) {
-            System.out.println(explosive);
-            builder.append(explosive);
-        }
-        System.out.println("+-----------------------------------------+");
-    }
-
     //Overriding toString() method
     /** @returns unique ID and Name
      * Transport Origin

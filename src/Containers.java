@@ -53,7 +53,7 @@ public class Containers {
         userInput = scan.next();
         standardContainer.setCertificateInfo(userInput);
 
-        System.out.println("loading container");
+        System.out.println("-------------loading container-------------");
         standardContainer.loadContainer(Main.cargo);
 
         standardContainers.add(standardContainer);
@@ -98,6 +98,8 @@ public class Containers {
         System.out.print("Certificate Information: ");
         userInput = scan.next();
         heavyContainer.setCertificateInfo(userInput);
+        System.out.println("-------------loading container-------------");
+        heavyContainer.loadContainer(Main.cargo);
 
         heavyContainers.add(heavyContainer);
     }
@@ -141,6 +143,8 @@ public class Containers {
         System.out.print("Certificate Information: ");
         userInput = scan.next();
         refrigeratedContainer.setCertificateInfo(userInput);
+        System.out.println("-------------loading container-------------");
+        refrigeratedContainer.loadContainer(Main.cargo);
 
         refrigeratedContainers.add(refrigeratedContainer);
     }
@@ -184,6 +188,8 @@ public class Containers {
         System.out.print("Certificate Information: ");
         userInput = scan.next();
         liquidContainer.setCertificateInfo(userInput);
+        System.out.println("-------------loading container-------------");
+        liquidContainer.loadContainer(Main.cargo);
 
         liquidContainers.add(liquidContainer);
     }
@@ -227,6 +233,8 @@ public class Containers {
         System.out.print("Certificate Information: ");
         userInput = scan.next();
         toxicContainer.setCertificateInfo(userInput);
+        System.out.println("-------------loading container-------------");
+        toxicContainer.loadContainer(Main.cargo);
 
         toxicContainers.add(toxicContainer);
     }
@@ -270,6 +278,8 @@ public class Containers {
         System.out.print("Certificate Information: ");
         userInput = scan.next();
         explosiveContainer.setCertificateInfo(userInput);
+        System.out.println("-------------loading container-------------");
+        explosiveContainer.loadContainer(Main.cargo);
 
         explosiveContainers.add(explosiveContainer);
     }
