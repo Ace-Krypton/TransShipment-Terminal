@@ -163,7 +163,7 @@ public class Main {
                                                     case "5" -> {  //All Cargos
                                                         boolean isCargosEmpty = cargo.cargos.isEmpty();
                                                         if (isCargosEmpty)
-                                                            System.out.println("You have not added cargos to the one yet");
+                                                            System.out.println("You have not confirmed cargos yet");
                                                         for (ArrayList<String> cargosAsList : cargo.cargos) {
                                                             for (String cargosOne : cargosAsList)
                                                                 System.out.println(cargosOne);
@@ -183,7 +183,7 @@ public class Main {
 
                                         case "5" -> {   //Loading Cargo
                                             System.out.println("""
-                                                                Do you want to add all of your cargos to the container?
+                                                                Do you want to confirm all of your cargos?
                                                                               Type "Yes" to confirm""");
                                             System.out.print("> ");
                                             strInput = scan.next(); //User input

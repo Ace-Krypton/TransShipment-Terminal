@@ -70,7 +70,7 @@ public class Cargo {
         System.out.println("[2] Create Toxic Cargo");
         System.out.println("[3] Create Liquid Cargo");
         System.out.println("[4] Display Cargos");
-        System.out.println("[5] Add Cargos To Containers");
+        System.out.println("[5] Confirm cargos");
         System.out.println("[A] Back");
         System.out.println("\n+-----------------------------------------+");
     }
