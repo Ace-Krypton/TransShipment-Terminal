@@ -320,6 +320,7 @@ public class Containers {
         System.out.println("[4] Liquid Container");
         System.out.println("[5] Explosive Container");
         System.out.println("[6] Toxic Container");
+
         System.out.println("[A] Back");
         System.out.println("[?] Info About Containers");
         System.out.println("+-----------------------------------------+");
@@ -333,6 +334,7 @@ public class Containers {
         System.out.println("[4] Display Liquid Containers");
         System.out.println("[5] Display Explosive Containers");
         System.out.println("[6] Display Toxic Containers");
+
         System.out.println("[A] Back");
         System.out.println("+-----------------------------------------+");
     }
