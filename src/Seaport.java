@@ -51,85 +51,92 @@ public class Seaport implements ISeaport {
 
             System.out.print("> ");
             String userInput = scan.next();
+            do {
+                switch (userInput.toUpperCase(Locale.ROOT)) {
+                    case "1" -> {  //Standard Container
+                        System.out.println("+-----------------------------------------+");
+                        System.out.println("These are your standard containers");
+                        Containers.standardInfo();  //Printing standard containers
+                        System.out.println("+-----------------------------------------+");
+                        shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
+                        //Iterating through ArrayList of ArrayList and appending String contents to the builder
+                        for (ArrayList<StandardContainer> standards : shipObjects.standardContainer)
+                            for (StandardContainer standard : standards) shipObjects.builder.append("\n\t").append(standard);
+                        Containers.standardContainers.clear();  //Removes all the elements from collection
+                        Ships.capacity += 100;
+                    }
 
-            switch (userInput.toUpperCase(Locale.ROOT)) {
-                case "1" -> {  //Standard Container
-                    System.out.println("+-----------------------------------------+");
-                    System.out.println("These are your standard containers");
-                    Containers.standardInfo();  //Printing standard containers
-                    System.out.println("+-----------------------------------------+");
-                    shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<StandardContainer> standards : shipObjects.standardContainer)
-                        for (StandardContainer standard : standards) shipObjects.builder.append("\n\t").append(standard);
-                    Containers.standardContainers.clear();  //Removes all the elements from collection
+                    case "2" -> {  //Heavy Container
+                        System.out.println("+-----------------------------------------+");
+                        System.out.println("These are your heavy containers");
+                        Containers.heavyInfo();  //Printing heavy containers
+                        System.out.println("+-----------------------------------------+");
+                        shipObjects.heavyContainer.add(Containers.heavyContainers); //Adding heavy containers to the Ship
+                        //Iterating through ArrayList of ArrayList and appending String contents to the builder
+                        for (ArrayList<HeavyContainer> heavies : shipObjects.heavyContainer)
+                            for (HeavyContainer heavy : heavies) shipObjects.builder.append("\n\t").append(heavy);
+                        Containers.heavyContainers.clear(); //Removes all the elements from collection
+                        Ships.capacity += 100;
+                    }
+
+                    case "3" -> {  //Refrigerated Container
+                        System.out.println("+-----------------------------------------+");
+                        System.out.println("These are your refrigerated containers");
+                        Containers.refrigeratedInfo();  //Printing refrigerated containers
+                        System.out.println("+-----------------------------------------+");
+                        shipObjects.refrigeratedContainer.add(Containers.refrigeratedContainers); //Adding refrigerated containers to the Ship
+                        //Iterating through ArrayList of ArrayList and appending String contents to the builder
+                        for (ArrayList<RefrigeratedContainer> refrigerateds : shipObjects.refrigeratedContainer)
+                            for (RefrigeratedContainer refrigerated : refrigerateds) shipObjects.builder.append("\n\t").append(refrigerated);
+                        Containers.refrigeratedContainers.clear(); //Removes all the elements from collection
+                        Ships.capacity += 100;
+                    }
+
+                    case "4" -> {  //Liquid Container
+                        System.out.println("+-----------------------------------------+");
+                        System.out.println("These are your liquid containers");
+                        Containers.liquidInfo();  //Printing liquid containers
+                        System.out.println("+-----------------------------------------+");
+                        shipObjects.liquidContainer.add(Containers.liquidContainers); //Adding liquid containers to the Ship
+                        //Iterating through ArrayList of ArrayList and appending String contents to the builder
+                        for (ArrayList<LiquidContainer> liquids : shipObjects.liquidContainer)
+                            for (LiquidContainer liquid : liquids) shipObjects.builder.append("\n\t").append(liquid);
+                        Containers.liquidContainers.clear(); //Removes all the elements from collection
+                        Ships.capacity += 100;
+                    }
+
+                    case "5" -> {  //Explosive Container
+                        System.out.println("+-----------------------------------------+");
+                        System.out.println("These are your explosive containers");
+                        Containers.explosiveInfo();  //Printing explosive containers
+                        System.out.println("+-----------------------------------------+");
+                        shipObjects.explosiveContainer.add(Containers.explosiveContainers); //Adding explosive containers to the Ship
+                        //Iterating through ArrayList of ArrayList and appending String contents to the builder
+                        for (ArrayList<ExplosiveContainer> explosives : shipObjects.explosiveContainer)
+                            for (ExplosiveContainer explosive : explosives) shipObjects.builder.append("\n\t").append(explosive);
+                        Containers.explosiveContainers.clear(); //Removes all the elements from collection
+                        Ships.capacity += 100;
+                    }
+
+                    case "6" -> {  //Toxic Container
+                        System.out.println("+-----------------------------------------+");
+                        System.out.println("These are your toxic containers");
+                        Containers.toxicInfo();  //Printing toxic containers
+                        System.out.println("+-----------------------------------------+");
+                        shipObjects.toxicContainer.add(Containers.toxicContainers); //Adding toxic containers to the Ship
+                        //Iterating through ArrayList of ArrayList and appending String contents to the builder
+                        for (ArrayList<ToxicContainer> toxics : shipObjects.toxicContainer)
+                            for (ToxicContainer toxic : toxics) shipObjects.builder.append("\n\t").append(toxic);
+                        Containers.toxicContainers.clear(); //Removes all the elements from collection
+                        Ships.capacity += 100;
+                    }
+
+                    case "F" -> loop = false;
+
+                    case default ->
+                            System.out.println("Invalid Command, Please Try Again");
                 }
-
-                case "2" -> {  //Heavy Container
-                    System.out.println("+-----------------------------------------+");
-                    System.out.println("These are your heavy containers");
-                    Containers.heavyInfo();  //Printing heavy containers
-                    System.out.println("+-----------------------------------------+");
-                    shipObjects.heavyContainer.add(Containers.heavyContainers); //Adding heavy containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<HeavyContainer> heavies : shipObjects.heavyContainer)
-                        for (HeavyContainer heavy : heavies) shipObjects.builder.append("\n\t").append(heavy);
-                    Containers.heavyContainers.clear(); //Removes all the elements from collection
-                }
-
-                case "3" -> {  //Refrigerated Container
-                    System.out.println("+-----------------------------------------+");
-                    System.out.println("These are your refrigerated containers");
-                    Containers.refrigeratedInfo();  //Printing refrigerated containers
-                    System.out.println("+-----------------------------------------+");
-                    shipObjects.refrigeratedContainer.add(Containers.refrigeratedContainers); //Adding refrigerated containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<RefrigeratedContainer> refrigerateds : shipObjects.refrigeratedContainer)
-                        for (RefrigeratedContainer refrigerated : refrigerateds) shipObjects.builder.append("\n\t").append(refrigerated);
-                    Containers.refrigeratedContainers.clear(); //Removes all the elements from collection
-                }
-
-                case "4" -> {  //Liquid Container
-                    System.out.println("+-----------------------------------------+");
-                    System.out.println("These are your liquid containers");
-                    Containers.liquidInfo();  //Printing liquid containers
-                    System.out.println("+-----------------------------------------+");
-                    shipObjects.liquidContainer.add(Containers.liquidContainers); //Adding liquid containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<LiquidContainer> liquids : shipObjects.liquidContainer)
-                        for (LiquidContainer liquid : liquids) shipObjects.builder.append("\n\t").append(liquid);
-                    Containers.liquidContainers.clear(); //Removes all the elements from collection
-                }
-
-                case "5" -> {  //Explosive Container
-                    System.out.println("+-----------------------------------------+");
-                    System.out.println("These are your explosive containers");
-                    Containers.explosiveInfo();  //Printing explosive containers
-                    System.out.println("+-----------------------------------------+");
-                    shipObjects.explosiveContainer.add(Containers.explosiveContainers); //Adding explosive containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<ExplosiveContainer> explosives : shipObjects.explosiveContainer)
-                        for (ExplosiveContainer explosive : explosives) shipObjects.builder.append("\n\t").append(explosive);
-                    Containers.explosiveContainers.clear(); //Removes all the elements from collection
-                }
-
-                case "6" -> {  //Toxic Container
-                    System.out.println("+-----------------------------------------+");
-                    System.out.println("These are your toxic containers");
-                    Containers.toxicInfo();  //Printing toxic containers
-                    System.out.println("+-----------------------------------------+");
-                    shipObjects.toxicContainer.add(Containers.toxicContainers); //Adding toxic containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<ToxicContainer> toxics : shipObjects.toxicContainer)
-                        for (ToxicContainer toxic : toxics) shipObjects.builder.append("\n\t").append(toxic);
-                    Containers.toxicContainers.clear(); //Removes all the elements from collection
-                }
-
-                case "F" -> loop = false;
-
-                case default ->
-                        System.out.println("Invalid Command, Please Try Again");
-            }
+            } while (Ships.capacity >= 300);
         }
         ships.add(shipObjects);
     }

@@ -7,7 +7,7 @@ public class Ships implements IShips{
     private String homePort;  //For home port
     private String transportOrigin; //For transport origin
     private String destination; //For destination of the ship
-    //public double capacity;  //Ship's capacity
+    public static double capacity = 0;  //Ship's capacity
 
     //Static ArrayLists
     ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
