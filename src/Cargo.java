@@ -70,7 +70,7 @@ public class Cargo {
         System.out.println("[2] Create Toxic Cargo");
         System.out.println("[3] Create Liquid Cargo");
         System.out.println("[4] Display Cargos");
-        System.out.println("[5] Confirm cargos");
+        System.out.println("[5] Confirm cargos\n");
         System.out.println("[A] Back");
         System.out.println("\n+-----------------------------------------+");
     }
@@ -79,7 +79,7 @@ public class Cargo {
     public void cargoToxicMenu() {
         System.out.println("\n+-----------------------------------------+");
         System.out.println("[1] Create Toxic Liquid Cargo");
-        System.out.println("[2] Create Toxic Powdery Cargo");
+        System.out.println("[2] Create Toxic Powdery Cargo\n");
         System.out.println("[A] Back");
         System.out.println("\n+-----------------------------------------+");
     }
@@ -91,8 +91,7 @@ public class Cargo {
         System.out.println("[2] Display Toxic Powdery Cargos");
         System.out.println("[3] Display Liquid Cargos");
         System.out.println("[4] Display Explosive Cargos");
-        System.out.println("[5] Display All Cargos");
-
+        System.out.println("[5] Display All Cargos\n");
         System.out.println("[A] Back");
         System.out.println("\n+-----------------------------------------+");
     }

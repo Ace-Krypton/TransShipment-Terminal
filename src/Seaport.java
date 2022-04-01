@@ -46,8 +46,7 @@ public class Seaport implements ISeaport {
             System.out.println("[3] Refrigerated Container");
             System.out.println("[4] Liquid Container");
             System.out.println("[5] Explosive Container");
-            System.out.println("[6] Toxic Container");
-
+            System.out.println("[6] Toxic Container\n");
             System.out.println("[F] If You Finished With Adding Press \"F\"");
 
             System.out.print("> ");
@@ -157,8 +156,7 @@ public class Seaport implements ISeaport {
         System.out.println("[2] Warehouse For Ships");
         System.out.println("[3] Create Cargo");
         System.out.println("[4] Create Container");
-        System.out.println("[5] Warehouse For Container");
-
+        System.out.println("[5] Warehouse For Container\n");
         System.out.println("[A] Back");
         System.out.println("+-----------------------------------------+");
     }
