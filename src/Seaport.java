@@ -118,6 +118,23 @@ public class Seaport implements ISeaport {
                     Containers.toxicInfo();  //Printing toxic containers
                     System.out.println("+-----------------------------------------+");
                     shipObjects.capacity = ToxicContainer.capacity + ToxicContainer.toxicCapacityWithoutCargo;
+                    while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
+                        System.out.println("""
+                                   You have exceed the maximum capacity for Ship
+                                   In other words you have shit ton of cargo
+                                            You must unload cargo""");
+                        System.out.println("These are your containers:");
+                        int count = 0;
+                        for (String toxic : ToxicContainer.toxicPowderyContainer) {
+                            count++;
+                            System.out.println(count + ". " + toxic);
+                        }
+                        System.out.print("> ");
+                        String inputUser = scan.next();
+                        ToxicContainer.toxicPowderyContainer.remove(inputUser);
+                        ToxicContainer.capacity -= 100;
+                        shipObjects.capacity -= 100;
+                    }
                     shipObjects.toxicContainer.add(Containers.toxicContainers); //Adding toxic containers to the Ship
                     //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<ToxicContainer> toxics : shipObjects.toxicContainer)

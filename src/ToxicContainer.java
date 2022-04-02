@@ -3,7 +3,7 @@ import java.util.Locale;
 
 public class ToxicContainer extends HeavyContainer {
     //ArrayList for toxic containers
-    ArrayList<String> toxicPowderyContainer = new ArrayList<>();
+    static ArrayList<String> toxicPowderyContainer = new ArrayList<>();
     ArrayList<String> toxicLiquidContainer = new ArrayList<>();
 
     //For unique ID
@@ -81,7 +81,7 @@ public class ToxicContainer extends HeavyContainer {
                             if (userInput.equalsIgnoreCase(cargoAsList) && cargo.toxicPowderyCargos.contains(userInput)) {
                                 //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                                 toxicPowderyContainer.add(cargoAsList);
-                                capacity += 200;
+                                capacity += 100;
                             }
                         }
                     }
