@@ -192,7 +192,7 @@ public class Seaport implements ISeaport {
                         for (String refrigerated : RefrigeratedContainer.refrigeratedContainer) {
                             if (inputUser.equalsIgnoreCase(refrigerated) && RefrigeratedContainer.refrigeratedContainer.contains(inputUser)) {
                                 removalList.add(refrigerated);
-                                HeavyContainer.capacity -= 100;
+                                RefrigeratedContainer.capacity -= 100;
                                 shipObjects.capacity -= 100;
                             }
                         }
@@ -261,6 +261,45 @@ public class Seaport implements ISeaport {
                     System.out.println("These are your explosive containers");
                     Containers.explosiveInfo();  //Printing explosive containers
                     System.out.println("+-----------------------------------------+");
+                    shipObjects.capacity = ExplosiveContainer.capacity + ExplosiveContainer.explosiveCapacityWithoutCargo;
+                    while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
+                        System.out.println("""
+                                   You have exceed the maximum capacity for Ship
+                                     In other words you have shit ton of cargo
+                                               You must unload cargo""");
+                        System.out.println("These are your containers:");
+                        int count = 0;  //Just a number that comes before out cargos nothing special
+
+                        //Prints all the cargos inside of container
+                        for (String explosive : ExplosiveContainer.explosiveContainer) {
+                            count++;
+                            System.out.println(count + ". " + explosive);
+                        }
+
+                        //User input
+                        System.out.print("> ");
+                        String inputUser = scan.next();
+
+                        /*
+                         * I experienced that you cannot remove elements from an arraylist
+                         *     by just browsing it with "for each" loop it gives you ConcurrentModificationException.
+                         * So I created a loop that finds the elements that has to be removed from our list
+                         *     Then I am adding elements to that arraylist.
+                         * After adding elements to my "removalList" I am removing them with using
+                         *     list.removeAll(another Collection) command to remove them.
+                         * BTW, I know you can do it with Iterator, but I don't know how to use it correctly yet :)
+                         */
+
+                        ArrayList<String> removalList = new ArrayList<>();
+                        for (String explosive : ExplosiveContainer.explosiveContainer) {
+                            if (inputUser.equalsIgnoreCase(explosive) && ExplosiveContainer.explosiveContainer.contains(inputUser)) {
+                                removalList.add(explosive);
+                                ExplosiveContainer.capacity -= 100;
+                                shipObjects.capacity -= 100;
+                            }
+                        }
+                        ExplosiveContainer.explosiveContainer.removeAll(removalList);
+                    }
                     shipObjects.explosiveContainer.add(Containers.explosiveContainers); //Adding explosive containers to the Ship
                     //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<ExplosiveContainer> explosives : shipObjects.explosiveContainer)

@@ -5,7 +5,7 @@ public class ExplosiveContainer extends StandardContainer {
     //Scanner for user input
     Scanner scan = new Scanner(System.in);
     //ArrayList of explosive containers
-    ArrayList<String> explosiveContainer = new ArrayList<>();
+    static ArrayList<String> explosiveContainer = new ArrayList<>();
 
     //For unique ID
     private static int _id;
@@ -18,6 +18,8 @@ public class ExplosiveContainer extends StandardContainer {
     private double netWeight;
     private double grossWeight;
     private String certificateInfo;
+    public static double explosiveCapacityWithoutCargo = 100;
+    public static double capacity = 0;
 
     public ExplosiveContainer() {
         ++_id;
@@ -71,6 +73,7 @@ public class ExplosiveContainer extends StandardContainer {
                     if (userInput.equalsIgnoreCase(cargoAsList) && cargo.explosiveCargos.contains(userInput)) {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                         explosiveContainer.add(cargoAsList);
+                        capacity += 50;
                     }
                 }
             }
