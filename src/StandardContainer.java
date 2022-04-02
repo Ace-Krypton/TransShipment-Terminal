@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class StandardContainer {
     //ArrayList for standard containers
-    ArrayList<String> standardContainer = new ArrayList<>();
+    static ArrayList<String> standardContainer = new ArrayList<>();
 
     //Scanner for user input
     Scanner scan = new Scanner(System.in);
@@ -19,6 +19,8 @@ public class StandardContainer {
     private double netWeight;
     private double grossWeight;
     private String certificateInfo;
+    public static double standardCapacityWithoutCargo = 100;
+    public static double capacity = 0;
 
     public StandardContainer() {
         ++_id;
@@ -68,6 +70,7 @@ public class StandardContainer {
                     if (userInput.equalsIgnoreCase(cargoAsList) && cargoAsList.contains(userInput)) {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                         standardContainer.add(cargoAsList);
+                        capacity += 50;
                         //cargosOne.remove(cargoAsList);  //MUST FIX! ~ Find a way to compare ArrayList<ArrayList<String>> with ArrayList<String>
                     }
                 }

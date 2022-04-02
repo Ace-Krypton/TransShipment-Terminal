@@ -57,6 +57,45 @@ public class Seaport implements ISeaport {
                     System.out.println("These are your standard containers");
                     Containers.standardInfo();  //Printing standard containers
                     System.out.println("+-----------------------------------------+");
+                    shipObjects.capacity = StandardContainer.capacity + StandardContainer.standardCapacityWithoutCargo;
+                    while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
+                        System.out.println("""
+                                   You have exceed the maximum capacity for Ship
+                                     In other words you have shit ton of cargo
+                                               You must unload cargo""");
+                        System.out.println("These are your containers:");
+                        int count = 0;  //Just a number that comes before out cargos nothing special
+
+                        //Prints all the cargos inside of container
+                        for (String standard : StandardContainer.standardContainer) {
+                            count++;
+                            System.out.println(count + ". " + standard);
+                        }
+
+                        //User input
+                        System.out.print("> ");
+                        String inputUser = scan.next();
+
+                        /*
+                         * I experienced that you cannot remove elements from an arraylist
+                         *     by just browsing it with "for each" loop it gives you ConcurrentModificationException.
+                         * So I created a loop that finds the elements that has to be removed from our list
+                         *     Then I am adding elements to that arraylist.
+                         * After adding elements to my "removalList" I am removing them with using
+                         *     list.removeAll(another Collection) command to remove them.
+                         * BTW, I know you can do it with Iterator, but I don't know how to use it correctly yet :)
+                         */
+
+                        ArrayList<String> removalList = new ArrayList<>();
+                        for (String standard : StandardContainer.standardContainer) {
+                            if (inputUser.equalsIgnoreCase(standard) && StandardContainer.standardContainer.contains(inputUser)) {
+                                removalList.add(standard);
+                                StandardContainer.capacity -= 100;
+                                shipObjects.capacity -= 100;
+                            }
+                        }
+                        StandardContainer.standardContainer.removeAll(removalList);
+                    }
                     shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
                     //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<StandardContainer> standards : shipObjects.standardContainer)
@@ -69,6 +108,45 @@ public class Seaport implements ISeaport {
                     System.out.println("These are your heavy containers");
                     Containers.heavyInfo();  //Printing heavy containers
                     System.out.println("+-----------------------------------------+");
+                    shipObjects.capacity = HeavyContainer.capacity + HeavyContainer.standardCapacityWithoutCargo;
+                    while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
+                        System.out.println("""
+                                   You have exceed the maximum capacity for Ship
+                                     In other words you have shit ton of cargo
+                                               You must unload cargo""");
+                        System.out.println("These are your containers:");
+                        int count = 0;  //Just a number that comes before out cargos nothing special
+
+                        //Prints all the cargos inside of container
+                        for (String heavy : HeavyContainer.heavyContainer) {
+                            count++;
+                            System.out.println(count + ". " + heavy);
+                        }
+
+                        //User input
+                        System.out.print("> ");
+                        String inputUser = scan.next();
+
+                        /*
+                         * I experienced that you cannot remove elements from an arraylist
+                         *     by just browsing it with "for each" loop it gives you ConcurrentModificationException.
+                         * So I created a loop that finds the elements that has to be removed from our list
+                         *     Then I am adding elements to that arraylist.
+                         * After adding elements to my "removalList" I am removing them with using
+                         *     list.removeAll(another Collection) command to remove them.
+                         * BTW, I know you can do it with Iterator, but I don't know how to use it correctly yet :)
+                         */
+
+                        ArrayList<String> removalList = new ArrayList<>();
+                        for (String heavy : HeavyContainer.heavyContainer) {
+                            if (inputUser.equalsIgnoreCase(heavy) && HeavyContainer.heavyContainer.contains(inputUser)) {
+                                removalList.add(heavy);
+                                HeavyContainer.capacity -= 100;
+                                shipObjects.capacity -= 100;
+                            }
+                        }
+                        HeavyContainer.heavyContainer.removeAll(removalList);
+                    }
                     shipObjects.heavyContainer.add(Containers.heavyContainers); //Adding heavy containers to the Ship
                     //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (ArrayList<HeavyContainer> heavies : shipObjects.heavyContainer)
@@ -124,15 +202,27 @@ public class Seaport implements ISeaport {
                                      In other words you have shit ton of cargo
                                                You must unload cargo""");
                         System.out.println("These are your containers:");
-                        int count = 0;
+                        int count = 0;  //Just a number that comes before out cargos nothing special
 
-                        for (String toxic : ToxicContainer.toxicPowderyContainer) { //Prints all the cargos inside of container
+                        //Prints all the cargos inside of container
+                        for (String toxic : ToxicContainer.toxicPowderyContainer) {
                             count++;
                             System.out.println(count + ". " + toxic);
                         }
 
+                        //User input
                         System.out.print("> ");
                         String inputUser = scan.next();
+
+                        /*
+                         * I experienced that you cannot remove elements from an arraylist
+                         *     by just browsing it with "for each" loop it gives you ConcurrentModificationException.
+                         * So I created a loop that finds the elements that has to be removed from our list
+                         *     Then I am adding elements to that arraylist.
+                         * After adding elements to my "removalList" I am removing them with using
+                         *     list.removeAll(another Collection) command to remove them.
+                         * BTW, I know you can do it with Iterator, but I don't know how to use it correctly yet :)
+                         */
 
                         ArrayList<String> removalList = new ArrayList<>();
                         for (String toxic : ToxicContainer.toxicPowderyContainer) {

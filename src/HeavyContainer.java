@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class HeavyContainer extends StandardContainer {
     //ArrayList for heavy containers
-    ArrayList<String> heavyContainer = new ArrayList<>();
+    static ArrayList<String> heavyContainer = new ArrayList<>();
 
     //For unique ID
     private static int _id;
@@ -15,6 +15,8 @@ public class HeavyContainer extends StandardContainer {
     private double netWeight;
     private double grossWeight;
     private String certificateInfo;
+    public static double heavyCapacityWithoutCargo = 100;
+    public static double capacity = 0;
 
     public HeavyContainer() {
         ++_id;
@@ -64,6 +66,7 @@ public class HeavyContainer extends StandardContainer {
                     if (userInput.equalsIgnoreCase(cargoAsList) && cargoAsList.contains(userInput)) {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                         heavyContainer.add(cargoAsList);
+                        capacity += 50;
                     }
                 }
             }
