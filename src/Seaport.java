@@ -121,19 +121,28 @@ public class Seaport implements ISeaport {
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
                                    You have exceed the maximum capacity for Ship
-                                   In other words you have shit ton of cargo
-                                            You must unload cargo""");
+                                     In other words you have shit ton of cargo
+                                               You must unload cargo""");
                         System.out.println("These are your containers:");
                         int count = 0;
-                        for (String toxic : ToxicContainer.toxicPowderyContainer) {
+
+                        for (String toxic : ToxicContainer.toxicPowderyContainer) { //Prints all the cargos inside of container
                             count++;
                             System.out.println(count + ". " + toxic);
                         }
+
                         System.out.print("> ");
                         String inputUser = scan.next();
-                        ToxicContainer.toxicPowderyContainer.remove(inputUser);
-                        ToxicContainer.capacity -= 100;
-                        shipObjects.capacity -= 100;
+
+                        ArrayList<String> removalList = new ArrayList<>();
+                        for (String toxic : ToxicContainer.toxicPowderyContainer) {
+                            if (inputUser.equalsIgnoreCase(toxic) && ToxicContainer.toxicPowderyContainer.contains(inputUser)) {
+                                removalList.add(toxic);
+                                ToxicContainer.capacity -= 100;
+                                shipObjects.capacity -= 100;
+                            }
+                        }
+                        ToxicContainer.toxicPowderyContainer.removeAll(removalList);
                     }
                     shipObjects.toxicContainer.add(Containers.toxicContainers); //Adding toxic containers to the Ship
                     //Iterating through ArrayList of ArrayList and appending String contents to the builder
