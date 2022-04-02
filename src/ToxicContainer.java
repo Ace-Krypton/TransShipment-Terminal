@@ -17,6 +17,8 @@ public class ToxicContainer extends HeavyContainer {
     private double netWeight;
     private double grossWeight;
     private String certificateInfo;
+    public static double toxicCapacityWithoutCargo = 100;
+    public static double capacity = 0;
 
     public ToxicContainer() {
         ++_id;
@@ -79,6 +81,7 @@ public class ToxicContainer extends HeavyContainer {
                             if (userInput.equalsIgnoreCase(cargoAsList) && cargo.toxicPowderyCargos.contains(userInput)) {
                                 //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                                 toxicPowderyContainer.add(cargoAsList);
+                                capacity += 200;
                             }
                         }
                     }
@@ -106,6 +109,7 @@ public class ToxicContainer extends HeavyContainer {
                             if (userInput.equalsIgnoreCase(cargoAsList) && cargo.toxicLiquidCargos.contains(userInput)) {
                                 //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                                 toxicLiquidContainer.add(cargoAsList);
+                                capacity += 10;
                             }
                         }
                     }
