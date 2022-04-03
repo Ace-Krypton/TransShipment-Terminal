@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class StandardContainer {
     //ArrayList for standard containers
     static ArrayList<String> standardContainer = new ArrayList<>();
+    //For storing elements that will remove soon
+    ArrayList<String> removalList = new ArrayList<>();
 
     //Scanner for user input
     Scanner scan = new Scanner(System.in);
@@ -70,10 +72,15 @@ public class StandardContainer {
                     if (userInput.equalsIgnoreCase(cargoAsList) && cargoAsList.contains(userInput)) {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                         standardContainer.add(cargoAsList);
+                        removalList.add(cargoAsList);
                         capacity += 50;
-                        //cargosOne.remove(cargoAsList);  //MUST FIX! ~ Find a way to compare ArrayList<ArrayList<String>> with ArrayList<String>
                     }
                 }
+            }
+
+            //Same method that I used in Seaport class, storing used cargos in arraylist then removing them
+            for (ArrayList<String> cargosOne : cargo.cargos) {
+                cargosOne.removeAll(removalList);
             }
 
             System.out.println("You wanna add more? Press \"Y\" For Yes, \"N\" For No");
