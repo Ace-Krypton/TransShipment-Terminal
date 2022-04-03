@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class RefrigeratedContainer extends HeavyContainer{
     //ArrayList for refrigerated containers
     static ArrayList<String> refrigeratedContainer = new ArrayList<>();
+    //For storing elements that will remove soon
+    ArrayList<String> removalList = new ArrayList<>();
 
     //For unique ID
     private static int _id;
@@ -86,9 +88,15 @@ public class RefrigeratedContainer extends HeavyContainer{
                     if (userInput.equalsIgnoreCase(cargoAsList) && cargoAsList.contains(userInput)) {
                         //Then adds that cargo to the list, the reason behind adding "cargoAsList" is that user input is not case-sensitive
                         refrigeratedContainer.add(cargoAsList);
+                        removalList.add(cargoAsList);
                         capacity += 50;
                     }
                 }
+            }
+
+            //Same method that I used in Seaport class, storing used cargos in arraylist then removing them
+            for (ArrayList<String> cargosOne : cargo.cargos) {
+                cargosOne.removeAll(removalList);
             }
 
             System.out.println("You wanna add more? Press \"Y\" For Yes, \"N\" For No");

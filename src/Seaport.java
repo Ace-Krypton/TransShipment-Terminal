@@ -108,7 +108,7 @@ public class Seaport implements ISeaport {
                     System.out.println("These are your heavy containers");
                     Containers.heavyInfo();  //Printing heavy containers
                     System.out.println("+-----------------------------------------+");
-                    shipObjects.capacity = HeavyContainer.capacity + HeavyContainer.standardCapacityWithoutCargo;
+                    shipObjects.capacity = HeavyContainer.capacity + HeavyContainer.heavyCapacityWithoutCargo;
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
                                    You have exceed the maximum capacity for Ship
