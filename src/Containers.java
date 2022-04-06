@@ -68,7 +68,7 @@ public class Containers {
         System.out.println("+-----------------------------------------+");
         endTime = System.currentTimeMillis();
         long timeElapsed = endTime - startTime;
-        if (timeElapsed >= 70000) {
+        if (timeElapsed >= 10000) {
             for (StandardContainer containers : standardContainers) {
                 containers.setSender(null);
                 containers.setCertificateInfo(null);
