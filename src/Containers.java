@@ -26,6 +26,8 @@ public class Containers {
     Scanner scan = new Scanner(System.in);
     String userInput;   //For user input
     double doubleInput; //For specific values
+    static long startTime;
+    static long endTime;
 
     //Method for creating new Standard Container
     public void createStandardContainer(StandardContainer standardContainer) {
@@ -57,16 +59,32 @@ public class Containers {
         standardContainer.loadContainer(Main.cargo);
 
         standardContainers.add(standardContainer);
+
+        startTime = System.currentTimeMillis();
     }
 
     //Standard Container Info
     public static void standardInfo() {
         System.out.println("+-----------------------------------------+");
+        endTime = System.currentTimeMillis();
+        long timeElapsed = endTime - startTime;
+        if (timeElapsed >= 70000) {
+            for (StandardContainer containers : standardContainers) {
+                containers.setSender(null);
+                containers.setCertificateInfo(null);
+                containers.setGrossWeight(0);
+                containers.setInfoSecurity(null);
+                containers.setNetWeight(0);
+                containers.setTare(0);
+                StandardContainer.standardContainer.clear();
+            }
+        }
+
         //Checks if List is empty or not
         boolean isEmpty = standardContainers.isEmpty();
         if (isEmpty)
             System.out.println("You don't have any standard containers right now");
-        else{
+        else {
             for (StandardContainer containers : standardContainers) {
                 System.out.println(containers);
             }

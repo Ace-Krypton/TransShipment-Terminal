@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Ships implements IShips{
+public class Ships {
     private static int _id; //No one could change unique ID from outside
     public int ID;  //For unique ID
     private String name;  //Indicates the name of the ship

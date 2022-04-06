@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Seaport implements ISeaport {
+public class Seaport {
     Scanner scan = new Scanner(System.in);  //Scanner for User input
     public ArrayList<Ships> ships = new ArrayList<>();  //ArrayList for ships
     private String name;   //Name of the seaport

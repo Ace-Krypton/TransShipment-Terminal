@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class StandardContainer {
     //ArrayList for standard containers
     static ArrayList<String> standardContainer = new ArrayList<>();
+
     //For storing elements that will remove soon
     ArrayList<String> removalList = new ArrayList<>();
 
