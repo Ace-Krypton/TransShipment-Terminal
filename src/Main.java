@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Locale;
@@ -61,6 +63,15 @@ public class Main {
                             case "2" -> //Warehouse for ships
                                     seaport.listInfo(); //Printing the elements of "ships" ArrayList
 
+                            case "10" -> {
+                                try {
+                                    FileWriter writer = new FileWriter("/home/draco/outputTTT.txt");
+                                    System.out.println("----------------------------------");
+                                    seaport.printInfo(writer);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
 
                             case "3" -> {  //Create Cargos
                                 CARGOLOOP:
@@ -84,7 +95,7 @@ public class Main {
                                                 strInput = scan.next(); //Getting the input from user
 
                                                 switch (strInput.toUpperCase(Locale.ROOT)) {
-                                                    case "1" -> { //Toxic Liquid
+                                                    case "1" -> {  //Toxic Liquid
                                                         System.out.print("Enter the name of the cargo (Toxic Liquid): ");
                                                         strInput = scan.next(); //User input
                                                         cargo.toxicLiquidCargos.add(strInput);
@@ -213,7 +224,6 @@ public class Main {
                                             container.createStandardContainer(new StandardContainer());
                                             System.out.println("Standard Container Created!");
                                         }
-
 
                                         case "2" -> {  //Heavy Container
                                             container.createHeavyContainer(new HeavyContainer());

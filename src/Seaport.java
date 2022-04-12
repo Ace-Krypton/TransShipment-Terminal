@@ -1,12 +1,14 @@
-import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 
 public class Seaport {
     Scanner scan = new Scanner(System.in);  //Scanner for User input
     public ArrayList<Ships> ships = new ArrayList<>();  //ArrayList for ships
     private String name;   //Name of the seaport
     String userInput;   //For user input
+
+    static ArrayList<String> list = new ArrayList<>();  //For output
 
     //Getters and Setters
     public String getName() {
@@ -379,6 +381,26 @@ public class Seaport {
                 System.out.println(shipList);
             }
         }
+    }
+
+    public void printInfo(FileWriter writer) throws IOException {
+        System.out.println("+-----------------------------------------+");
+        Collections.sort(list);
+        //Checks if List is empty or not
+        boolean isEmpty = ships.isEmpty();
+        if (isEmpty)
+            System.out.println("You don't have any ships right now");
+        else {
+            for (Ships shipsAsList : ships) {
+                list.add(String.valueOf(shipsAsList));
+            }
+        }
+
+        for (String l : list) {
+            writer.write(String.valueOf(l));
+            System.out.println(l);
+        }
+        writer.close();
     }
 
     //Menu For Seaport
