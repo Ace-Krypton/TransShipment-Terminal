@@ -58,8 +58,16 @@ public class Seaport {
                     System.out.println("+-----------------------------------------+");
                     System.out.println("These are your standard containers");
                     Containers.standardInfo();  //Printing standard containers
+                    System.out.print("Which one you want to add (Please enter the ID) : ");
+                    int addCon = scan.nextInt();
+                    for (StandardContainer standard : Containers.standardContainers) {
+                        if (addCon == standard.ID) {
+                            shipObjects.standardContainer.add(standard);
+                            shipObjects.capacity = StandardContainer.capacity + StandardContainer.standardCapacityWithoutCargo;
+                        }
+                    }
+                    //shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
                     System.out.println("+-----------------------------------------+");
-                    shipObjects.capacity = StandardContainer.capacity + StandardContainer.standardCapacityWithoutCargo;
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
                                    You have exceed the maximum capacity for Ship
@@ -98,10 +106,10 @@ public class Seaport {
                         }
                         StandardContainer.standardContainer.removeAll(removalList);
                     }
-                    shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
+                    //shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
                     //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<StandardContainer> standards : shipObjects.standardContainer)
-                            for (StandardContainer standard : standards) shipObjects.builder.append("\n\t").append(standard);
+                    for (StandardContainer standards : shipObjects.standardContainer)
+                        shipObjects.builder.append("\n\t").append(standards);
                     Containers.standardContainers.clear();  //Removes all the elements from collection
                 }
 

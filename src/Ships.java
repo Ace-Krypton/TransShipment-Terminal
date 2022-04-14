@@ -10,7 +10,9 @@ public class Ships {
     public double capacity = 0;  //Ship's capacity
 
     //Static ArrayLists
-    ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
+    //ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
+    ArrayList<StandardContainer> standardContainer = new ArrayList<>();
+
     ArrayList<ArrayList<HeavyContainer>> heavyContainer = new ArrayList<>();
     ArrayList<ArrayList<ToxicContainer>> toxicContainer = new ArrayList<>();
     ArrayList<ArrayList<RefrigeratedContainer>> refrigeratedContainer = new ArrayList<>();
