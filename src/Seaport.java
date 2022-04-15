@@ -56,6 +56,7 @@ public class Seaport {
             switch (userInput.toUpperCase(Locale.ROOT)) {
                 case "1" -> {  //Standard Container
                     System.out.println("+-----------------------------------------+");
+                    ArrayList<StandardContainer> removalST = new ArrayList<>();
                     System.out.println("These are your standard containers");
                     Containers.standardInfo();  //Printing standard containers
                     System.out.print("Which one you want to add (Please enter the ID) : ");
@@ -64,8 +65,10 @@ public class Seaport {
                         if (addCon == standard.ID) {
                             shipObjects.standardContainer.add(standard);
                             shipObjects.capacity = StandardContainer.capacity + StandardContainer.standardCapacityWithoutCargo;
+                            removalST.add(standard); //Removes the element from collection
                         }
                     }
+                    Containers.standardContainers.removeAll(removalST);
                     //shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
                     System.out.println("+-----------------------------------------+");
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
@@ -110,7 +113,6 @@ public class Seaport {
                     //Iterating through ArrayList of ArrayList and appending String contents to the builder
                     for (StandardContainer standards : shipObjects.standardContainer)
                         shipObjects.builder.append("\n\t").append(standards);
-                    Containers.standardContainers.clear();  //Removes all the elements from collection
                 }
 
                 case "2" -> {  //Heavy Container
