@@ -11,7 +11,7 @@ public class Ships {
 
     //Static ArrayLists
     //ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
-    ArrayList<StandardContainer> standardContainer = new ArrayList<>();
+    ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
 
     ArrayList<ArrayList<HeavyContainer>> heavyContainer = new ArrayList<>();
     ArrayList<ArrayList<ToxicContainer>> toxicContainer = new ArrayList<>();

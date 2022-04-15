@@ -21,6 +21,7 @@ public class Seaport {
 
     //Creating Ships
     public void createShips(Ships shipObjects) {
+        ArrayList<StandardContainer> removalST = new ArrayList<>(); //ArrayList for elements that are supposed to removed
         System.out.print("Name Of The Ship: ");
         userInput = scan.next();
         shipObjects.setName(userInput); //Setting the name of the ship
@@ -56,19 +57,21 @@ public class Seaport {
             switch (userInput.toUpperCase(Locale.ROOT)) {
                 case "1" -> {  //Standard Container
                     System.out.println("+-----------------------------------------+");
-                    ArrayList<StandardContainer> removalST = new ArrayList<>();
                     System.out.println("These are your standard containers");
                     Containers.standardInfo();  //Printing standard containers
                     System.out.print("Which one you want to add (Please enter the ID) : ");
                     int addCon = scan.nextInt();
                     for (StandardContainer standard : Containers.standardContainers) {
-                        if (addCon == standard.ID) {
-                            shipObjects.standardContainer.add(standard);
+                        if (addCon == standard.ID && !(shipObjects.standardContainer.contains(Containers.standardContainers))) {
+                            //If user entered ID found it adds that
+                            shipObjects.standardContainer.add(Containers.standardContainers);
+                            //Adds all capacity to ship
                             shipObjects.capacity = StandardContainer.capacity + StandardContainer.standardCapacityWithoutCargo;
+                            //Adds element to the removal list
                             removalST.add(standard); //Removes the element from collection
                         }
                     }
-                    Containers.standardContainers.removeAll(removalST);
+                    Containers.standardContainers.removeAll(removalST); //Removes all elements from removalList
                     //shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
                     System.out.println("+-----------------------------------------+");
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
@@ -111,7 +114,7 @@ public class Seaport {
                     }
                     //shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
                     //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (StandardContainer standards : shipObjects.standardContainer)
+                    for (ArrayList<StandardContainer> standards : shipObjects.standardContainer)
                         shipObjects.builder.append("\n\t").append(standards);
                 }
 
