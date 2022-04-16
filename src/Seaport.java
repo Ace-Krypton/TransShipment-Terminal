@@ -21,7 +21,6 @@ public class Seaport {
 
     //Creating Ships
     public void createShips(Ships shipObjects) {
-        ArrayList<StandardContainer> removalST = new ArrayList<>(); //ArrayList for elements that are supposed to removed
         System.out.print("Name Of The Ship: ");
         userInput = scan.next();
         shipObjects.setName(userInput); //Setting the name of the ship
@@ -59,20 +58,8 @@ public class Seaport {
                     System.out.println("+-----------------------------------------+");
                     System.out.println("These are your standard containers");
                     Containers.standardInfo();  //Printing standard containers
-                    System.out.print("Which one you want to add (Please enter the ID) : ");
-                    int addCon = scan.nextInt();
-                    for (StandardContainer standard : Containers.standardContainers) {
-                        if (addCon == standard.ID && !(shipObjects.standardContainer.contains(Containers.standardContainers))) {
-                            //If user entered ID found it adds that
-                            shipObjects.standardContainer.add(Containers.standardContainers);
-                            //Adds all capacity to ship
-                            shipObjects.capacity = StandardContainer.capacity + StandardContainer.standardCapacityWithoutCargo;
-                            //Adds element to the removal list
-                            removalST.add(standard); //Removes the element from collection
-                        }
-                    }
-                    Containers.standardContainers.removeAll(removalST); //Removes all elements from removalList
-                    //shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
+                    //Adds all capacity to ship
+                    shipObjects.capacity = StandardContainer.capacity + StandardContainer.standardCapacityWithoutCargo;
                     System.out.println("+-----------------------------------------+");
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
@@ -112,10 +99,20 @@ public class Seaport {
                         }
                         StandardContainer.standardContainer.removeAll(removalList);
                     }
-                    //shipObjects.standardContainer.add(Containers.standardContainers); //Adding standard containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<StandardContainer> standards : shipObjects.standardContainer)
-                        shipObjects.builder.append("\n\t").append(standards);
+                    ArrayList<StandardContainer> removalST = new ArrayList<>(); //ArrayList for elements that are supposed to removed
+                    System.out.print("Which one you want to add (Please enter the ID) : ");
+                    int addCon = scan.nextInt();
+                    for (StandardContainer standard : Containers.standardContainers) {
+                        if (shipObjects.standardContainer.contains(standard)) shipObjects.standardContainer.remove(standard);
+                        else if (addCon == standard.ID) {
+                            //If user entered ID found it adds that
+                            shipObjects.standardContainer.add(standard);
+                            //Adds element to the removal list
+                            removalST.add(standard); //Removes the element from collection
+                            shipObjects.builder.append("\n\t").append(standard); //Iterating through ArrayList and appending String contents to the builder
+                        }
+                    }
+                    Containers.standardContainers.removeAll(removalST); //Removes all elements from removalList
                 }
 
                 case "2" -> {  //Heavy Container
@@ -162,11 +159,20 @@ public class Seaport {
                         }
                         HeavyContainer.heavyContainer.removeAll(removalList);
                     }
-                    shipObjects.heavyContainer.add(Containers.heavyContainers); //Adding heavy containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<HeavyContainer> heavies : shipObjects.heavyContainer)
-                        for (HeavyContainer heavy : heavies) shipObjects.builder.append("\n\t").append(heavy);
-                    Containers.heavyContainers.clear(); //Removes all the elements from collection
+                    ArrayList<HeavyContainer> removalST = new ArrayList<>(); //ArrayList for elements that are supposed to removed
+                    System.out.print("Which one you want to add (Please enter the ID) : ");
+                    int addCon = scan.nextInt();
+                    for (HeavyContainer heavy : Containers.heavyContainers) {
+                        if (shipObjects.heavyContainer.contains(heavy)) shipObjects.heavyContainer.remove(heavy);
+                        else if (addCon == heavy.ID) {
+                            //If user entered ID found it adds that
+                            shipObjects.heavyContainer.add(heavy);
+                            //Adds element to the removal list
+                            removalST.add(heavy); //Removes the element from collection
+                            shipObjects.builder.append("\n\t").append(heavy); //Iterating through ArrayList and appending String contents to the builder
+                        }
+                    }
+                    Containers.heavyContainers.removeAll(removalST); //Removes all elements from removalList
                 }
 
                 case "3" -> {  //Refrigerated Container
@@ -213,11 +219,20 @@ public class Seaport {
                         }
                         RefrigeratedContainer.refrigeratedContainer.removeAll(removalList);
                     }
-                    shipObjects.refrigeratedContainer.add(Containers.refrigeratedContainers); //Adding refrigerated containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<RefrigeratedContainer> refrigerateds : shipObjects.refrigeratedContainer)
-                        for (RefrigeratedContainer refrigerated : refrigerateds) shipObjects.builder.append("\n\t").append(refrigerated);
-                    Containers.refrigeratedContainers.clear(); //Removes all the elements from collection
+                    ArrayList<RefrigeratedContainer> removalST = new ArrayList<>(); //ArrayList for elements that are supposed to removed
+                    System.out.print("Which one you want to add (Please enter the ID) : ");
+                    int addCon = scan.nextInt();
+                    for (RefrigeratedContainer refrigerated : Containers.refrigeratedContainers) {
+                        if (shipObjects.refrigeratedContainer.contains(refrigerated)) shipObjects.refrigeratedContainer.remove(refrigerated);
+                        else if (addCon == refrigerated.ID) {
+                            //If user entered ID found it adds that
+                            shipObjects.refrigeratedContainer.add(refrigerated);
+                            //Adds element to the removal list
+                            removalST.add(refrigerated); //Removes the element from collection
+                            shipObjects.builder.append("\n\t").append(refrigerated); //Iterating through ArrayList and appending String contents to the builder
+                        }
+                    }
+                    Containers.refrigeratedContainers.removeAll(removalST); //Removes all elements from removalList
                 }
 
                 case "4" -> {  //Liquid Container
@@ -264,11 +279,20 @@ public class Seaport {
                         }
                         LiquidContainer.liquidContainer.removeAll(removalList);
                     }
-                    shipObjects.liquidContainer.add(Containers.liquidContainers); //Adding liquid containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<LiquidContainer> liquids : shipObjects.liquidContainer)
-                        for (LiquidContainer liquid : liquids) shipObjects.builder.append("\n\t").append(liquid);
-                    Containers.liquidContainers.clear(); //Removes all the elements from collection
+                    ArrayList<LiquidContainer> removalST = new ArrayList<>(); //ArrayList for elements that are supposed to removed
+                    System.out.print("Which one you want to add (Please enter the ID) : ");
+                    int addCon = scan.nextInt();
+                    for (LiquidContainer liquid : Containers.liquidContainers) {
+                        if (shipObjects.liquidContainer.contains(liquid)) shipObjects.liquidContainer.remove(liquid);
+                        else if (addCon == liquid.ID) {
+                            //If user entered ID found it adds that
+                            shipObjects.liquidContainer.add(liquid);
+                            //Adds element to the removal list
+                            removalST.add(liquid); //Removes the element from collection
+                            shipObjects.builder.append("\n\t").append(liquid); //Iterating through ArrayList and appending String contents to the builder
+                        }
+                    }
+                    Containers.liquidContainers.removeAll(removalST); //Removes all elements from removalList
                 }
 
                 case "5" -> {  //Explosive Container
@@ -315,11 +339,20 @@ public class Seaport {
                         }
                         ExplosiveContainer.explosiveContainer.removeAll(removalList);
                     }
-                    shipObjects.explosiveContainer.add(Containers.explosiveContainers); //Adding explosive containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<ExplosiveContainer> explosives : shipObjects.explosiveContainer)
-                        for (ExplosiveContainer explosive : explosives) shipObjects.builder.append("\n\t").append(explosive);
-                    Containers.explosiveContainers.clear(); //Removes all the elements from collection
+                    ArrayList<ExplosiveContainer> removalST = new ArrayList<>(); //ArrayList for elements that are supposed to removed
+                    System.out.print("Which one you want to add (Please enter the ID) : ");
+                    int addCon = scan.nextInt();
+                    for (ExplosiveContainer explosive : Containers.explosiveContainers) {
+                        if (shipObjects.explosiveContainer.contains(explosive)) shipObjects.explosiveContainer.remove(explosive);
+                        else if (addCon == explosive.ID) {
+                            //If user entered ID found it adds that
+                            shipObjects.explosiveContainer.add(explosive);
+                            //Adds element to the removal list
+                            removalST.add(explosive); //Removes the element from collection
+                            shipObjects.builder.append("\n\t").append(explosive); //Iterating through ArrayList and appending String contents to the builder
+                        }
+                    }
+                    Containers.explosiveContainers.removeAll(removalST); //Removes all elements from removalList
                 }
 
                 case "6" -> {  //Toxic Container
@@ -366,11 +399,20 @@ public class Seaport {
                         }
                         ToxicContainer.toxicPowderyContainer.removeAll(removalList);
                     }
-                    shipObjects.toxicContainer.add(Containers.toxicContainers); //Adding toxic containers to the Ship
-                    //Iterating through ArrayList of ArrayList and appending String contents to the builder
-                    for (ArrayList<ToxicContainer> toxics : shipObjects.toxicContainer)
-                        for (ToxicContainer toxic : toxics) shipObjects.builder.append("\n\t").append(toxic);
-                    Containers.toxicContainers.clear(); //Removes all the elements from collection
+                    ArrayList<ToxicContainer> removalST = new ArrayList<>(); //ArrayList for elements that are supposed to removed
+                    System.out.print("Which one you want to add (Please enter the ID) : ");
+                    int addCon = scan.nextInt();
+                    for (ToxicContainer toxic : Containers.toxicContainers) {
+                        if (shipObjects.toxicContainer.contains(toxic)) shipObjects.toxicContainer.remove(toxic);
+                        else if (addCon == toxic.ID) {
+                            //If user entered ID found it adds that
+                            shipObjects.toxicContainer.add(toxic);
+                            //Adds element to the removal list
+                            removalST.add(toxic); //Removes the element from collection
+                            shipObjects.builder.append("\n\t").append(toxic); //Iterating through ArrayList and appending String contents to the builder
+                        }
+                    }
+                    Containers.toxicContainers.removeAll(removalST); //Removes all elements from removalList
                 }
 
                 case "F" -> loop = false;

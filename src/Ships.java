@@ -8,19 +8,13 @@ public class Ships {
     private String transportOrigin; //For transport origin
     private String destination; //For destination of the ship
     public double capacity = 0;  //Ship's capacity
-
-    //Static ArrayLists
-    //ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
-    ArrayList<ArrayList<StandardContainer>> standardContainer = new ArrayList<>();
-
-    ArrayList<ArrayList<HeavyContainer>> heavyContainer = new ArrayList<>();
-    ArrayList<ArrayList<ToxicContainer>> toxicContainer = new ArrayList<>();
-    ArrayList<ArrayList<RefrigeratedContainer>> refrigeratedContainer = new ArrayList<>();
-    ArrayList<ArrayList<LiquidContainer>> liquidContainer = new ArrayList<>();
-    ArrayList<ArrayList<ExplosiveContainer>> explosiveContainer = new ArrayList<>();
-
+    ArrayList<StandardContainer> standardContainer = new ArrayList<>();
+    ArrayList<HeavyContainer> heavyContainer = new ArrayList<>();
+    ArrayList<ToxicContainer> toxicContainer = new ArrayList<>();
+    ArrayList<RefrigeratedContainer> refrigeratedContainer = new ArrayList<>();
+    ArrayList<LiquidContainer> liquidContainer = new ArrayList<>();
+    ArrayList<ExplosiveContainer> explosiveContainer = new ArrayList<>();
     StringBuilder builder = new StringBuilder();
-
 
     //Constructor
     public Ships() {
@@ -46,7 +40,9 @@ public class Ships {
     }
 
     //Overriding toString() method
-    /** @returns unique ID and Name
+
+    /**
+     * @returns unique ID and Name
      * Transport Origin
      * Home Port
      * Destination of the ship
@@ -54,10 +50,10 @@ public class Ships {
     @Override
     public String toString() {
         return ID + ". "
-                  + " Name: " + name
-                  + "\n\tTransport Origin: " + transportOrigin
-                  + "\n\tHome Port: " + homePort
-                  + "\n\tDestination: " + destination
-                  + "\n\t" + builder + "\n" + "+-----------------------------------------+";
+                + " Name: " + name
+                + "\n\tTransport Origin: " + transportOrigin
+                + "\n\tHome Port: " + homePort
+                + "\n\tDestination: " + destination
+                + "\n\t" + builder + "\n" + "+-----------------------------------------+";
     }
 }
