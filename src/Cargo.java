@@ -17,32 +17,12 @@ public class Cargo {
     ArrayList<String> toxicLiquidCargos = new ArrayList<>();
     ArrayList<String> liquidCargos = new ArrayList<>();
 
-    //Cargo Capacities
-    /*
-     *     final double cargoCapacityForToxic = 25;
-     *     final double cargoCapacityForExplosive = 25;
-     *     final double cargoCapacityForLiquid = 15;
-     */
-
     //Adding different cargos to the one cargo
     public void addCargos() {
         cargos.add(explosiveCargos);
         cargos.add(toxicPowderyCargos);
         cargos.add(toxicLiquidCargos);
         cargos.add(liquidCargos);
-
-//        Iterating through arraylist
-//        for (ArrayList<String> elements : cargos) {
-//            for (String element : elements) {
-//                /*
-//                 * https://www.geeksforgeeks.org/how-to-remove-duplicates-from-arraylist-in-java/
-//                 * If cargos arraylist contains its elements it is not going to add it
-//                 * Simply it does not add duplicate items
-//                 */
-//
-//                if (!cargos.contains(elements) || !elements.contains(element))
-//            }
-//        }
     }
 
     public void printCargos() {
