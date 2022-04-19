@@ -64,7 +64,6 @@ public class Seaport {
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
                                    You have exceed the maximum capacity for Ship
-                                     In other words you have shit ton of cargo
                                                You must unload cargo""");
                         System.out.println("These are your containers:");
                         int count = 0;  //Just a number that comes before out cargos nothing special
@@ -124,7 +123,6 @@ public class Seaport {
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
                                    You have exceed the maximum capacity for Ship
-                                     In other words you have shit ton of cargo
                                                You must unload cargo""");
                         System.out.println("These are your containers:");
                         int count = 0;  //Just a number that comes before out cargos nothing special
@@ -184,7 +182,6 @@ public class Seaport {
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
                                    You have exceed the maximum capacity for Ship
-                                     In other words you have shit ton of cargo
                                                You must unload cargo""");
                         System.out.println("These are your containers:");
                         int count = 0;  //Just a number that comes before out cargos nothing special
@@ -244,7 +241,6 @@ public class Seaport {
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
                                    You have exceed the maximum capacity for Ship
-                                     In other words you have shit ton of cargo
                                                You must unload cargo""");
                         System.out.println("These are your containers:");
                         int count = 0;  //Just a number that comes before out cargos nothing special
@@ -304,7 +300,6 @@ public class Seaport {
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
                                    You have exceed the maximum capacity for Ship
-                                     In other words you have shit ton of cargo
                                                You must unload cargo""");
                         System.out.println("These are your containers:");
                         int count = 0;  //Just a number that comes before out cargos nothing special
@@ -364,7 +359,6 @@ public class Seaport {
                     while (shipObjects.capacity >= 300) {  //If ship's capacity is equals or greater than 300 it will stop adding
                         System.out.println("""
                                    You have exceed the maximum capacity for Ship
-                                     In other words you have shit ton of cargo
                                                You must unload cargo""");
                         System.out.println("These are your containers:");
                         int count = 0;  //Just a number that comes before out cargos nothing special
@@ -440,22 +434,22 @@ public class Seaport {
 
     public void printInfo(FileWriter writer) throws IOException {
         System.out.println("+-----------------------------------------+");
-        Collections.sort(list);
+        Collections.sort(list); //Sorts the list
         //Checks if List is empty or not
-        boolean isEmpty = ships.isEmpty();
+        boolean isEmpty = ships.isEmpty();  //Checks is empty or not
         if (isEmpty)
             System.out.println("You don't have any ships right now");
         else {
             for (Ships shipsAsList : ships) {
-                list.add(String.valueOf(shipsAsList));
+                list.add(String.valueOf(shipsAsList));  //Adds String values of elements of Ship ArrayList
             }
         }
 
-        for (String l : list) {
-            writer.write(String.valueOf(l));
+        for (String l : list) { //Writing list to the file
+            writer.write(l + "\n");
             System.out.println(l);
         }
-        writer.close();
+        writer.close(); //Closing the stream
     }
 
     //Menu For Seaport
@@ -466,7 +460,8 @@ public class Seaport {
         System.out.println("[2] Warehouse For Ships");
         System.out.println("[3] Create Cargo");
         System.out.println("[4] Create Container");
-        System.out.println("[5] Warehouse For Container\n");
+        System.out.println("[5] Warehouse For Container");
+        System.out.println("[6] Write To File");
         System.out.println("[A] Back");
         System.out.println("+-----------------------------------------+");
     }

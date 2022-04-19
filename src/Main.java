@@ -63,16 +63,6 @@ public class Main {
                             case "2" -> //Warehouse for ships
                                     seaport.listInfo(); //Printing the elements of "ships" ArrayList
 
-                            case "10" -> {
-                                try {
-                                    FileWriter writer = new FileWriter("/home/draco/outputTTT.txt");
-                                    System.out.println("----------------------------------");
-                                    seaport.printInfo(writer);
-                                } catch (IOException e) {
-                                    throw new RuntimeException(e);
-                                }
-                            }
-
                             case "3" -> {  //Create Cargos
                                 CARGOLOOP:
                                 while (true) {  //For Cargos
@@ -295,6 +285,16 @@ public class Main {
                                         case default ->
                                                 System.out.println("Invalid Command, Please Try Again");
                                     }
+                                }
+                            }
+
+                            case "6" -> {
+                                try {
+                                    FileWriter writer = new FileWriter("/home/draco/outputTTT.txt");
+                                    System.out.println("----------------------------------");
+                                    seaport.printInfo(writer);
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
                                 }
                             }
 
