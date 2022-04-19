@@ -289,12 +289,19 @@ public class Main {
                             }
 
                             case "6" -> {
-                                try {
-                                    FileWriter writer = new FileWriter("/home/draco/outputTTT.txt");
-                                    System.out.println("----------------------------------");
-                                    seaport.printInfo(writer);
-                                } catch (IOException e) {
-                                    throw new RuntimeException(e);
+                                System.out.println("----------------------------------");
+                                if (seaport.ships.isEmpty())
+                                    System.out.println("Sorry you don't have any ships");
+                                else {
+                                    try {
+                                        System.out.print("Please enter the path that you wanna save the file: ");
+                                        strInput = scan.next(); //User input for path
+                                        FileWriter writer = new FileWriter(strInput);  //Passing strInput as an argument
+                                        System.out.println("----------------------------------");
+                                        seaport.printInfo(writer);
+                                    } catch (IOException e) {
+                                        throw new RuntimeException(e);
+                                    }
                                 }
                             }
 
