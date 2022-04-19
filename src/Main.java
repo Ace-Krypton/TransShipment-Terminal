@@ -344,7 +344,46 @@ public class Main {
                     System.out.println("Account Created Successfully!");
                 }
 
-                case "4" ->
+                case "4" -> System.out.println("""
+                                   * are important parts
+                                                       ~ Login System ~
+                                   First I want to start with login system that I wrote.
+                                   Login system uses hash table for storing passwords and usernames,
+                                   which are also known as keys and values, I used hash table because,
+                                   I know that hash table uses functions also known as algorithms to calculate
+                                   each index based on the key, which means we are saving time when we search from
+                                   our list, instead of using linear searching. And I think HashTable in Java is dynamic
+                                   that is why it is preventing possible collision.
+                                   
+                                   *You should create an account with pressing [3], and login to that account with [1] option
+                                   
+                                                       ~ After Login ~
+                                   After logged in, you should put the name for your seaport. First thing you will see is
+                                   gonna be 6 options. First let's start with creating cargos, cus you need cargos for your containers
+                                   right? Probably not :) But I created it anyways. *So you have to press [3] in order to create
+                                   cargo. When you press [3] you will see 5 options. *[1] will create Explosive cargos.
+                                   *[2] will create Toxic cargo, but there is two options with toxic cargo, you can create
+                                   toxic liquid or toxic powdery and they only goes to toxic container. *[3] will create liquid cargos.
+                                   *After you done with creating don't do back or don't do anything before you confirm them,
+                                   in order to confirm the cargos just press [5] and type "yes" to confirm. After that
+                                   do whatever you want. You could display your cargos or just go back with [A]. *When you go back,
+                                   you have to create container with pressing [4] and you will see bunch of options, just create
+                                   a container you want and load it with cargos with typing the names of cargos, but remember
+                                   you could only load toxic cargo to toxic container, and also in case of refrigerated container,
+                                   you have to connect it to the ship's internal network, when you create it, just type "connect"
+                                   in order to connect it to the ship's internal network. *You could also display this containers
+                                   with pressing [5] which is warehouse for containers. Also containers and cargos have their own weights
+                                   so you have to be careful to not overload your ship with containers. When you finished all of that
+                                   you can do the last step, which is creating your ship. *Press [1] to create ship, enter the fields
+                                   required by ship, then add container to it with typing the unique ID of container. *Finish your adding
+                                   process with pressing [F] and it is all done now you can see your ship from warehouse for ships
+                                   by pressing [2].
+                                   
+                                                       ~ File Output And Input~
+                                   I used FileWriter to write results to my file, actually user can enter the path for file.
+                                   *Press [6] to give the path and write results to the file.""");
+
+                case "5" ->
                         System.out.println("""
                                                           Ramiz Abbasov aka Krypton
                                            If you want to see progress I did with project check this out
@@ -367,7 +406,8 @@ public class Main {
         System.out.println("[1] Login Into Seaport Account");
         System.out.println("[2] Info About Existing Seaport Account");
         System.out.println("[3] Create A Seaport Account");
-        System.out.println("[4] Credits\n");
+        System.out.println("[4] Tutorial");
+        System.out.println("[5] Credits\n");
         System.out.println("[X] Exit");
         System.out.println("+-----------------------------------------+");
     }
