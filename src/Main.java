@@ -344,6 +344,12 @@ public class Main {
                     System.out.println("Account Created Successfully!");
                 }
 
+                case "4" ->
+                        System.out.println("""
+                                                          Ramiz Abbasov aka Krypton
+                                           If you want to see progress I did with project check this out
+                                              https://github.com/Ace-Krypton/TransShipment-Terminal""");
+
                 case "X" -> {  //Exit
                     System.out.println("Exiting....");
                     loopStop = false;
@@ -360,7 +366,8 @@ public class Main {
         System.out.println("+-----------------------------------------+");
         System.out.println("[1] Login Into Seaport Account");
         System.out.println("[2] Info About Existing Seaport Account");
-        System.out.println("[3] Create A Seaport Account\n");
+        System.out.println("[3] Create A Seaport Account");
+        System.out.println("[4] Credits\n");
         System.out.println("[X] Exit");
         System.out.println("+-----------------------------------------+");
     }
