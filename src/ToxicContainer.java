@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class ToxicContainer extends HeavyContainer {
+public class ToxicContainer extends HeavyContainer implements ILiquidable {
     //ArrayList for toxic containers
     static ArrayList<String> toxicPowderyContainer = new ArrayList<>();
     ArrayList<String> toxicLiquidContainer = new ArrayList<>();

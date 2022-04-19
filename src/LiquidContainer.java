@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class LiquidContainer extends StandardContainer {
+public class LiquidContainer extends StandardContainer implements ILiquidable {
     //ArrayList for liquid containers
     static ArrayList<String> liquidContainer = new ArrayList<>();
     //For storing elements that will remove soon
