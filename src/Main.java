@@ -379,7 +379,7 @@ public class Main {
                                    process with pressing [F] and it is all done now you can see your ship from warehouse for ships
                                    by pressing [2].
                                    
-                                                       ~ File Output And Input~
+                                                       ~ File Output And Input ~
                                    I used FileWriter to write results to my file, actually user can enter the path for file.
                                    *Press [6] to give the path and write results to the file.""");
 
