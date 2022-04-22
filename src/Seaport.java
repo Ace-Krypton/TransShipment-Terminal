@@ -456,23 +456,48 @@ public class Seaport {
 
     public void writeInfo(StringBuilder readData) {
         String name = null;
+        String transportOrigin = null;
+        String homePort = null;
+        String destination = null;
         String data = String.valueOf(readData);
         String[] split = data.split("[+]-----------------------------------------[+]");
 
-        //Name
         for (int count = 0; count < split.length - 1; count++) {
+            //Name
             Pattern namePattern = Pattern.compile("(\\d).*(Name)..(\\w+)");
-            Matcher matcher = namePattern.matcher(split[count]);
-            while (matcher.find()) {
-                name = matcher.group(3);
+            Matcher nameMatcher = namePattern.matcher(split[count]);
+            while (nameMatcher.find()) {
+                name = nameMatcher.group(3);
             }
+
+            //Transport origin
+            Pattern transportPattern = Pattern.compile(".(Transport Origin)..(\\w+)");
+            Matcher transportMatcher = transportPattern.matcher(split[count]);
+            while (transportMatcher.find()) {
+                transportOrigin = transportMatcher.group(2);
+            }
+
+            //Home port
+            Pattern homePortPattern = Pattern.compile(".(Home Port)..(\\w+)");
+            Matcher homePortMatcher = homePortPattern.matcher(split[count]);
+            while (homePortMatcher.find()) {
+                homePort = homePortMatcher.group(2);
+            }
+
+            //Destination
+            Pattern destinationPattern = Pattern.compile(".(Destination)..(\\w+)");
+            Matcher destinationMatcher = destinationPattern.matcher(split[count]);
+            while (destinationMatcher.find()) {
+                destination = destinationMatcher.group(2);
+            }
+
             Ships ship = new Ships();
             ship.setName(name);
+            ship.setTransportOrigin(transportOrigin);
+            ship.setHomePort(homePort);
+            ship.setDestination(destination);
             System.out.println(ship);
         }
-
-        //Home Port
-
     }
 
     //Menu For Seaport
