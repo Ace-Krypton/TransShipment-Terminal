@@ -1,6 +1,8 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Seaport {
     Scanner scan = new Scanner(System.in);  //Scanner for User input
@@ -450,6 +452,27 @@ public class Seaport {
             System.out.println(l);
         }
         writer.close(); //Closing the stream
+    }
+
+    public void writeInfo(StringBuilder readData) {
+        String name = null;
+        String data = String.valueOf(readData);
+        String[] split = data.split("[+]-----------------------------------------[+]");
+
+        //Name
+        for (int count = 0; count < split.length - 1; count++) {
+            Pattern namePattern = Pattern.compile("(\\d).*(Name)..(\\w+)");
+            Matcher matcher = namePattern.matcher(split[count]);
+            while (matcher.find()) {
+                name = matcher.group(3);
+            }
+            Ships ship = new Ships();
+            ship.setName(name);
+            System.out.println(ship);
+        }
+
+        //Home Port
+
     }
 
     //Menu For Seaport

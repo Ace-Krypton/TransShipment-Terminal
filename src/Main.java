@@ -1,5 +1,4 @@
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Locale;
@@ -15,7 +14,7 @@ public class Main {
     static Containers container = new Containers();
     static Seaport seaport = new Seaport(); //Creating new object of Seaport class
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ArrayList<Seaport> seaports = new ArrayList<>();
         Hashtable<String, String> userPass = new Hashtable<>();
         Scanner scan = new Scanner(System.in);  //For user input
@@ -288,9 +287,9 @@ public class Main {
                                 }
                             }
 
-                            case "6" -> {
+                            case "6" -> {  //FileWriter
                                 System.out.println("----------------------------------");
-                                if (seaport.ships.isEmpty())
+                                if (seaport.ships.isEmpty())  //Checks if it is empty or not
                                     System.out.println("Sorry you don't have any ships");
                                 else {
                                     try {
@@ -302,6 +301,27 @@ public class Main {
                                     } catch (IOException e) {
                                         throw new RuntimeException(e);
                                     }
+                                }
+                            }
+
+                            case "7" -> {  //Saving state (Reading from file)
+                                // Creating an object of BufferedReader class
+                                try {
+                                    //Getting path from the user
+                                    String path = scan.next();
+                                    //BufferedReader for reading the file
+                                    BufferedReader reader = new BufferedReader(new FileReader(path));
+                                    //StringBuilder because everytime we are appending string value
+                                    //For performance I used StringBuilder
+                                    StringBuilder read = new StringBuilder();
+                                    // Declaring a string variable
+                                    String st;
+                                    // Condition holds true till
+                                    // there is character in a string
+                                    while ((st = reader.readLine()) != null) read.append(st).append("\n");
+                                    seaport.writeInfo(read);
+                                } catch (FileNotFoundException e) {
+                                    throw new RuntimeException(e);
                                 }
                             }
 
