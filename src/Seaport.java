@@ -462,6 +462,9 @@ public class Seaport {
         String transportOrigin = null;
         String homePort = null;
         String destination = null;
+        String sender = null;
+        double tare = 0.0;
+        ArrayList<Object> containers = new ArrayList<>();
         //Converting readData which is StringBuilder to String with String.valueOf(readData)
         String data = String.valueOf(readData);
         //I used that to differentiate my ship's, that is why we need use split to count how many ship objects,
@@ -470,8 +473,8 @@ public class Seaport {
 
         //Using for loop, till we set all values to the ship objects
         for (int count = 0; count < split.length - 1; count++) {
-            //Name
             //I used pattern grouping to extract appropriate data
+            //Name
             Pattern namePattern = Pattern.compile("(\\d).*(Name)..(\\w+)");
             Matcher nameMatcher = namePattern.matcher(split[count]);
             while (nameMatcher.find()) {
@@ -505,6 +508,29 @@ public class Seaport {
             ship.setTransportOrigin(transportOrigin);
             ship.setHomePort(homePort);
             ship.setDestination(destination);
+
+            //Checks if it has container or not
+            for (String splits : split) {
+                if (splits.contains("Sender")) {
+                    //Sender
+                    Pattern senderPattern = Pattern.compile(".(\\d).*(Sender)..(\\w+)");
+                    Matcher senderMatcher = senderPattern.matcher(split[count]);
+                    while (senderMatcher.find()) {
+                        sender = senderMatcher.group(3);
+                    }
+                    containers.add(sender);
+
+                    //Sender
+                    Pattern tarePattern = Pattern.compile("(Tare)..(\\w+.*)");
+                    Matcher tareMatcher = tarePattern.matcher(split[count]);
+                    while (tareMatcher.find()) {
+                        tare = Double.parseDouble(tareMatcher.group(2));
+                    }
+                    containers.add(tare);
+                    ship.savedContainers.add(containers);
+                }
+            }
+
             System.out.println(ship);
         }
     }
