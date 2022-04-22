@@ -462,9 +462,9 @@ public class Seaport {
         String transportOrigin = null;
         String homePort = null;
         String destination = null;
-        String sender = null;
-        double tare = 0.0;
-        ArrayList<Object> containers = new ArrayList<>();
+        //String sender = null;
+        //double tare = 0.0;
+        //ArrayList<Object> containers = new ArrayList<>();
         //Converting readData which is StringBuilder to String with String.valueOf(readData)
         String data = String.valueOf(readData);
         //I used that to differentiate my ship's, that is why we need use split to count how many ship objects,
@@ -508,30 +508,29 @@ public class Seaport {
             ship.setTransportOrigin(transportOrigin);
             ship.setHomePort(homePort);
             ship.setDestination(destination);
+            System.out.println(ship);
 
             //Checks if it has container or not
-            for (String splits : split) {
-                if (splits.contains("Sender")) {
+            //for (String splits : split) {
+                //if (splits.contains("Sender")) {
                     //Sender
-                    Pattern senderPattern = Pattern.compile(".(\\d).*(Sender)..(\\w+)");
-                    Matcher senderMatcher = senderPattern.matcher(split[count]);
-                    while (senderMatcher.find()) {
-                        sender = senderMatcher.group(3);
-                    }
-                    containers.add(sender);
+                    //Pattern senderPattern = Pattern.compile(".(\\d).*(Sender)..(\\w+)");
+                    //Matcher senderMatcher = senderPattern.matcher(split[count]);
+                    //while (senderMatcher.find()) {
+                        //sender = senderMatcher.group(3);
+                    //}
+                    //containers.add(sender);
 
                     //Sender
-                    Pattern tarePattern = Pattern.compile("(Tare)..(\\w+.*)");
-                    Matcher tareMatcher = tarePattern.matcher(split[count]);
-                    while (tareMatcher.find()) {
-                        tare = Double.parseDouble(tareMatcher.group(2));
-                    }
-                    containers.add(tare);
-                    ship.savedContainers.add(containers);
-                }
-            }
-
-            System.out.println(ship);
+                    //Pattern tarePattern = Pattern.compile("(Tare)..(\\w+.*)");
+                    //Matcher tareMatcher = tarePattern.matcher(split[count]);
+                    //while (tareMatcher.find()) {
+                        //tare = Double.parseDouble(tareMatcher.group(2));
+                    //}
+                    //containers.add(tare);
+                    //ship.savedContainers.add(containers);
+                //}
+            //}
         }
     }
 

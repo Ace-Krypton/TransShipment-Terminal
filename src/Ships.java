@@ -8,8 +8,6 @@ public class Ships {
     private String transportOrigin; //For transport origin
     private String destination; //For destination of the ship
     public double capacity = 0;  //Ship's capacity
-
-    ArrayList<Object> savedContainers = new ArrayList<>();
     ArrayList<StandardContainer> standardContainer = new ArrayList<>();
     ArrayList<HeavyContainer> heavyContainer = new ArrayList<>();
     ArrayList<ToxicContainer> toxicContainer = new ArrayList<>();
@@ -56,7 +54,6 @@ public class Ships {
                 + "\n\tTransport Origin: " + transportOrigin
                 + "\n\tHome Port: " + homePort
                 + "\n\tDestination: " + destination
-                + "\n\t" + builder + "\n" + "+-----------------------------------------+"
-                + savedContainers;
+                + "\n\t" + builder + "\n" + "+-----------------------------------------+";
     }
 }

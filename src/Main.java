@@ -308,6 +308,7 @@ public class Main {
                                 // Creating an object of BufferedReader class
                                 try {
                                     //Getting path from the user
+                                    System.out.print("Enter the path: ");
                                     String path = scan.next();
                                     //BufferedReader for reading the file
                                     BufferedReader reader = new BufferedReader(new FileReader(path));
