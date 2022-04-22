@@ -434,6 +434,7 @@ public class Seaport {
         }
     }
 
+    //Writer
     public void printInfo(FileWriter writer) throws IOException {
         System.out.println("+-----------------------------------------+");
         Collections.sort(list); //Sorts the list
@@ -454,16 +455,23 @@ public class Seaport {
         writer.close(); //Closing the stream
     }
 
+    //Reader
     public void writeInfo(StringBuilder readData) {
+        //We are initializing ship's values with null beforehand
         String name = null;
         String transportOrigin = null;
         String homePort = null;
         String destination = null;
+        //Converting readData which is StringBuilder to String with String.valueOf(readData)
         String data = String.valueOf(readData);
+        //I used that to differentiate my ship's, that is why we need use split to count how many ship objects,
+        //we have and give them indexes, maybe it is not a good idea, but I used it.
         String[] split = data.split("[+]-----------------------------------------[+]");
 
+        //Using for loop, till we set all values to the ship objects
         for (int count = 0; count < split.length - 1; count++) {
             //Name
+            //I used pattern grouping to extract appropriate data
             Pattern namePattern = Pattern.compile("(\\d).*(Name)..(\\w+)");
             Matcher nameMatcher = namePattern.matcher(split[count]);
             while (nameMatcher.find()) {
@@ -491,6 +499,7 @@ public class Seaport {
                 destination = destinationMatcher.group(2);
             }
 
+            //Creating ship objects each time and setting values to them
             Ships ship = new Ships();
             ship.setName(name);
             ship.setTransportOrigin(transportOrigin);
