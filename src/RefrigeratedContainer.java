@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class RefrigeratedContainer extends HeavyContainer{
+public class RefrigeratedContainer extends HeavyContainer {
     //ArrayList for refrigerated containers
     static ArrayList<String> refrigeratedContainer = new ArrayList<>();
     //For storing elements that will remove soon
